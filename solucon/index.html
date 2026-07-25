@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Solucon · Diagnóstico Estratégico — Lean Company</title>
+<meta name="description" content="Diagnóstico estratégico e proposta da Lean Company para a Solucon — processos, orçamentação e indicadores de gestão." />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ===================== TELA DE ACESSO ===================== -->
+<div id="access" class="access" role="dialog" aria-modal="true" aria-labelledby="access-title">
+  <div class="access__card">
+    <div class="access__logos">
+      <img src="assets/cliente-logo.png" alt="Solucon" class="access__client-logo" />
+      <span class="access__plus" aria-hidden="true">×</span>
+      <img src="assets/lean-logo-white.png" alt="Lean Company" class="access__lean-logo" />
+    </div>
+    <span class="access__tag">Conteúdo reservado</span>
+    <h1 id="access-title" class="access__title">Diagnóstico Estratégico Solucon</h1>
+    <p class="access__desc">Material exclusivo preparado pela Lean Company. Informe a senha de acesso enviada pela equipe.</p>
+    <form id="access-form" class="access__form" autocomplete="off">
+      <label class="access__label" for="password">Senha de acesso</label>
+      <div class="access__field">
+        <input type="password" id="password" name="password" placeholder="••••••••" required />
+        <button type="button" id="toggle-pass" class="access__toggle" aria-label="Mostrar senha">Mostrar</button>
+      </div>
+      <p id="access-error" class="access__error" role="alert" aria-live="polite" hidden>Senha incorreta. Tente novamente.</p>
+      <button type="submit" class="access__btn">Acessar diagnóstico</button>
+    </form>
+    <p class="access__footer">Solucon · Londrina — PR &nbsp;·&nbsp; Lean Company</p>
+  </div>
+</div>
+
+<!-- ===================== CONTEÚDO ===================== -->
+<div id="site" class="site" hidden>
+
+  <div class="progress" aria-hidden="true"><span id="progress-bar" class="progress__bar"></span></div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="#capa" class="header__brand">
+        <img src="assets/cliente-logo.png" alt="Solucon" class="header__logo" />
+        <span class="header__tagline">Diagnóstico estratégico</span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Seções do diagnóstico">
+        <a href="#capa" class="nav__link">Início</a>
+        <a href="#leitura" class="nav__link">Panorama</a>
+        <a href="#diagnostico" class="nav__link">Diagnóstico</a>
+        <a href="#impacto" class="nav__link">Impacto</a>
+        <a href="#roadmap" class="nav__link">Roadmap</a>
+        <a href="#exemplo" class="nav__link">Exemplo</a>
+        <a href="#proposta" class="nav__link">Proposta</a>
+      </nav>
+      <div class="header__right">
+        <img src="assets/lean-wordmark-blue.png" alt="Lean Company" class="header__lean" />
+        <button id="logout" class="header__logout" title="Encerrar sessão">Encerrar</button>
+        <button id="menu-toggle" class="header__burger" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- CAPA -->
+  <section id="capa" class="cover">
+    <div class="cover__inner">
+      <div class="cover__content">
+        <span class="cover__label">Diagnóstico estratégico · Processos e Gestão</span>
+        <h2 class="cover__title">Processos que sustentam o crescimento da Solucon</h2>
+        <p class="cover__text">Um diagnóstico consultivo para mapear os processos administrativos, tornar a orçamentação mais ágil e liberar a capacidade da engenharia — conectando cada etapa a indicadores de gestão.</p>
+        <div class="cover__actions">
+          <a href="#diagnostico" class="btn btn--primary">Ver diagnóstico</a>
+        </div>
+        <div class="cover__sign">
+          <span>Preparado por</span>
+          <img src="assets/lean-wordmark-blue.png" alt="Lean Company" />
+        </div>
+      </div>
+      <figure class="cover__figure">
+        <div class="cover__frame">
+          <img src="assets/cliente-hero.jpg" alt="Sede da Solucon em Londrina" />
+        </div>
+        <figcaption class="cover__struct">Londrina · PR &nbsp;·&nbsp; Construção civil &nbsp;·&nbsp; Esquadrias, fachadas e drywall</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- HEADLINE -->
+  <section class="headline">
+    <p class="headline__text">Processos que fluem. <strong>Orçamentos que priorizam o que converte.</strong> Engenharia livre para o que gera valor.</p>
+  </section>
+
+  <!-- LEITURA EXECUTIVA -->
+  <section id="leitura" class="section">
+    <div class="section__head">
+      <span class="eyebrow">Panorama</span>
+      <h3 class="section__title">Onde a Solucon está e para onde pode acelerar</h3>
+    </div>
+    <div class="exec">
+      <article class="exec__card">
+        <span class="exec__kicker">Contexto atual</span>
+        <p>A Solucon é referência técnica em fachadas, esquadrias e sistemas construtivos, combinando indústria e serviço. O crescimento ampliou a complexidade administrativa e tornou a orçamentação um processo intensivo em horas de engenharia.</p>
+      </article>
+      <article class="exec__card">
+        <span class="exec__kicker">Oportunidade</span>
+        <p>Mapear e padronizar os processos administrativos, priorizar os orçamentos pelo potencial de conversão e liberar a capacidade da engenharia para o que gera mais valor.</p>
+      </article>
+      <article class="exec__card exec__card--lean">
+        <span class="exec__kicker">Como a Lean ajuda</span>
+        <p>A Lean atua como integradora e aceleradora — estrutura processos, cria indicadores e implanta rotina de gestão, sem substituir os controles e a competência técnica que a Solucon já domina.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- DIAGNÓSTICO -->
+  <section id="diagnostico" class="section">
+    <div class="section__head">
+      <span class="eyebrow">Diagnóstico por frentes</span>
+      <h3 class="section__title">Cinco frentes para estruturar e acelerar a gestão</h3>
+      <p class="section__lead">Do administrativo aos indicadores — cada frente com o que observamos e o que a Lean entrega.</p>
+    </div>
+    <div class="dcards" id="diag-grid"></div>
+  </section>
+
+  <!-- IMPACTO SISTÊMICO -->
+  <section id="impacto" class="section section--alt">
+    <div class="section__head">
+      <span class="eyebrow">Impacto sistêmico</span>
+      <h3 class="section__title">Da rotina manual à gestão por indicadores</h3>
+    </div>
+    <div class="switch" role="group" aria-label="Alternar cenário">
+      <button class="switch__btn is-active" data-scenario="antes">Cenário atual</button>
+      <button class="switch__btn" data-scenario="depois">Após as melhorias</button>
+    </div>
+    <div class="impact" id="impact-grid"></div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section id="roadmap" class="section">
+    <div class="section__head">
+      <span class="eyebrow">Sequência recomendada</span>
+      <h3 class="section__title">Três fases que se conectam</h3>
+      <p class="section__lead">As fases são encadeadas, sem prazos rígidos por etapa: cada uma avança conforme a maturidade e as prioridades validadas na operação.</p>
+    </div>
+    <div class="roadmap">
+      <article class="phase">
+        <span class="phase__range">Fase 01</span>
+        <h4 class="phase__title">Base e mapeamento</h4>
+        <ul>
+          <li>Mapear os processos administrativos e o fluxo de orçamentação</li>
+          <li>Entender responsáveis e sistemas em uso (ClickUp)</li>
+          <li>Definir os indicadores prioritários</li>
+        </ul>
+      </article>
+      <article class="phase">
+        <span class="phase__range">Fase 02</span>
+        <h4 class="phase__title">Implantação</h4>
+        <ul>
+          <li>Redesenhar o funil de orçamentos e automatizar etapas</li>
+          <li>Estruturar indicadores de horas e ocupação da engenharia</li>
+          <li>Implantar os indicadores financeiros e gerenciais</li>
+        </ul>
+      </article>
+      <article class="phase">
+        <span class="phase__range">Fase 03</span>
+        <h4 class="phase__title">Consolidação e performance</h4>
+        <ul>
+          <li>Implantar a rotina gerencial e acompanhar metas</li>
+          <li>Refinar processos com base nos resultados</li>
+          <li>Comparar projetos — benchmarking interno</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- METODOLOGIA -->
+  <section class="section section--lean">
+    <div class="section__head">
+      <span class="eyebrow eyebrow--light">Metodologia Lean</span>
+      <h3 class="section__title section__title--light">Como conduzimos cada frente</h3>
+    </div>
+    <div class="method">
+      <div class="method__step"><span>01</span><h4>Validar</h4><p>Confirmar contexto, dados e prioridades diretamente na operação.</p></div>
+      <div class="method__step"><span>02</span><h4>Estruturar</h4><p>Desenhar processos, critérios e indicadores padronizados.</p></div>
+      <div class="method__step"><span>03</span><h4>Implantar</h4><p>Colocar em prática, automatizar e integrar as soluções.</p></div>
+      <div class="method__step"><span>04</span><h4>Acompanhar</h4><p>Medir, ajustar e sustentar a melhoria contínua.</p></div>
+    </div>
+  </section>
+
+  <!-- EXEMPLO / DASHBOARD -->
+  <section id="exemplo" class="section section--alt">
+    <div class="showcase">
+      <div class="showcase__text">
+        <span class="eyebrow">Exemplo do nosso trabalho</span>
+        <h3 class="section__title">Veja um painel que já construímos</h3>
+        <p>Um dashboard gerencial real desenvolvido pela Lean — o tipo de entrega que reúne indicadores de diferentes sistemas em um só lugar, como planejamos para a Solucon.</p>
+        <a href="https://leanco-dashboardexemplo.vercel.app/login.html" class="btn btn--lean" target="_blank" rel="noopener">Abrir dashboard de exemplo</a>
+        <p class="showcase__cred">Acesso de demonstração &nbsp;·&nbsp; <strong>login:</strong> lean &nbsp;&nbsp; <strong>senha:</strong> lean2025</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROPOSTA -->
+  <section id="proposta" class="section">
+    <div class="section__head">
+      <span class="eyebrow">Proposta comercial</span>
+      <h3 class="section__title">Uma parceria presencial e próxima</h3>
+    </div>
+    <div class="proposal">
+      <div class="proposal__main">
+        <div class="proposal__grid">
+          <div class="proposal__item"><span class="proposal__k">Formato</span><span class="proposal__v">Presencial</span></div>
+          <div class="proposal__item"><span class="proposal__k">Frequência</span><span class="proposal__v">4 visitas por mês</span></div>
+          <div class="proposal__item"><span class="proposal__k">Acompanhamento</span><span class="proposal__v">Recorrente e presencial</span></div>
+          <div class="proposal__item"><span class="proposal__k">Despesas</span><span class="proposal__v">Já incluídas</span></div>
+          <div class="proposal__item"><span class="proposal__k">Cancelamento</span><span class="proposal__v">Sem multa · aviso de 30 dias</span></div>
+          <div class="proposal__item"><span class="proposal__k">Escopo</span><span class="proposal__v">5 frentes de diagnóstico e implantação</span></div>
+        </div>
+        <p class="proposal__note">O valor contempla o acompanhamento presencial, a estruturação dos processos, a integração dos sistemas e a construção dos indicadores descritos neste diagnóstico. As despesas de deslocamento já estão incluídas no valor mensal.</p>
+      </div>
+      <aside class="proposal__price">
+        <span class="proposal__price-k">Investimento mensal</span>
+        <span class="proposal__price-v">R$ 7.760</span>
+        <span class="proposal__price-sub">por mês · despesas incluídas</span>
+        <a href="https://wa.me/5544999061699?text=Ol%C3%A1%2C%20somos%20da%20Solucon%20e%20gostar%C3%ADamos%20de%20conversar%20sobre%20a%20proposta%20da%20Lean." class="btn btn--lean" target="_blank" rel="noopener">Falar com a Lean</a>
+        <span class="proposal__price-foot">Próximo passo: agendar a imersão inicial</span>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ENCERRAMENTO -->
+  <section class="closing">
+    <div class="closing__inner">
+      <span class="eyebrow eyebrow--light">Em resumo</span>
+      <h3 class="closing__title">O que muda com a Lean ao lado da Solucon</h3>
+      <div class="closing__grid">
+        <div><h4>Integrar</h4><p>Os processos administrativos e o fluxo de orçamentação, com informação padronizada e integrada.</p></div>
+        <div><h4>Acelerar</h4><p>A resposta aos orçamentos de maior potencial e a liberação de tempo da engenharia.</p></div>
+        <div><h4>Melhorar</h4><p>A produtividade administrativa e a clareza de gestão, sustentadas por indicadores financeiros.</p></div>
+      </div>
+      <a href="https://wa.me/5544999061699?text=Ol%C3%A1%2C%20somos%20da%20Solucon%20e%20gostar%C3%ADamos%20de%20conversar%20sobre%20a%20proposta%20da%20Lean." class="btn btn--primary" target="_blank" rel="noopener">Agendar conversa</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <img src="assets/lean-logo-white.png" alt="Lean Company" class="footer__logo" />
+      <div class="footer__contacts">
+        <span>44 99906-1699</span>
+        <span>@leancompanybrasil</span>
+        <span>leancompany.net</span>
+        <span>Maringá · Paraná</span>
+      </div>
+      <p class="footer__legal">Documento reservado · preparado exclusivamente para a Solucon. © Lean Company.</p>
+    </div>
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
