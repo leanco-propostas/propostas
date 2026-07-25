@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Diagnóstico estratégico e proposta de parceria para a LECLOÁ, desenvolvidos pela Lean Company." />
+  <meta name="robots" content="noindex,nofollow,noarchive" />
+  <meta name="theme-color" content="#244661" />
+  <title>Diagnóstico e Proposta | LECLOÁ × Lean Company</title>
+  <link rel="icon" href="assets/lean-symbol.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="locked">
+  <noscript>
+    <div class="noscript">Ative o JavaScript para acessar este diagnóstico.</div>
+  </noscript>
+
+  <section class="access-gate" id="accessGate" aria-labelledby="accessTitle">
+    <div class="access-atmosphere" aria-hidden="true"></div>
+    <div class="access-card">
+      <div class="access-brands" aria-label="LECLOÁ e Lean Company">
+        <div class="access-brand access-brand-light">
+          <img src="assets/lecloa-logo.png" alt="LECLOÁ" />
+        </div>
+        <span>×</span>
+        <div class="access-brand access-brand-dark">
+          <img src="assets/lean-logo.png" alt="Lean Company" />
+        </div>
+      </div>
+
+      <span class="access-kicker">Conteúdo reservado</span>
+      <h1 id="accessTitle">Diagnóstico estratégico<br />e proposta de parceria.</h1>
+      <p>Informe a senha para acessar a análise preparada especialmente para a LECLOÁ.</p>
+
+      <form id="accessForm" novalidate>
+        <label for="accessPassword">Senha de acesso</label>
+        <div class="password-field">
+          <input
+            id="accessPassword"
+            name="password"
+            type="password"
+            inputmode="text"
+            autocomplete="current-password"
+            placeholder="Digite a senha"
+            aria-describedby="accessFeedback"
+            required
+          />
+          <button class="password-toggle" id="passwordToggle" type="button" aria-label="Mostrar senha" aria-pressed="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.7"/></svg>
+          </button>
+        </div>
+        <div class="access-feedback" id="accessFeedback" role="status" aria-live="polite"></div>
+        <button class="access-submit" type="submit">
+          Acessar diagnóstico
+          <span aria-hidden="true">→</span>
+        </button>
+      </form>
+
+      <div class="access-footer">
+        <span>LECLOÁ · Maringá/PR</span>
+        <span>Desenvolvido pela Lean Company</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="site-shell" id="siteShell" aria-hidden="true">
+    <div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+    <header class="topbar" id="topo">
+      <a class="brand-lockup" href="#topo" aria-label="Voltar ao início">
+        <img src="assets/lecloa-logo.png" alt="LECLOÁ" class="brand-lecloa" />
+        <span class="brand-divider"></span>
+        <span class="brand-context">Diagnóstico estratégico</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Navegação principal">
+        <a href="#leitura">Leitura executiva</a>
+        <a href="#diagnostico">Diagnóstico</a>
+        <a href="#impactos">Impactos</a>
+        <a href="#prioridades">Prioridades</a>
+        <a href="#proposta">Proposta</a>
+      </nav>
+
+      <div class="topbar-actions">
+        <a class="lean-signature top" href="#metodo" aria-label="Lean Company">
+          <span>Desenvolvido por</span>
+          <img src="assets/lean-logo.png" alt="Lean Company" />
+        </a>
+        <button class="logout-button" id="logoutButton" type="button" aria-label="Encerrar acesso" title="Encerrar acesso">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5H5v14h4M13 8l4 4-4 4M17 12H8"/></svg>
+        </button>
+        <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="mobileNav">Menu</button>
+      </div>
+    </header>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Navegação mobile">
+      <a href="#leitura">Leitura executiva</a>
+      <a href="#diagnostico">Diagnóstico</a>
+      <a href="#impactos">Impactos</a>
+      <a href="#prioridades">Prioridades</a>
+      <a href="#proposta">Proposta</a>
+      <button id="mobileLogoutButton" type="button">Encerrar acesso</button>
+    </nav>
+
+    <main>
+      <section class="hero section-pad">
+        <div class="hero-copy reveal">
+          <span class="eyebrow">Diagnóstico inicial · Maringá/PR</span>
+          <h1>Uma operação<br><em>à altura da marca.</em></h1>
+          <p class="hero-lead">Uma leitura objetiva dos pontos de atenção levantados na reunião — conectando problemas, riscos, ações e impactos esperados.</p>
+          <div class="hero-actions">
+            <a class="button button-dark" href="#diagnostico">Explorar diagnóstico</a>
+            <a class="text-link" href="#leitura">Entender o cenário <span>↘</span></a>
+          </div>
+          <div class="hero-credit">
+            <span>Diagnóstico desenvolvido pela</span>
+            <img src="assets/lean-logo.png" alt="Lean Company" />
+          </div>
+        </div>
+
+        <div class="hero-visual reveal delay-1">
+          <div class="image-frame">
+            <img src="assets/lecloa-corporativa.webp" alt="Linha corporativa LECLOÁ" />
+            <div class="image-overlay"></div>
+            <div class="image-caption">Imagem profissional é posicionamento.<br><strong>Gestão também.</strong></div>
+          </div>
+          <div class="hero-tag">
+            <span>LECLOÁ</span>
+            <strong>Diagnóstico<br>estratégico</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="executive section-pad" id="leitura">
+        <div class="section-heading split reveal">
+          <div>
+            <span class="eyebrow">Leitura executiva</span>
+            <h2>O cenário atual e a oportunidade de evolução.</h2>
+          </div>
+          <p>Os desafios identificados estão conectados. Dados, finanças, comercial, produção, estoques e custos precisam operar como um único sistema de gestão.</p>
+        </div>
+
+        <div class="executive-path reveal">
+          <article>
+            <div class="path-icon path-current" aria-hidden="true">01</div>
+            <span>Situação percebida</span>
+            <h3>Informações e processos ainda não sustentam toda a velocidade da operação.</h3>
+            <p>Há oportunidades de elevar a confiabilidade dos dados, antecipar decisões e reduzir dependências, retrabalhos, esperas e reações tardias.</p>
+          </article>
+          <div class="path-arrow" aria-hidden="true">→</div>
+          <article>
+            <div class="path-icon path-opportunity" aria-hidden="true">02</div>
+            <span>Oportunidade</span>
+            <h3>Conectar gestão, operação e resultado em uma mesma lógica.</h3>
+            <p>Uma base gerencial integrada pode melhorar previsibilidade financeira, direcionamento comercial, disponibilidade de materiais e fluidez produtiva.</p>
+          </article>
+          <div class="path-arrow" aria-hidden="true">→</div>
+          <article class="lean-path">
+            <div class="path-icon path-lean" aria-hidden="true"><img src="assets/lean-symbol.png" alt="" /></div>
+            <span>Como a Lean Company ajuda</span>
+            <h3>Validar a base, estruturar processos e transformar dados em ação.</h3>
+            <p>A atuação conecta diagnóstico, indicadores, ferramentas de gestão e acompanhamento da execução para gerar melhorias sustentáveis.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="diagnostic section-pad" id="diagnostico">
+        <div class="section-heading split reveal">
+          <div>
+            <span class="eyebrow">Mapa do diagnóstico</span>
+            <h2>Problema, risco, ação e impacto em uma única leitura.</h2>
+          </div>
+          <p>Selecione uma frente. Cada análise apresenta três pontos prioritários em cada dimensão.</p>
+        </div>
+
+        <div class="diagnostic-shell reveal">
+          <aside class="diagnostic-tabs" id="diagnosticTabs" aria-label="Frentes analisadas"></aside>
+
+          <section class="diagnostic-content" aria-live="polite">
+            <div class="diagnostic-head">
+              <div class="diagnostic-title-wrap">
+                <div class="active-area-icon" id="activeAreaIcon" aria-hidden="true"></div>
+                <div>
+                  <div class="diagnostic-meta"><span class="status-pill" id="diagPriority"></span><span id="diagKicker"></span></div>
+                  <h3 id="diagTitle"></h3>
+                  <p id="diagSummary"></p>
+                </div>
+              </div>
+              <div class="diag-index" id="diagIndex"></div>
+            </div>
+
+            <div class="diagnostic-quadrants">
+              <article class="quadrant problem">
+                <div class="quadrant-head"><span class="quadrant-icon">!</span><strong>Problemas identificados</strong></div>
+                <ul id="diagProblems"></ul>
+              </article>
+              <article class="quadrant risk">
+                <div class="quadrant-head"><span class="quadrant-icon">↘</span><strong>Riscos para a operação</strong></div>
+                <ul id="diagRisks"></ul>
+              </article>
+              <article class="quadrant action">
+                <div class="quadrant-head"><span class="quadrant-icon">→</span><strong>Ações e soluções</strong></div>
+                <ul id="diagActions"></ul>
+              </article>
+              <article class="quadrant impact">
+                <div class="quadrant-head"><span class="quadrant-icon">+</span><strong>Impacto após implantação</strong></div>
+                <ul id="diagImpacts"></ul>
+              </article>
+            </div>
+          </section>
+        </div>
+      </section>
+
+      <section class="systemic section-pad" id="impactos">
+        <div class="section-heading split reveal">
+          <div>
+            <span class="eyebrow">Impacto sistêmico</span>
+            <h2>Um problema alimenta o outro — e a solução também.</h2>
+          </div>
+          <div class="scenario-switch" role="group" aria-label="Alternar cenário">
+            <button class="scenario active" data-scenario="current">Cenário atual</button>
+            <button class="scenario" data-scenario="future">Após as melhorias</button>
+          </div>
+        </div>
+
+        <div class="impact-stage reveal">
+          <div class="impact-copy" id="impactIntro"></div>
+          <div class="impact-flow" id="impactFlow"></div>
+          <div class="impact-outcome" id="impactOutcome"></div>
+        </div>
+      </section>
+
+      <section class="priorities section-pad" id="prioridades">
+        <div class="section-heading split reveal">
+          <div>
+            <span class="eyebrow">Sequência recomendada</span>
+            <h2>Primeiro a base. Depois a integração. Por fim, performance.</h2>
+          </div>
+          <p>A ordem reduz o risco de criar indicadores sobre informações frágeis ou executar melhorias pontuais sem conexão com o resultado.</p>
+        </div>
+
+        <div class="priority-grid reveal">
+          <article>
+            <div class="priority-number">01</div>
+            <span>Base confiável</span>
+            <h3>Organizar dados, ERP e leitura financeira.</h3>
+            <ul>
+              <li>Validar cadastros, lançamentos e rotinas críticas.</li>
+              <li>Estruturar DRE, fluxo projetado e contas a receber.</li>
+              <li>Definir responsáveis, processos e prioridades.</li>
+            </ul>
+          </article>
+          <article>
+            <div class="priority-number">02</div>
+            <span>Controle integrado</span>
+            <h3>Conectar comercial, estoque e produção.</h3>
+            <ul>
+              <li>Separar canais, metas, carteira e recompra.</li>
+              <li>Parametrizar estoques e fornecedores críticos.</li>
+              <li>Mapear fluxo, capacidade, esperas e gargalos.</li>
+            </ul>
+          </article>
+          <article>
+            <div class="priority-number">03</div>
+            <span>Performance</span>
+            <h3>Transformar controle em margem e velocidade.</h3>
+            <ul>
+              <li>Reduzir lead time e estabilizar a produção.</li>
+              <li>Estruturar custos e precificação por complexidade.</li>
+              <li>Automatizar indicadores e consolidar a rotina gerencial.</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="method section-pad" id="metodo">
+        <div class="method-brand reveal">
+          <div>
+            <span class="eyebrow light">Atuação Lean Company</span>
+            <h2>Do diagnóstico à execução.</h2>
+          </div>
+          <img src="assets/lean-logo.png" alt="Lean Company" />
+        </div>
+        <div class="method-grid reveal delay-1">
+          <article><span>01</span><strong>Validar</strong><p>Conferir dados, rotinas e processos para criar uma base confiável.</p></article>
+          <article><span>02</span><strong>Estruturar</strong><p>Desenvolver processos, ferramentas e indicadores aderentes à operação.</p></article>
+          <article><span>03</span><strong>Direcionar</strong><p>Interpretar resultados, priorizar ações e acompanhar a execução.</p></article>
+        </div>
+      </section>
+
+      <section class="proposal section-pad" id="proposta">
+        <div class="section-heading split reveal">
+          <div>
+            <span class="eyebrow">Proposta de parceria</span>
+            <h2>Mais intensidade na implantação. Mais constância na evolução.</h2>
+          </div>
+          <p>O formato recomendado combina uma fase inicial de estruturação intensiva com acompanhamento contínuo para consolidar processos, indicadores e resultados.</p>
+        </div>
+
+        <div class="proposal-summary reveal">
+          <div><span>Duração sugerida</span><strong>12 meses</strong></div>
+          <div><span>Formato</span><strong>Presencial + desenvolvimento entre visitas</strong></div>
+          <div><span>Local</span><strong>Maringá/PR</strong></div>
+        </div>
+
+        <div class="proposal-grid reveal">
+          <article class="proposal-card proposal-card-primary">
+            <div class="proposal-card-top">
+              <div>
+                <span class="proposal-phase">Fase 01 · Meses 1 a 3</span>
+                <h3>Implantação intensiva</h3>
+                <p>Imersão, validação da base, estruturação dos primeiros controles e definição das prioridades de execução.</p>
+              </div>
+              <span class="proposal-badge">Início recomendado</span>
+            </div>
+            <div class="proposal-price">
+              <small>Investimento mensal</small>
+              <strong><sup>R$</sup> 4.960</strong>
+              <span>4 visitas presenciais por mês</span>
+            </div>
+            <ul>
+              <li>Maior presença na fase de diagnóstico e implantação.</li>
+              <li>Estruturação das rotinas, indicadores e planos de ação.</li>
+              <li>Acompanhamento próximo dos responsáveis internos.</li>
+            </ul>
+          </article>
+
+          <article class="proposal-card">
+            <div class="proposal-card-top">
+              <div>
+                <span class="proposal-phase">Fase 02 · Meses 4 a 12</span>
+                <h3>Acompanhamento e consolidação</h3>
+                <p>Monitoramento dos indicadores, ajustes estratégicos, desenvolvimento das frentes e consolidação da rotina de gestão.</p>
+              </div>
+            </div>
+            <div class="proposal-price">
+              <small>Investimento mensal</small>
+              <strong><sup>R$</sup> 2.800</strong>
+              <span>2 visitas presenciais por mês</span>
+            </div>
+            <ul>
+              <li>Revisão periódica dos resultados e planos de ação.</li>
+              <li>Ajustes nos processos, controles e indicadores.</li>
+              <li>Desenvolvimento da autonomia da equipe de gestão.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="proposal-includes reveal">
+          <div class="proposal-includes-title">
+            <span class="eyebrow">Incluído na parceria</span>
+            <h3>Atuação integrada, sem limitar o projeto à entrega de relatórios.</h3>
+          </div>
+          <div class="proposal-includes-list">
+            <span>Consultoria sênior</span>
+            <span>Diagnóstico e processos</span>
+            <span>Indicadores e ferramentas</span>
+            <span>Planos de ação</span>
+            <span>Acompanhamento gerencial</span>
+            <span>Treinamento dos responsáveis</span>
+          </div>
+        </div>
+
+        <div class="proposal-terms reveal">
+          <div>
+            <span>Pagamento</span>
+            <strong>Mensal</strong>
+          </div>
+          <div>
+            <span>Cancelamento</span>
+            <strong>Sem multa</strong>
+          </div>
+          <div>
+            <span>Aviso prévio</span>
+            <strong>30 dias</strong>
+          </div>
+          <p>O contrato poderá ser encerrado a qualquer momento, mediante aviso prévio de 30 dias.</p>
+        </div>
+      </section>
+
+      <section class="closing section-pad reveal">
+        <img class="closing-symbol" src="assets/lean-symbol.png" alt="" aria-hidden="true" />
+        <div class="closing-copy">
+          <span class="eyebrow light">Encerramento</span>
+          <h2>Somos uma <em>extensão estratégica</em><br />do seu negócio.</h2>
+          <div class="closing-lines">
+            <p>Trabalhamos no detalhe. No dado. Na decisão.</p>
+            <p>Transformando pessoas e negócios.</p>
+            <p>Mais resultado, mais controle e mais clareza para a LECLOÁ.</p>
+          </div>
+        </div>
+
+        <div class="closing-bottom">
+          <img class="closing-logo" src="assets/lean-logo.png" alt="Lean Company" />
+          <div class="closing-contact"><span>Telefone</span><strong>44 99906-1699</strong></div>
+          <div class="closing-contact"><span>Instagram</span><strong>@leancompanybrasil</strong></div>
+          <div class="closing-contact"><span>Website</span><strong>leancompany.net</strong></div>
+          <div class="closing-contact"><span>Local</span><strong>Maringá · Paraná</strong></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Diagnóstico estratégico inicial · elaborado a partir das informações compartilhadas em reunião</p>
+      <a href="#topo">Voltar ao topo ↑</a>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
