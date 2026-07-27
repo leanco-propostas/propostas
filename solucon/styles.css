@@ -105,20 +105,14 @@ a{color:inherit;text-decoration:none}
 .cover__sign span{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
 .cover__sign img{height:24px;width:auto}
 .cover__figure{margin:0}
-.cover__frame{border-radius:18px;overflow:hidden;border:6px solid #fff;box-shadow:var(--shadow-lg);aspect-ratio:4/3;background:#dfe7e7}
-.cover__frame img{width:100%;height:100%;object-fit:cover;display:block}
-.cover__struct{display:block;margin-top:14px;text-align:center;font-size:12.5px;color:var(--muted);letter-spacing:.02em}
-
-/* ---------- OBRAS DO CLIENTE ---------- */
-.works{background:var(--white);border-bottom:1px solid var(--line);padding:54px 24px 58px}
-.works__inner{max-width:var(--maxw);margin:0 auto}
-.works__head{margin-bottom:24px;max-width:760px}
-.works__lead{margin-top:10px;font-size:15.5px;color:var(--body)}
-.works__grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
-.work{margin:0;border-radius:14px;overflow:hidden;aspect-ratio:4/3;background:#e6eded;
-  border:1px solid var(--line);box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s}
-.work img{width:100%;height:100%;object-fit:cover;display:block}
-.work:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
+.cover__mosaic{position:relative;aspect-ratio:4/3}
+.cover__tile{position:absolute;aspect-ratio:1;border-radius:16px;overflow:hidden;
+  border:6px solid #fff;box-shadow:var(--shadow-lg);background:#dfe7e7}
+.cover__tile img{width:100%;height:100%;object-fit:cover;display:block}
+.cover__tile--a{left:0;top:12%;width:54%;z-index:3}
+.cover__tile--b{left:46%;bottom:0;width:46%;z-index:2}
+.cover__tile--c{right:0;top:0;width:38%;z-index:1}
+.cover__struct{display:block;margin-top:16px;text-align:center;font-size:12.5px;color:var(--muted);letter-spacing:.02em}
 
 /* ---------- HEADLINE ---------- */
 .headline{background:var(--graphite);color:#fff;padding:44px 24px;text-align:center}
@@ -246,13 +240,12 @@ a{color:inherit;text-decoration:none}
   .proposal__price{position:static}
   .cover__inner{grid-template-columns:1fr;gap:32px}
   .cover__figure{order:-1}
-  .cover__frame{aspect-ratio:16/10;max-width:520px;margin:0 auto}
-  .works__grid{grid-template-columns:repeat(2,1fr)}
+  .cover__mosaic{aspect-ratio:16/10;max-width:560px;margin:0 auto}
 }
 @media (max-width:560px){
   .proposal__grid{grid-template-columns:1fr}
   .cover__inner{padding:40px 24px}
-  .works{padding:40px 24px 44px}
+  .cover__mosaic{aspect-ratio:4/3}
   .headline__text{font-size:22px}
   .showcase{padding:36px 22px}
 }
