@@ -23,6 +23,8 @@ ESTRUTURA DE ARQUIVOS
   README.txt      Este arquivo
   assets/
     cliente-logo.png        Logo Solucon
+    obra-capa.jpg           Obra da Solucon (capa)
+    obra-01..04.jpg         Obras da Solucon (faixa da galeria)
     lean-logo-blue.png      Logo Lean azul (fundo claro)
     lean-logo-white.png     Logo Lean branca (fundo escuro)
     lean-wordmark-blue.png  Wordmark Lean (header/assinatura)
@@ -32,8 +34,9 @@ ESTRUTURA DE ARQUIVOS
 SEÇÕES DO MICROSITE
 --------------------------------------------------------------------
   1. Tela de acesso (senha)
-  2. Capa (editorial, sem imagem)
+  2. Capa (imagem em quadro: obra da Solucon)
   3. Headline (frase de posicionamento)
+  3b. Obras realizadas pela Solucon (faixa com 4 fotos)
   4. Leitura executiva (contexto, oportunidade, como a Lean ajuda)
   5. Diagnóstico — 5 frentes (todas expostas, sem clique):
        1) Processos Administrativos
