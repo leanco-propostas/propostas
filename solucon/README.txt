@@ -23,7 +23,6 @@ ESTRUTURA DE ARQUIVOS
   README.txt      Este arquivo
   assets/
     cliente-logo.png        Logo Solucon
-    cliente-hero.jpg        Foto da sede (capa)
     lean-logo-blue.png      Logo Lean azul (fundo claro)
     lean-logo-white.png     Logo Lean branca (fundo escuro)
     lean-wordmark-blue.png  Wordmark Lean (header/assinatura)
@@ -33,7 +32,7 @@ ESTRUTURA DE ARQUIVOS
 SEÇÕES DO MICROSITE
 --------------------------------------------------------------------
   1. Tela de acesso (senha)
-  2. Capa / hero (imagem em quadro)
+  2. Capa (editorial, sem imagem)
   3. Headline (frase de posicionamento)
   4. Leitura executiva (contexto, oportunidade, como a Lean ajuda)
   5. Diagnóstico — 5 frentes (todas expostas, sem clique):
@@ -43,12 +42,11 @@ SEÇÕES DO MICROSITE
        4) Integração de Sistemas  (frente central)
        5) Indicadores Financeiros
   6. Impacto sistêmico (cenário atual x após melhorias)
-  7. Roadmap (3 fases encadeadas, sem prazo rígido por etapa)
-  8. Metodologia Lean (Validar · Estruturar · Implantar · Acompanhar)
-  9. Exemplo — dashboard real da Lean (botão + acesso de demonstração)
- 10. Proposta comercial
- 11. Encerramento
- 12. Rodapé institucional Lean
+  7. Sequência recomendada (3 fases encadeadas, sem prazo rígido por etapa)
+  8. Exemplo — dashboard real da Lean (botão + acesso de demonstração)
+  9. Proposta comercial
+ 10. Encerramento
+ 11. Rodapé institucional Lean
 
 --------------------------------------------------------------------
 PROPOSTA COMERCIAL (resumo)
