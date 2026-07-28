@@ -57,7 +57,7 @@ PROPOSTA COMERCIAL (resumo)
   Formato:      Presencial
   Frequência:   4 visitas por mês
   Acompanhamento: recorrente e presencial
-  Valor mensal: R$ 7.760 (despesas já incluídas)
+  Valor mensal: R$ 8.860 (despesas já incluídas)
   Cancelamento: sem multa, com aviso prévio de 30 dias
 
 --------------------------------------------------------------------
