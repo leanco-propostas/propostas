@@ -126,6 +126,7 @@ ul.list li::before{content:""; position:absolute; left:0; top:11.5px; width:10px
 .etapa{display:grid; grid-template-columns:1fr; gap:32px; padding:40px 0; border-top:1px solid var(--line)}
 @media (min-width:900px){.etapa{grid-template-columns:minmax(0,1fr) 296px; gap:52px}}
 .etapa.wide{grid-template-columns:1fr; gap:36px}
+.etapa.solo{grid-template-columns:1fr}
 .etapa-h{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:12px}
 .etapa-n{font-family:var(--mono); font-size:10.5px; font-weight:700; color:var(--client); letter-spacing:.16em; text-transform:uppercase}
 .etapa-d{font-family:var(--mono); font-size:11px; color:var(--muted); font-variant-numeric:tabular-nums}
@@ -527,15 +528,6 @@ body.locked{overflow:hidden}
 
   /* ---------- exemplos ---------- */
   var MOCK={
-    inv:'<div class="mock"><table><colgroup><col style="width:47%"><col style="width:20%"><col style="width:15%"><col style="width:18%"></colgroup>'+
-      '<thead><tr><th>Processo</th><th>Área</th><th>Vol.</th><th>Prior.</th></tr></thead><tbody>'+
-      '<tr><td>Abertura de vaga</td><td>R&amp;S</td><td>62</td><td><i class="pill a" style="width:24px"></i></td></tr>'+
-      '<tr><td>Inscrição em treinamento</td><td>T&amp;D</td><td>310</td><td><i class="pill a" style="width:21px"></i></td></tr>'+
-      '<tr><td>Solicitação de benefício</td><td>C&amp;B</td><td>148</td><td><i class="pill" style="width:16px"></i></td></tr>'+
-      '<tr><td>Atendimento ao gestor</td><td>HRBP</td><td>—</td><td><i class="pill" style="width:13px"></i></td></tr>'+
-      '<tr><td>Agendamento ocupacional</td><td>Saúde</td><td>44</td><td><i class="pill q" style="width:9px"></i></td></tr>'+
-      '</tbody></table></div>',
-
     reg:'<div class="ev"><span class="id">Registro · observação</span><p>A mesma informação do candidato é digitada em dois sistemas e em uma planilha de acompanhamento da área.</p><span class="src">3 acompanhamentos · confirmado em entrevista</span></div>'+
         '<div class="ev"><span class="id">Registro · entrevista</span><p>A equipe aponta concentração de solicitações no início e no fim do ciclo, sem controle de fila.</p><span class="src">2 entrevistas · a confirmar com relatório de volume</span></div>',
 
@@ -638,9 +630,7 @@ body.locked{overflow:hidden}
         'Levantamento de quais processos existem em cada área — recrutamento, treinamento, cultura, remuneração e benefícios, facilities, saúde, HRBPs e demais atividades do ciclo de pessoas.',
         'Definição em conjunto de quais processos e áreas observar primeiro, priorizando o que parece ter mais impacto.'],
      e:'Lista organizada e priorizada dos processos que serão mapeados nas próximas etapas.',
-     f:['Planilha'],
-     leg:'Cada processo levantado recebe volume, área responsável e uma ordem de prioridade acordada com a liderança.',
-     m:'inv'},
+     f:['Planilha']},
 
     {n:'Etapa 2',t:'Observação e entrevistas',d:'32 horas',
      o:'Ver como o trabalho realmente acontece, não como está descrito em algum manual.',
@@ -696,7 +686,7 @@ body.locked{overflow:hidden}
   var host=document.getElementById('etapas');
   ETAPAS.forEach(function(s){
     var el=document.createElement('article');
-    el.className='etapa'+(s.wide?' wide':'');
+    el.className='etapa'+(s.wide?' wide':'')+(s.m?'':' solo');
     el.innerHTML=
       '<div>'+
         '<div class="etapa-h"><span class="etapa-n">'+s.n+'</span><span class="etapa-d">'+s.d+'</span></div>'+
@@ -707,8 +697,10 @@ body.locked{overflow:hidden}
         '<div class="etapa-e"><p class="lbl">Entregável</p><p>'+s.e+'</p>'+
         '<div class="fmts">'+s.f.map(function(x){return '<span class="tag">'+x+'</span>'}).join('')+'</div></div>'+
       '</div>'+
-      '<div class="demo"><p class="lbl" style="margin-bottom:0">Exemplo da entrega</p>'+MOCK[s.m]+
-        '<p class="fine" style="font-size:12.5px">'+s.leg+'</p></div>';
+      (s.m
+        ? '<div class="demo"><p class="lbl" style="margin-bottom:0">Exemplo da entrega</p>'+MOCK[s.m]+
+          '<p class="fine" style="font-size:12.5px">'+s.leg+'</p></div>'
+        : '');
     host.appendChild(el);
   });
 
