@@ -104,6 +104,7 @@ ul.list li{position:relative; padding-left:24px; font-size:16px; line-height:1.6
 ul.list li::before{content:""; position:absolute; left:0; top:11.5px; width:10px; height:1px; background:var(--client-2)}
 
 .tag{display:inline-block; font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; padding:4px 10px; background:var(--client-soft); color:var(--client); font-weight:650; border-radius:2px}
+.tag-mod{background:var(--brand); color:#FFFFFF}
 
 /* ---------- cronograma ---------- */
 .gantt{border-top:1px solid var(--line)}
@@ -385,7 +386,7 @@ body.locked{overflow:hidden}
     <p class="num">02</p>
     <div>
       <h2>Como conduzimos o trabalho</h2>
-      <p class="sub">Uma dupla de especialistas em análise de processos ao longo de 9 dias úteis, somando 144 horas de trabalho, organizadas em seis etapas — cada uma com a duração proporcional ao que exige. O cliente acompanha e valida ao longo do caminho.</p>
+      <p class="sub">Uma dupla de especialistas em análise de processos ao longo de 9 dias úteis, somando 144 horas de trabalho, organizadas em quatro etapas — cada uma com a duração proporcional ao que exige. O cliente acompanha e valida ao longo do caminho.</p>
     </div>
   </div>
 
@@ -460,7 +461,7 @@ body.locked{overflow:hidden}
       <div><b>2</b><span>especialistas em análise de processos</span></div>
       <div><b>72h</b><span>de dedicação por especialista</span></div>
       <div><b>144h</b><span>de dedicação total</span></div>
-      <div><b>9</b><span>dias úteis, em seis etapas</span></div>
+      <div><b>9</b><span>dias úteis, em quatro etapas</span></div>
     </div>
   </div>
 </section>
@@ -484,7 +485,7 @@ body.locked{overflow:hidden}
         <p class="t">Despesas
           <span class="d">Hospedagem, alimentação e deslocamento da dupla durante os períodos presenciais.</span>
         </p>
-        <span class="v">R$ 8.368,00</span>
+        <span class="v">R$ 7.568,00</span>
       </div>
 
       <div class="desp">
@@ -498,11 +499,11 @@ body.locked{overflow:hidden}
             </tr>
           </thead>
           <tbody>
-            <tr><td>Hospedagem</td><td class="n r">16</td><td class="n r">R$ 200,00</td><td class="n r">R$ 3.200,00</td></tr>
-            <tr><td>Alimentação</td><td class="n r">36</td><td class="n r">R$ 50,00</td><td class="n r">R$ 1.800,00</td></tr>
+            <tr><td>Hospedagem</td><td class="n r">14</td><td class="n r">R$ 200,00</td><td class="n r">R$ 2.800,00</td></tr>
+            <tr><td>Alimentação</td><td class="n r">28</td><td class="n r">R$ 50,00</td><td class="n r">R$ 1.400,00</td></tr>
             <tr><td>Combustível</td><td class="n r">2</td><td class="n r">R$ 1.472,00</td><td class="n r">R$ 2.944,00</td></tr>
             <tr><td>Pedágio</td><td class="n r">2</td><td class="n r">R$ 212,00</td><td class="n r">R$ 424,00</td></tr>
-            <tr><td>Subtotal de despesas</td><td class="r"></td><td class="r"></td><td class="n r">R$ 8.368,00</td></tr>
+            <tr><td>Subtotal de despesas</td><td class="r"></td><td class="r"></td><td class="n r">R$ 7.568,00</td></tr>
           </tbody>
         </table>
         <p class="desp-note">Hospedagem e deslocamento podem ser contratados diretamente pela Kie-Tec ou pelo cliente, caso haja fornecedor ou política própria. Nessa hipótese, os itens correspondentes são deduzidos do total desta proposta.</p>
@@ -510,7 +511,7 @@ body.locked{overflow:hidden}
 
       <div class="row total">
         <p class="t">Total</p>
-        <span class="v">R$ 37.168,00</span>
+        <span class="v">R$ 36.368,00</span>
       </div>
     </div>
 
@@ -547,12 +548,10 @@ body.locked{overflow:hidden}
   if(t){for(var i=1;i<=18;i++){var s=document.createElement('span');s.textContent=(i%2===0)?(i/2):'';t.appendChild(s);}}
 
   var PLANO=[
-    {n:'01', t:'Entendimento e priorização', d:'16 horas', ini:1,  dur:2},
-    {n:'02', t:'Observação e entrevistas',   d:'32 horas', ini:3,  dur:4},
-    {n:'03', t:'Mapeamento dos processos',   d:'24 horas', ini:7,  dur:3},
-    {n:'04', t:'Medição',                    d:'24 horas', ini:10, dur:3},
-    {n:'05', t:'Análise das causas',         d:'24 horas', ini:13, dur:3},
-    {n:'06', t:'Consolidação e entrega',     d:'24 horas', ini:16, dur:3, fim:true}
+    {n:'01', t:'Observação e entrevistas',   d:'32 horas',          ini:1,  dur:4},
+    {n:'02', t:'Mapeamento dos processos',   d:'32 horas',          ini:5,  dur:4},
+    {n:'03', t:'Medição',                    d:'48 horas',          ini:9,  dur:6},
+    {n:'04', t:'Análise, consolidação e entrega', d:'32 horas · online', ini:15, dur:4, fim:true}
   ];
   var g=document.getElementById('gantt');
   PLANO.forEach(function(p){
@@ -671,25 +670,19 @@ body.locked{overflow:hidden}
   };
 
   var ETAPAS=[
-    {n:'Etapa 1',t:'Entendimento e priorização',d:'16 horas',
-     o:'Entender como as áreas de RH funcionam hoje e definir por onde o diagnóstico deve começar.',
+    {n:'Etapa 1',t:'Observação e entrevistas',d:'32 horas',
+     o:'Entender como as áreas de RH funcionam hoje e ver como o trabalho realmente acontece — não como está descrito em algum manual.',
      a:['Reunião de abertura com a liderança de RH, para alinhar expectativas, riscos e o que já se sabe sobre os problemas.',
-        'Levantamento de quais processos existem em cada área — recrutamento, treinamento, cultura, remuneração e benefícios, facilities, saúde, HRBPs e demais atividades do ciclo de pessoas.',
-        'Definição em conjunto de quais processos e áreas observar primeiro, priorizando o que parece ter mais impacto.'],
-     e:'Lista organizada e priorizada dos processos que serão mapeados nas próximas etapas.',
-     f:['Planilha']},
-
-    {n:'Etapa 2',t:'Observação e entrevistas',d:'32 horas',
-     o:'Ver como o trabalho realmente acontece, não como está descrito em algum manual.',
-     a:['Acompanhamento do time de RH trabalhando no dia a dia, nas áreas priorizadas na etapa anterior.',
+        'Levantamento de quais processos existem em cada área — recrutamento, treinamento, cultura, remuneração e benefícios, facilities, saúde, HRBPs e demais atividades do ciclo de pessoas — e definição em conjunto de quais observar primeiro.',
+        'Acompanhamento do time de RH trabalhando no dia a dia, nas áreas priorizadas.',
         'Entrevistas com quem executa cada processo, para entender etapas, decisões e dificuldades.',
         'Cruzamento com dados de sistemas — relatórios, planilhas de volume — quando disponíveis, para confirmar o que foi observado e ouvido.'],
-     e:'Registro consolidado de como cada processo priorizado funciona na prática, com as evidências que sustentam esse retrato.',
-     f:['Documento'],
+     e:'Lista priorizada dos processos e registro consolidado de como cada um funciona na prática, com as evidências que sustentam esse retrato.',
+     f:['Planilha','Documento'],
      leg:'Cada registro guarda a fonte que o originou, para que qualquer conclusão possa ser rastreada depois.',
      m:'reg'},
 
-    {n:'Etapa 3',t:'Mapeamento completo dos processos',d:'24 horas',
+    {n:'Etapa 2',t:'Mapeamento completo dos processos',d:'32 horas',
      o:'Ter o desenho pronto de cada processo priorizado.',
      a:['Desenho de cada processo em fluxograma padrão, com as etapas, os responsáveis e os pontos de decisão.',
         'Validação de cada mapa com quem executa o processo, para garantir que reflete a realidade.',
@@ -699,7 +692,7 @@ body.locked{overflow:hidden}
      leg:'Exemplo de um mapa entregue: raias por responsável, os formulários que circulam, o ponto de decisão e os dois desfechos possíveis. Os marcadores em destaque assinalam, já sobre o desenho, os pontos com oportunidade de melhoria — que depois entram na priorização da etapa final. Cada processo do setor é desenhado neste mesmo padrão, o que torna todos comparáveis entre si.',
      m:'mapa', wide:true},
 
-    {n:'Etapa 4',t:'Medição',d:'24 horas',
+    {n:'Etapa 3',t:'Medição',d:'48 horas',
      o:'Ter números concretos sobre tempo, capacidade e qualidade do trabalho.',
      a:['Medição de quanto tempo cada atividade leva, e onde há fila, espera e retrabalho.',
         'Comparação entre quanto trabalho chega para cada equipe e quanto ela consegue dar conta, para identificar onde há sobrecarga e onde há ociosidade.',
@@ -709,26 +702,20 @@ body.locked{overflow:hidden}
      leg:'A comparação por equipe mostra de imediato onde o trabalho que chega supera a capacidade disponível.',
      m:'cap'},
 
-    {n:'Etapa 5',t:'Análise das causas',d:'24 horas',
-     o:'Entender por que cada problema acontece.',
+    {n:'Etapa 4',t:'Análise, consolidação e entrega das propostas de melhoria',d:'32 horas · entrega final',
+     mod:'Etapa online',
+     o:'Entender por que cada problema acontece e entregar o panorama de oportunidades com os próximos passos.',
      a:['Para cada processo com problema identificado, investigação da causa: falta de gente, falta de treinamento, processo mal desenhado, falta de regra clara ou falta de ferramenta.',
-        'Cruzamento das causas com os números levantados na etapa de medição, para confirmar cada hipótese com evidência.'],
-     e:'Diagnóstico de causa para cada problema identificado, com as evidências que sustentam essa leitura.',
-     f:['Documento'],
-     leg:'Cada causa possível é testada e registrada — inclusive as descartadas, que evitam decisões tomadas pelo motivo errado.',
-     m:'causa'},
-
-    {n:'Etapa 6',t:'Consolidação e recomendações',d:'24 horas · entrega final',
-     o:'Entregar o panorama completo de oportunidades e os próximos passos.',
-     a:['Reunião de todos os pontos de oportunidade identificados, com a recomendação de ação para cada um: cortar, simplificar, padronizar, digitalizar ou automatizar.',
-        'Priorização das oportunidades por impacto e esforço.',
-        'Indicação de quais processos têm maior potencial de ganho para serem aprofundados em uma etapa futura.',
-        'Apresentação final à liderança de RH, com o modelo documentado para ser repetido em outras áreas.'],
-     e:'Diagnóstico completo com todas as oportunidades priorizadas, recomendações de próximos passos e o modelo replicável.',
-     f:['Apresentação','Planilha'],
-     leg:'A matriz separa o que dá retorno rápido do que exige projeto — e mostra o que não vale o esforço.',
-     m:'prior'}
+        'Cruzamento das causas com os números levantados na etapa de medição, para confirmar cada hipótese com evidência.',
+        'Reunião de todos os pontos de oportunidade identificados, com a recomendação de ação para cada um: cortar, simplificar, padronizar, digitalizar ou automatizar.',
+        'Priorização das oportunidades por impacto e esforço, e indicação de quais processos têm maior potencial de ganho para serem aprofundados em uma etapa futura.',
+        'Apresentação final à liderança de RH, conduzida a distância, com o modelo documentado para ser repetido em outras áreas.'],
+     e:'Diagnóstico de causa por problema e o diagnóstico completo, com as oportunidades priorizadas, as recomendações de próximos passos e o modelo replicável.',
+     f:['Documento','Apresentação','Planilha'],
+     leg:'Cada causa possível é testada e registrada — inclusive as descartadas, que evitam decisões tomadas pelo motivo errado. Em seguida, as oportunidades confirmadas são posicionadas por impacto e esforço.',
+     m:'analise'}
   ];
+  MOCK.analise = MOCK.causa + MOCK.prior;
 
   var host=document.getElementById('etapas');
   ETAPAS.forEach(function(s){
@@ -736,7 +723,8 @@ body.locked{overflow:hidden}
     el.className='etapa'+(s.wide?' wide':'')+(s.m?'':' solo');
     el.innerHTML=
       '<div>'+
-        '<div class="etapa-h"><span class="etapa-n">'+s.n+'</span><span class="etapa-d">'+s.d+'</span></div>'+
+        '<div class="etapa-h"><span class="etapa-n">'+s.n+'</span><span class="etapa-d">'+s.d+'</span>'+
+          (s.mod?'<span class="tag tag-mod">'+s.mod+'</span>':'')+'</div>'+
         '<h3>'+s.t+'</h3>'+
         '<p class="etapa-obj">'+s.o+'</p>'+
         '<p class="lbl">Atividades</p>'+
