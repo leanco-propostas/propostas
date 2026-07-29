@@ -61,10 +61,12 @@ strong{font-weight:600; color:var(--brand)}
 .lbl{font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); font-weight:650; margin:0 0 14px}
 
 /* ---------- co-branding ---------- */
-.cobrand{display:flex; align-items:center; gap:24px; flex-wrap:wrap; padding:32px 0 26px; border-bottom:1px solid var(--line)}
-.cobrand .kt{width:136px; display:block}
-.cobrand .sep{width:1px; height:34px; background:var(--rule)}
-.cobrand .lc{width:104px; display:block}
+.cobrand{display:flex; align-items:center; gap:22px; flex-wrap:wrap; padding:32px 0 26px; border-bottom:1px solid var(--line)}
+/* alinhados pela altura — as duas marcas têm proporções diferentes */
+.cobrand img{display:block; width:auto}
+.cobrand .kt{height:34px}
+.cobrand .lc{height:30px}
+.cobrand .sep{flex:0 0 1px; width:1px; height:28px; background:var(--rule)}
 .cobrand .role{margin-left:auto; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); font-weight:650}
 
 /* ---------- capa ---------- */
@@ -231,43 +233,67 @@ a:focus-visible{outline:2px solid var(--client); outline-offset:3px}
 /* ---------- tela de acesso ---------- */
 .gate{
   position:fixed; inset:0; z-index:100; background:#FFFFFF;
-  display:flex; align-items:center; justify-content:center; padding:28px;
+  display:flex; align-items:center; justify-content:center;
+  padding:44px 28px; overflow-y:auto;
 }
 .gate[hidden]{display:none}
-.gate-card{width:100%; max-width:460px}
-.gate-brand{display:flex; align-items:center; gap:20px; margin-bottom:44px}
-.gate-brand .kt{width:118px; display:block}
-.gate-brand .sep{width:1px; height:30px; background:var(--rule)}
-.gate-brand .lc{width:92px; display:block}
+.gate-card{width:100%; max-width:424px; margin:auto}
+
+/* logos alinhados pela ALTURA — as duas marcas têm proporções diferentes */
+.gate-brand{display:flex; align-items:center; gap:18px; margin:0 0 42px}
+.gate-brand img{display:block; width:auto}
+.gate-brand .kt{height:28px}
+.gate-brand .lc{height:25px}
+.gate-brand .sep{flex:0 0 1px; width:1px; height:24px; background:var(--rule)}
+
 .gate-eyebrow{
   display:block; font-size:10.5px; letter-spacing:.2em; text-transform:uppercase;
-  color:var(--client); font-weight:700; margin-bottom:14px;
+  color:var(--client); font-weight:700; margin:0 0 12px;
 }
-.gate-card h1{font-size:31px; line-height:1.14; margin-bottom:16px; max-width:14ch}
-.gate-card .gate-lead{font-size:16px; color:var(--ink-2); margin:0 0 32px; line-height:1.6}
-.gate-label{display:block; font-size:10.5px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); font-weight:650; margin-bottom:10px}
-.gate-field{display:flex; align-items:stretch; border:1px solid var(--rule); border-radius:3px; overflow:hidden}
+.gate-card h1{font-size:28px; line-height:1.2; letter-spacing:-.012em; margin:0 0 14px; max-width:none}
+.gate-lead{font-size:15.5px; line-height:1.62; color:var(--ink-2); margin:0 0 30px}
+
+.gate-label{
+  display:block; font-size:10.5px; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--muted); font-weight:650; margin:0 0 9px;
+}
+.gate-field{
+  display:flex; align-items:stretch; border:1px solid var(--rule);
+  border-radius:3px; background:#FFFFFF; overflow:hidden;
+}
 .gate-field:focus-within{border-color:var(--client); box-shadow:0 0 0 3px rgba(0,116,171,.12)}
 .gate-field input{
-  flex:1; min-width:0; border:0; outline:0; padding:14px 16px;
-  font-family:var(--sans); font-size:16px; color:var(--ink); background:transparent;
+  flex:1 1 auto; min-width:0; border:0; outline:0; background:transparent;
+  padding:13px 15px; font-family:var(--sans); font-size:15.5px; line-height:1.5;
+  color:var(--ink); letter-spacing:.01em;
 }
 .gate-field button{
-  border:0; background:transparent; cursor:pointer; padding:0 16px;
-  font-family:var(--sans); font-size:12px; letter-spacing:.1em; text-transform:uppercase;
+  flex:0 0 auto; border:0; border-left:1px solid var(--line); background:transparent;
+  cursor:pointer; padding:0 15px; font-family:var(--sans);
+  font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
   color:var(--muted); font-weight:650;
 }
 .gate-field button:hover{color:var(--client)}
-.gate-err{margin:12px 0 0; font-size:14px; color:#A5382F}
+.gate-err{margin:12px 0 0; font-size:13.5px; line-height:1.5; color:#A5382F}
 .gate-btn{
-  width:100%; margin-top:22px; padding:15px 20px; border:0; border-radius:3px; cursor:pointer;
-  background:var(--brand); color:#FFFFFF; font-family:var(--sans); font-size:15px; font-weight:600;
-  letter-spacing:.02em;
+  display:block; width:100%; margin:20px 0 0; padding:14px 20px;
+  border:0; border-radius:3px; cursor:pointer; background:var(--brand); color:#FFFFFF;
+  font-family:var(--sans); font-size:15px; font-weight:600; letter-spacing:.01em; line-height:1.4;
 }
 .gate-btn:hover{background:#2A4459}
-.gate-foot{margin:38px 0 0; padding-top:20px; border-top:1px solid var(--line); font-size:13px; color:var(--muted)}
+.gate-foot{
+  margin:36px 0 0; padding-top:18px; border-top:1px solid var(--line);
+  font-size:12.5px; line-height:1.65; color:var(--muted);
+}
 .gate-field button:focus-visible,.gate-btn:focus-visible{outline:2px solid var(--client); outline-offset:2px}
 
+@media (max-width:420px){
+  .gate{padding:32px 22px}
+  .gate-card h1{font-size:25px}
+  .gate-brand{margin-bottom:34px}
+}
+
+/* botão de saída no cabeçalho do documento */
 .logout{
   margin-left:18px; border:1px solid var(--line); background:transparent; cursor:pointer;
   padding:7px 14px; border-radius:3px; font-family:var(--sans);
