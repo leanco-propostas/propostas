@@ -166,6 +166,15 @@ ul.list li::before{content:""; position:absolute; left:0; top:11.5px; width:10px
 .legend{display:flex; gap:18px; margin-top:14px; font-size:10px; color:var(--muted); flex-wrap:wrap}
 .legend i{margin-right:5px}
 
+/* oportunidades marcadas no mapa */
+.op-leg{margin-top:18px; padding-top:15px; border-top:1px solid var(--line); display:flex; flex-direction:column; gap:10px}
+.op-leg .op-t{font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:var(--flag); font-weight:700; margin:0}
+.op-leg p{margin:0; font-size:12.5px; line-height:1.55; color:var(--ink-2); display:flex; gap:10px; align-items:flex-start}
+.op-n{
+  flex:0 0 17px; height:17px; border-radius:50%; background:var(--flag); color:#FFFFFF;
+  font-size:10px; font-weight:700; display:inline-flex; align-items:center; justify-content:center; margin-top:2px;
+}
+
 /* ---------- o que recebe ---------- */
 .recebe{border-top:1px solid var(--line); max-width:760px}
 .recebe > div{display:grid; grid-template-columns:38px minmax(0,1fr); gap:20px; padding:22px 0; border-bottom:1px solid var(--line); align-items:baseline}
@@ -594,7 +603,17 @@ body.locked{overflow:hidden}
       '<line x1="156" y1="410" x2="156" y2="424" stroke="var(--client-3)" stroke-width="1.2" marker-end="url(#lpsArrow)"/>'+
       '<circle cx="156" cy="442" r="13" fill="var(--paper)" stroke="var(--client)" stroke-width="2.4"/>'+
       '<text x="156" y="474" text-anchor="middle" font-size="9.5" fill="var(--muted)">Fim</text>'+
-      '</g></svg></div>',
+      /* marcadores de oportunidade de melhoria */
+      '<circle cx="284" cy="110" r="9" fill="var(--flag)"/>'+
+      '<text x="284" y="113.5" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF">1</text>'+
+      '<circle cx="500" cy="206" r="9" fill="var(--flag)"/>'+
+      '<text x="500" y="209.5" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF">2</text>'+
+      '</g></svg>'+
+      '<div class="op-leg">'+
+      '<p class="op-t">Oportunidades de melhoria identificadas</p>'+
+      '<p><span class="op-n">1</span>Formulário em papel circulando entre as duas áreas — candidato a digitalização.</p>'+
+      '<p><span class="op-n">2</span>Devolução com prazo fixo e sem controle ou aviso — risco de perder o prazo do período.</p>'+
+      '</div></div>',
 
     cap:'<div class="mock"><div class="cap-chart" id="capChart"></div>'+
       '<div class="legend"><span><i class="pill" style="width:14px"></i>trabalho que chega</span>'+
@@ -651,7 +670,7 @@ body.locked{overflow:hidden}
         'Consolidação de todos os mapas em um único repositório do setor.'],
      e:'Mapa completo e validado de todos os processos priorizados do setor.',
      f:['BPMN','PDF','Repositório'],
-     leg:'Exemplo de um mapa entregue: raias por responsável, os formulários que circulam, o ponto de decisão e os dois desfechos possíveis. Cada processo do setor é desenhado neste mesmo padrão, o que torna todos comparáveis entre si.',
+     leg:'Exemplo de um mapa entregue: raias por responsável, os formulários que circulam, o ponto de decisão e os dois desfechos possíveis. Os marcadores em destaque assinalam, já sobre o desenho, os pontos com oportunidade de melhoria — que depois entram na priorização da etapa final. Cada processo do setor é desenhado neste mesmo padrão, o que torna todos comparáveis entre si.',
      m:'mapa', wide:true},
 
     {n:'Etapa 4',t:'Medição',d:'24 horas',
