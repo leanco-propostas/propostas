@@ -1,8 +1,9 @@
-PROPOSTA · INCOPOSTES — TREINAMENTO LEAN MANUFACTURING (V2)
-===========================================================
+PROPOSTA · INCOPOSTES — TREINAMENTO LEAN MANUFACTURING (V2 · microsite)
+=======================================================================
 
-Link:   https://propostas.leancompany.com.br/incopostes/
+Link:   https://propostas.leancompany.com.br/incopostes/v2/
 Senha:  Incopostes2026
+(V1, formato documento, permanece em .../incopostes/)
 
 Escopo: treinamento in-company de Lean Manufacturing, nivel basico,
         nas instalacoes da Incopostes (Paranavai-PR).
@@ -13,6 +14,7 @@ Escopo: treinamento in-company de Lean Manufacturing, nivel basico,
 Valor:  R$ 2.400,00 (treinamento) + R$ 300,00 (deslocamento e alimentacao
         do instrutor) = R$ 2.700,00. Validade: 30 dias.
 
-Arquivo unico e autocontido (padrao B): logos em base64, sem pasta assets.
-V2 — julho de 2026: artefatos visuais por modulo, agenda em blocos
-numerados, entregaveis em cards, correcao das despesas.
+Formato: microsite (estilo solucon) em arquivo unico e autocontido —
+CSS/JS inline, logos em base64, sem pasta assets. Tela de senha, barra de
+progresso, menu fixo, agenda em cards com artefatos visuais por modulo,
+card de investimento com CTA de WhatsApp. Julho de 2026.
