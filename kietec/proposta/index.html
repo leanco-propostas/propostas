@@ -1,0 +1,827 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="description" content="Metodologia e investimento para o diagnostico de processos de Recursos Humanos.">
+<meta name="theme-color" content="#33526B">
+<title>Mapeamento e Diagnóstico de Processos · Recursos Humanos</title>
+
+<style>
+/* Documento impresso: branco sempre, independente do tema do navegador. */
+:root,
+:root[data-theme="dark"],
+:root[data-theme="light"]{
+  --paper:#FFFFFF;
+  --tint:#F1F7FA;
+  --line:#E2EAEF;
+  --rule:#CCDBE3;
+  --ink:#2A4358;
+  --ink-2:#4B667D;
+  --muted:#8399AC;
+
+  /* azul-escuro — assinatura */
+  --brand:#33526B;
+  --brand-2:#7B9CB6;
+
+  /* Kie-Tec — parceria */
+  --client:#0074AB;
+  --client-2:#09C0DE;
+  --client-3:#0096B8;
+  --client-soft:#E3F5FA;
+
+  --flag:#9C6534;
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"Cascadia Mono","SF Mono",Menlo,Consolas,monospace;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; color-scheme:light; background:#FFFFFF}
+body{
+  margin:0; background:#FFFFFF; color:var(--ink-2);
+  font-family:var(--sans); font-size:17px; line-height:1.74;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%; height:auto}
+.page{max-width:920px; margin:0 auto; padding:0 28px 0}
+
+h1,h2,h3{font-family:var(--serif); font-weight:600; text-wrap:balance; margin:0; color:var(--brand)}
+h1{font-size:clamp(32px,4.6vw,50px); line-height:1.06; letter-spacing:-.018em}
+h2{font-size:clamp(24px,2.8vw,32px); line-height:1.16; letter-spacing:-.012em}
+h3{font-size:19px; line-height:1.34; letter-spacing:-.004em}
+p{margin:0 0 18px}
+strong{font-weight:600; color:var(--brand)}
+.prose{max-width:640px}
+.prose p:last-child{margin-bottom:0}
+.lead{font-size:19.5px; line-height:1.6; color:var(--ink); font-weight:400}
+.fine{font-size:13.5px; line-height:1.62; color:var(--muted); margin:0}
+.lbl{font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); font-weight:650; margin:0 0 14px}
+
+/* ---------- co-branding ---------- */
+.cobrand{display:flex; align-items:center; gap:22px; flex-wrap:wrap; padding:32px 0 26px; border-bottom:1px solid var(--line)}
+/* alinhados pela altura — as duas marcas têm proporções diferentes */
+.cobrand img{display:block; width:auto}
+.cobrand .kt{height:34px}
+.cobrand .lc{height:30px}
+.cobrand .sep{flex:0 0 1px; width:1px; height:28px; background:var(--rule)}
+.cobrand .role{margin-left:auto; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); font-weight:650}
+
+/* ---------- capa ---------- */
+.cover{padding:70px 0 0}
+.cover .eyebrow{font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--client); font-weight:700; margin:0 0 18px}
+.cover h1{max-width:13ch}
+.cover .accent{width:74px; height:3px; background:linear-gradient(90deg,var(--client) 0%,var(--client-2) 100%); margin:30px 0 0; border-radius:2px}
+.cover .lead{margin:28px 0 0; max-width:52ch}
+.cover .stamp{margin-top:44px; padding-top:20px; border-top:1px solid var(--line); max-width:640px; font-size:13.5px; line-height:1.65; color:var(--muted)}
+.cover .stamp b{color:var(--ink); font-weight:600}
+
+/* ---------- seções ---------- */
+section{padding:86px 0 0}
+.head{margin-bottom:36px}
+@media (min-width:860px){.head{display:grid; grid-template-columns:64px minmax(0,1fr); gap:28px; align-items:start}}
+.head .num{font-family:var(--serif); font-size:18px; color:var(--client); font-weight:600; margin:0 0 8px; line-height:1.55}
+@media (min-width:860px){.head .num{margin:0; text-align:right; padding-top:7px}}
+.head h2{margin:0}
+.head .sub{margin:16px 0 0; color:var(--ink-2); font-size:16.5px; max-width:600px}
+@media (min-width:860px){.indent{padding-left:92px}}
+
+/* ---------- duas colunas ---------- */
+.split{display:grid; grid-template-columns:1fr; gap:32px; padding-top:34px; border-top:1px solid var(--line)}
+@media (min-width:760px){
+  .split{grid-template-columns:1fr 1fr; gap:0}
+  .split > div{padding-right:44px}
+  .split > div + div{padding-right:0; padding-left:44px; border-left:1px solid var(--line)}
+}
+.split h3{margin-bottom:12px}
+.split p{font-size:16px; color:var(--ink-2); margin-bottom:0}
+.split p + p{margin-top:14px}
+
+ul.list{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px}
+ul.list li{position:relative; padding-left:24px; font-size:16px; line-height:1.62; color:var(--ink-2)}
+ul.list li::before{content:""; position:absolute; left:0; top:11.5px; width:10px; height:1px; background:var(--client-2)}
+
+.tag{display:inline-block; font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; padding:4px 10px; background:var(--client-soft); color:var(--client); font-weight:650; border-radius:2px}
+.tag-mod{background:var(--brand); color:#FFFFFF}
+
+/* ---------- cronograma ---------- */
+.gantt{border-top:1px solid var(--line)}
+.g-scale{display:none}
+@media (min-width:760px){
+  .g-scale{display:grid; grid-template-columns:236px minmax(0,1fr); gap:26px; padding:10px 0 12px}
+  .g-scale .ticks{display:grid; grid-template-columns:repeat(18,1fr); gap:2px; padding:0 6px}
+  .g-scale .ticks span{font-family:var(--mono); font-size:9.5px; color:var(--muted); text-align:center; font-variant-numeric:tabular-nums}
+  .g-scale .cap{font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:650; align-self:end}
+}
+.g-row{display:grid; grid-template-columns:1fr; gap:12px; padding:17px 0; border-top:1px solid var(--line); align-items:center}
+@media (min-width:760px){.g-row{grid-template-columns:236px minmax(0,1fr); gap:26px}}
+.g-n{font-family:var(--mono); font-size:10.5px; letter-spacing:.16em; color:var(--client); font-weight:700}
+.g-t{display:block; font-size:15.5px; font-weight:600; color:var(--brand); line-height:1.35; margin-top:5px}
+.g-d{display:block; font-family:var(--mono); font-size:11.5px; color:var(--muted); margin-top:5px; font-variant-numeric:tabular-nums}
+.g-track{display:grid; grid-template-columns:repeat(18,1fr); gap:2px; background:var(--tint); border-radius:3px; padding:6px}
+.g-bar{height:11px; border-radius:2px; background:var(--client)}
+.g-bar.final{background:var(--brand)}
+
+/* ---------- etapas ---------- */
+.etapas{display:flex; flex-direction:column; margin-top:26px}
+.etapa{display:grid; grid-template-columns:1fr; gap:32px; padding:40px 0; border-top:1px solid var(--line)}
+@media (min-width:900px){.etapa{grid-template-columns:minmax(0,1fr) 296px; gap:52px}}
+.etapa.wide{grid-template-columns:1fr; gap:36px}
+.etapa.solo{grid-template-columns:1fr}
+.etapa-h{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:12px}
+.etapa-n{font-family:var(--mono); font-size:10.5px; font-weight:700; color:var(--client); letter-spacing:.16em; text-transform:uppercase}
+.etapa-d{font-family:var(--mono); font-size:11px; color:var(--muted); font-variant-numeric:tabular-nums}
+.etapa-obj{font-size:16.5px; color:var(--ink); margin:0 0 24px; max-width:54ch}
+.etapa-e{margin-top:24px; padding-top:20px; border-top:1px solid var(--line)}
+.etapa-e p{margin:0; font-size:16px; color:var(--ink-2); max-width:54ch}
+.fmts{display:flex; gap:8px; flex-wrap:wrap; margin-top:14px}
+.demo{display:flex; flex-direction:column; gap:12px; min-width:0}
+.etapa.wide .demo{max-width:640px; margin:0 auto; width:100%}
+
+/* ---------- exemplos ---------- */
+.mock{background:var(--paper); border:1px solid var(--line); padding:16px 18px; border-radius:2px}
+.mock table{border-collapse:collapse; width:100%; table-layout:fixed}
+.mock thead th{text-align:left; font-size:9.5px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:650; padding:0 8px 9px 0; border-bottom:1px solid var(--line)}
+.mock tbody td{padding:9px 8px 9px 0; font-size:11.5px; color:var(--ink-2); border-bottom:1px solid var(--line); vertical-align:middle; line-height:1.4}
+.mock tbody td:first-child{color:var(--ink)}
+.mock tbody tr:last-child td{border-bottom:0; padding-bottom:0}
+.mock svg{display:block; width:100%; height:auto}
+.pill{display:inline-block; height:4px; border-radius:2px; background:var(--client-2); vertical-align:middle}
+.pill.a{background:var(--client)} .pill.q{background:var(--rule)}
+
+.ev{background:var(--paper); border:1px solid var(--line); padding:14px 16px; border-radius:2px}
+.ev .id{font-size:9px; letter-spacing:.16em; text-transform:uppercase; color:var(--client); font-weight:700}
+.ev p{margin:9px 0 0; font-size:12.5px; line-height:1.58; color:var(--ink-2)}
+.ev .src{display:block; margin-top:10px; font-size:10.5px; color:var(--muted)}
+
+.cap-chart{display:flex; flex-direction:column; gap:11px}
+.cap-chart .row{display:grid; grid-template-columns:54px minmax(0,1fr); gap:12px; align-items:center}
+.cap-chart .nm{color:var(--muted); text-align:right; font-size:10px}
+.cap-chart .bars{display:flex; flex-direction:column; gap:3px}
+.cap-chart i{display:block; height:5px; border-radius:3px}
+
+.tree{font-size:11.5px; line-height:2; color:var(--ink-2); margin:0; font-family:var(--mono)}
+.tree b{color:var(--ink); font-weight:600}
+.tree .ok{color:var(--client)} .tree .no{color:var(--muted)}
+
+.legend{display:flex; gap:18px; margin-top:14px; font-size:10px; color:var(--muted); flex-wrap:wrap}
+.legend i{margin-right:5px}
+
+/* oportunidades marcadas no mapa */
+.op-leg{margin-top:18px; padding-top:15px; border-top:1px solid var(--line); display:flex; flex-direction:column; gap:10px}
+.op-leg .op-t{font-size:10px; letter-spacing:.16em; text-transform:uppercase; color:var(--flag); font-weight:700; margin:0}
+.op-leg p{margin:0; font-size:12.5px; line-height:1.55; color:var(--ink-2); display:flex; gap:10px; align-items:flex-start}
+.op-n{
+  flex:0 0 17px; height:17px; border-radius:50%; background:var(--flag); color:#FFFFFF;
+  font-size:10px; font-weight:700; display:inline-flex; align-items:center; justify-content:center; margin-top:2px;
+}
+
+/* ---------- o que recebe ---------- */
+.recebe{border-top:1px solid var(--line); max-width:760px}
+.recebe > div{display:grid; grid-template-columns:38px minmax(0,1fr); gap:20px; padding:22px 0; border-bottom:1px solid var(--line); align-items:baseline}
+.recebe .i{font-family:var(--serif); font-size:15px; color:var(--client); font-weight:600}
+.recebe p{margin:0; font-size:16px; color:var(--ink-2); line-height:1.62}
+
+/* ---------- equipe ---------- */
+.equipe{display:grid; grid-template-columns:repeat(2,1fr); border-top:1px solid var(--line); max-width:760px}
+@media (min-width:700px){.equipe{grid-template-columns:repeat(4,1fr)}}
+.equipe div{padding:26px 24px 28px 0; border-bottom:1px solid var(--line)}
+.equipe b{display:block; font-family:var(--serif); font-size:32px; line-height:1; color:var(--client); font-variant-numeric:tabular-nums; font-weight:600}
+.equipe span{display:block; margin-top:12px; font-size:13.5px; color:var(--muted); line-height:1.45}
+
+/* ---------- investimento ---------- */
+.invest{border-top:1px solid var(--line); max-width:760px}
+.invest .row{display:grid; grid-template-columns:minmax(0,1fr) auto; gap:28px; padding:24px 0; border-bottom:1px solid var(--line); align-items:baseline}
+.invest .t{font-size:16.5px; color:var(--ink); font-weight:600; margin:0}
+.invest .d{display:block; font-size:14px; color:var(--muted); margin-top:5px; font-weight:400; line-height:1.55}
+.invest .v{font-family:var(--mono); font-size:16.5px; color:var(--ink); font-variant-numeric:tabular-nums; white-space:nowrap}
+.invest .desp{padding:22px 0 28px}
+.invest .desp table{border-collapse:collapse; width:100%; max-width:560px}
+.invest .desp th{
+  text-align:left; font-size:10px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--muted); font-weight:650; padding:0 20px 9px 0; border-bottom:1px solid var(--line);
+}
+.invest .desp td{padding:11px 20px 11px 0; font-size:14.5px; color:var(--ink-2); border-bottom:1px solid var(--line)}
+.invest .desp td:first-child{color:var(--ink)}
+.invest .desp th.r,.invest .desp td.r{text-align:right; padding-right:0}
+.invest .desp td.n{font-family:var(--mono); font-variant-numeric:tabular-nums; font-size:13.5px}
+.invest .desp tr:last-child td{border-bottom:0; color:var(--ink); font-weight:600}
+.invest .desp-note{margin:18px 0 0; max-width:560px; font-size:13px; line-height:1.62; color:var(--muted)}
+.invest .row.total{border-bottom:0; border-top:2px solid var(--brand); padding-top:26px; align-items:center}
+.invest .row.total .t{font-family:var(--serif); font-size:21px; color:var(--brand); font-weight:600}
+.invest .row.total .v{font-family:var(--serif); font-size:30px; color:var(--brand); font-weight:600; letter-spacing:-.01em}
+.cond{display:flex; flex-wrap:wrap; gap:0; max-width:760px; margin-top:34px; border-top:1px solid var(--line)}
+.cond div{flex:1 1 240px; padding:20px 26px 22px 0; border-bottom:1px solid var(--line)}
+.cond dt{font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:650; margin-bottom:7px}
+.cond dd{margin:0; font-size:15px; color:var(--ink-2); line-height:1.55}
+
+/* ---------- encerramento ---------- */
+.closing{background:var(--brand); color:#EAF0F5; margin-top:104px; padding:64px 0 56px}
+.closing .inner{max-width:920px; margin:0 auto; padding:0 28px}
+.closing h2{color:#FFFFFF; max-width:20ch}
+.closing p{max-width:52ch; color:#C4D3DF; font-size:17px; margin:20px 0 0}
+.closing .sign{display:flex; justify-content:space-between; align-items:flex-end; gap:32px; flex-wrap:wrap; margin-top:52px; padding-top:26px; border-top:1px solid rgba(255,255,255,.18)}
+.closing .sign img{width:96px; display:block; margin-bottom:12px; filter:brightness(0) invert(1)}
+.closing .sign p{margin:0; font-size:13.5px; line-height:1.6; color:#A9BDCC; max-width:none}
+
+a{color:var(--client)}
+a:focus-visible{outline:2px solid var(--client); outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important; animation:none!important; scroll-behavior:auto!important}}
+@media print{body{font-size:11pt} section,.etapa,.g-row{page-break-inside:avoid} .closing{background:#33526B!important; -webkit-print-color-adjust:exact; print-color-adjust:exact}}
+
+/* ---------- tela de acesso ---------- */
+.gate{
+  position:fixed; inset:0; z-index:100; background:#FFFFFF;
+  display:flex; align-items:center; justify-content:center;
+  padding:44px 28px; overflow-y:auto;
+}
+.gate[hidden]{display:none}
+.gate-card{width:100%; max-width:424px; margin:auto}
+
+/* logos alinhados pela ALTURA — as duas marcas têm proporções diferentes */
+.gate-brand{display:flex; align-items:center; gap:18px; margin:0 0 42px}
+.gate-brand img{display:block; width:auto}
+.gate-brand .kt{height:28px}
+.gate-brand .lc{height:25px}
+.gate-brand .sep{flex:0 0 1px; width:1px; height:24px; background:var(--rule)}
+
+.gate-eyebrow{
+  display:block; font-size:10.5px; letter-spacing:.2em; text-transform:uppercase;
+  color:var(--client); font-weight:700; margin:0 0 12px;
+}
+.gate-card h1{font-size:28px; line-height:1.2; letter-spacing:-.012em; margin:0 0 14px; max-width:none}
+.gate-lead{font-size:15.5px; line-height:1.62; color:var(--ink-2); margin:0 0 30px}
+
+.gate-label{
+  display:block; font-size:10.5px; letter-spacing:.18em; text-transform:uppercase;
+  color:var(--muted); font-weight:650; margin:0 0 9px;
+}
+.gate-field{
+  display:flex; align-items:stretch; border:1px solid var(--rule);
+  border-radius:3px; background:#FFFFFF; overflow:hidden;
+}
+.gate-field:focus-within{border-color:var(--client); box-shadow:0 0 0 3px rgba(0,116,171,.12)}
+.gate-field input{
+  flex:1 1 auto; min-width:0; border:0; outline:0; background:transparent;
+  padding:13px 15px; font-family:var(--sans); font-size:15.5px; line-height:1.5;
+  color:var(--ink); letter-spacing:.01em;
+}
+.gate-field button{
+  flex:0 0 auto; border:0; border-left:1px solid var(--line); background:transparent;
+  cursor:pointer; padding:0 15px; font-family:var(--sans);
+  font-size:10.5px; letter-spacing:.14em; text-transform:uppercase;
+  color:var(--muted); font-weight:650;
+}
+.gate-field button:hover{color:var(--client)}
+.gate-err{margin:12px 0 0; font-size:13.5px; line-height:1.5; color:#A5382F}
+.gate-btn{
+  display:block; width:100%; margin:20px 0 0; padding:14px 20px;
+  border:0; border-radius:3px; cursor:pointer; background:var(--brand); color:#FFFFFF;
+  font-family:var(--sans); font-size:15px; font-weight:600; letter-spacing:.01em; line-height:1.4;
+}
+.gate-btn:hover{background:#2A4459}
+.gate-foot{
+  margin:36px 0 0; padding-top:18px; border-top:1px solid var(--line);
+  font-size:12.5px; line-height:1.65; color:var(--muted);
+}
+.gate-field button:focus-visible,.gate-btn:focus-visible{outline:2px solid var(--client); outline-offset:2px}
+
+@media (max-width:420px){
+  .gate{padding:32px 22px}
+  .gate-card h1{font-size:25px}
+  .gate-brand{margin-bottom:34px}
+}
+
+/* botão de saída no cabeçalho do documento */
+.logout{
+  margin-left:18px; border:1px solid var(--line); background:transparent; cursor:pointer;
+  padding:7px 14px; border-radius:3px; font-family:var(--sans);
+  font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--muted); font-weight:650;
+}
+.logout:hover{color:var(--client); border-color:var(--client)}
+@media print{.logout{display:none}}
+
+body.locked{overflow:hidden}
+
+/* seletor de documentos */
+.xsw{position:sticky;top:0;z-index:90;display:flex;gap:4px;align-items:center;background:#fff;border-bottom:1px solid #E2EAEF;padding:8px 16px;font-family:var(--sans);font-size:12.5px}
+.xsw .home{color:#8399AC;margin-right:auto;text-decoration:none;padding:6px 4px}
+.xsw .home:hover{color:#0074AB}
+.xsw .tab{padding:6px 13px;border-radius:6px;text-decoration:none}
+.xsw a.tab{color:#4B667D}
+.xsw a.tab:hover{background:#F1F7FA;color:#0074AB}
+.xsw span.tab{background:#E3F5FA;color:#0074AB;font-weight:650}
+</style>
+
+
+</head>
+<body>
+<div class="gate" id="gate">
+  <div class="gate-card">
+    <div class="gate-brand">
+      <img class="kt" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJDYW1hZGFfMiIgZGF0YS1uYW1lPSJDYW1hZGEgMiIgdmlld0JveD0iMCAwIDY3My40NiAyMjYuMTkiPjxkZWZzPjxzdHlsZT4gICAgICAuY2xzLTEgeyAgICAgICAgZmlsbDogIzU4NTk1YjsgICAgICB9ICAgICAgLmNscy0xLCAuY2xzLTIsIC5jbHMtMywgLmNscy00LCAuY2xzLTUgeyAgICAgICAgZmlsbC1ydWxlOiBldmVub2RkOyAgICAgIH0gICAgICAuY2xzLTIgeyAgICAgICAgZmlsbDogIzA5YzBkZTsgICAgICB9ICAgICAgLmNscy0zIHsgICAgICAgIGZpbGw6ICMwMDk2Yjg7ICAgICAgfSAgICAgIC5jbHMtNCB7ICAgICAgICBmaWxsOiAjMDA3NGFiOyAgICAgIH0gICAgICAuY2xzLTUgeyAgICAgICAgZmlsbDogI2FjZDllMzsgICAgICB9ICAgIDwvc3R5bGU+PC9kZWZzPjxnIGlkPSJDYW1hZGFfMS0yIiBkYXRhLW5hbWU9IkNhbWFkYSAxIj48Zz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im00MTguMjgsMTI0LjY2Yy00LjM3LTQuNC05LjY5LTYuNjItMTYuMDUtNi42MnMtMTEuNjgsMi4yNS0xNi4xNCw2LjczYy00LjQ0LDQuNDktNi43MSw5LjgyLTYuNzEsMTYuMTQsMCwxLjk2LjIyLDMuOS42OSw1Ljc5bDM4LjIxLTIyLjA0aDBabS0zMi4xMSwzMi41M2M0LjM1LDQuNDMsOS42OSw2LjYyLDE2LjA2LDYuNjIsNi45NSwwLDEyLjc1LTIuNDIsMTcuMTgtNy44MS44OC0xLjI3LDEuODMtMi41MiwyLjc2LTMuNzYsMS4yMS0xLjU4LDIuODUtMi45Nyw0Ljk0LTIuOTcsMS42NywwLDMuMTMuNiw0LjM3LDEuNzEsMS4yNywxLjE0LDEuOTQsMi42LDEuOTQsNC4zMSwwLDEuMDgtLjMxLDIuMS0uNzYsMy4wN2wtLjAyLjAzLS4wMi4wM2MtMi45NCw1LjUxLTcuMzQsOS43LTEyLjc3LDEyLjc1LTUuNDYsMy4wNi0xMS4zNiw0Ljc3LTE3LjYyLDQuNzctOS42NywwLTE3LjkzLTMuNDQtMjQuNzctMTAuMjctNi44NS02LjgyLTEwLjMtMTUuMTMtMTAuMy0yNC43OXMzLjQ3LTE3LjkxLDEwLjMtMjQuNzJjNi44My02LjgzLDE1LjEtMTAuMjcsMjQuNzctMTAuMjcsMy42OSwwLDcuMzQuNzMsMTAuODMsMS45Miw0LjU0LDEuNTYsOC42OCw0LjAzLDEyLjQ0LDYuOTksMy41OCwyLjc5LDcuODcsNi45OCw3Ljg3LDExLjg4LDAsMi4yNC0xLjA5LDMuOTQtMy4wMyw1LjAxbC00NC4xNywyNS41aDBabS0yOS4zMi00NS4yNXY1Ny45MWMwLDMuOTItMi4xOCw2LjEtNi4xLDYuMXMtNi4xMi0yLjE3LTYuMTItNi4xdi01Ny45MWMwLTMuOTMsMi4yMi02LjA1LDYuMTItNi4wNXM2LjEsMi4xNCw2LjEsNi4wNWgwWm0tLjEtMjAuNDJjLTEuNjcsMS42MS0zLjY4LDIuNDQtNiwyLjQ0cy00LjM1LS44Mi02LjAzLTIuNDRjLTEuNjgtMS42NS0yLjU0LTMuNjQtMi41NC02cy44Ny00LjM4LDIuNTMtNi4wNGMxLjY3LTEuNjcsMy42OC0yLjUzLDYuMDQtMi41M3M0LjM2Ljg4LDYuMDEsMi41M2MxLjY2LDEuNjYsMi41MywzLjY5LDIuNTMsNi4wNHMtLjg2LDQuMzUtMi41NSw2aDBabS03My4yMyw4My40YzIuMjEtMS4zNywzLjMtMy4yNCwzLjMtNS44NHYtMjAuMDVsOC41Ny04LjE2LDIzLjYzLDMyLjI4Yy40NC41OC45NywxLjA3LDEuNjIsMS40bC4wNy4wNC4wNy4wNGMyLjY2LDEuNjYsNS4wOCwxLjc1LDcuNi0uMjMuNy0uNTMsMS4zMy0xLjE1LDEuODYtMS44NSwxLjczLTIuNjIsMS41NS01LjAyLS4zLTcuNTRsLTI0LjY2LTMzLjUzLDIwLjYzLTE5LjNjLjYtLjgsMS4xNC0xLjY0LDEuNjYtMi41LDEuMTYtMi43NC43Mi01LjA2LTEuMy03LjI1LS41OS0uNTktMS4yNy0xLjE1LTIuMDItMS41NC0yLjg3LTEuMTYtNS4zNi0uODQtNy42NSwxLjI4bC0yOS43OCwyOC4zOHYtNTAuNTJjMC0xLjkxLS42OS0zLjQ4LTIuMDQtNC44My0xLjM1LTEuMzUtMi45Mi0yLjA0LTQuODMtMi4wNC0uOTQsMC0xLjgxLjIzLTIuNjIuNzFsLS4wNy4wNS0uMDguMDRjLTIuNjIsMS4yMi0zLjc4LDMuMi0zLjc4LDYuMDh2ODkuMDZjMCwyLjYxLDEuMSw0LjQ5LDMuMzIsNS44NiwyLjMsMS40MSw0LjUsMS4zLDYuODItLjAxWiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTQ2Ni4wNywxMjUuMDdjNy4xOCwwLDEzLjAxLDUuODIsMTMuMDEsMTMuMDFzLTUuODIsMTMuMDEtMTMuMDEsMTMuMDEtMTMuMDEtNS44Mi0xMy4wMS0xMy4wMSw1LjgyLTEzLjAxLDEzLjAxLTEzLjAxWiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTY2OC41LDE1OS41MWMtMS4wNCwwLTEuNjkuMTMtMi44Ny43OC00LjU2LDIuMzUtOC4yMSw0LjE3LTE0Ljk5LDQuMTctMTUuMTIsMC0yMy45OC05LjUxLTIzLjk4LTIzLjQ2czguODYtMjMuNDYsMjMuOTgtMjMuNDZjNi43OCwwLDEwLjQzLDEuODIsMTQuOTksNC4xNywxLjE3LjY1LDEuODIuNzgsMi44Ny43OCwyLjc0LDAsNC45NS0yLjc0LDQuOTUtNS4yMSwwLTEuOTYtMS4wNC0zLjUyLTIuNjEtNC41Ni00LjQzLTIuODctMTAuOTUtNi4yNi0yMS4yNC02LjI2LTE4LjUxLDAtMzQuOCwxMi43Ny0zNC44LDM0LjU0czE2LjI5LDM0LjU0LDM0LjgsMzQuNTRjMTAuMywwLDE2LjgxLTMuMzksMjEuMjQtNi4yNiwxLjU2LTEuMDQsMi42MS0yLjYxLDIuNjEtNC41NiwwLTIuNDgtMi4yMi01LjIxLTQuOTUtNS4yMWgwWiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTUyNy4yMiwxNjMuOTRjLTIuMjIsMC0zLjY1LDEuMTctNy44MiwxLjE3LTMuMjYsMC04LjQ3LS4xMy04LjQ3LTcuODJ2LTM5LjM2aDE0Ljg2czAsMCwwLDBoLjEzYzIuNjUtLjEzLDQuNjktMi4xNyw0LjgyLTQuODJ2LS4xM3MwLDAsMCwwdi0uMTNzMCwwLDAsMHYtLjEzczAsMCwwLDB2LS4xM2MtLjEzLTIuNjUtMi4xNy00LjY5LTQuODItNC44MmgtLjEzczAsMCwwLDBoLS4xM3MwLDAsMCwwaC0xNC43M3YtMTAuNDNjMC0uMi0uMDItLjQtLjA2LS41OS0uNC0yLjc5LTIuODItNC45NS01LjcyLTQuOTVoMGMtMy4xOCwwLTUuNzgsMi42LTUuNzgsNS43OHY0LjRjMCwuMjEuMDEuNDEuMDMuNjFsLS4wMy4wM3Y1LjE0aC05LjI5Yy0yLjgsMC01LjA4LDIuMjktNS4wOCw1LjA4aDBjMCwyLjQ2LDEuNzcsNC41Miw0LjEsNC45OS4yMy4wNi40Ny4xLjczLjFoOS4yNXY0MC40YzAsMTYuMTYsMTIuOSwxNy4yLDE5LjAzLDE3LjIsNC4xNywwLDcuNjktLjkxLDEwLjgyLTIuMzUsMS44Mi0uOTEsMy0yLjM1LDMtNC41NiwwLTIuNzQtMi4zNS00LjY5LTQuNjktNC42OVoiPjwvcGF0aD48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im01NTcuODcsMTU3LjI3YzQuMzUsNC40Myw5LjY5LDYuNjIsMTYuMDYsNi42Miw2Ljk1LDAsMTIuNzUtMi40MiwxNy4xOC03LjgxLjg4LTEuMjcsMS44Mi0yLjUyLDIuNzYtMy43NiwxLjIxLTEuNTgsMi44NS0yLjk3LDQuOTQtMi45NywxLjY3LDAsMy4xMy42LDQuMzcsMS43MSwxLjI3LDEuMTQsMS45NCwyLjYsMS45NCw0LjMxLDAsMS4wOC0uMzEsMi4xLS43NiwzLjA3bC0uMDIuMDMtLjAyLjAzYy0yLjk0LDUuNTEtNy4zNCw5LjctMTIuNzcsMTIuNzUtNS40NiwzLjA2LTExLjM2LDQuNzctMTcuNjIsNC43Ny05LjY3LDAtMTcuOTMtMy40NC0yNC43Ny0xMC4yNy02Ljg1LTYuODItMTAuMy0xNS4xMy0xMC4zLTI0Ljc5czMuNDctMTcuOTEsMTAuMy0yNC43MmM2Ljg0LTYuODQsMTUuMS0xMC4yNywyNC43Ny0xMC4yNywzLjY5LDAsNy4zNC43MywxMC44MywxLjkyLDQuNTQsMS41Niw4LjY4LDQuMDMsMTIuNDQsNi45OSwzLjU4LDIuNzksNy44Nyw2Ljk4LDcuODcsMTEuODgsMCwyLjI0LTEuMDksMy45NC0zLjAzLDUuMDFsLTQ0LjE3LDI1LjVoMFptMzIuMTEtMzIuNTNjLTQuMzctNC40LTkuNjktNi42Mi0xNi4wNS02LjYycy0xMS42OCwyLjI1LTE2LjE0LDYuNzNjLTQuNDQsNC40OS02LjcxLDkuODItNi43MSwxNi4xNCwwLDEuOTYuMjIsMy45LjY5LDUuNzlsMzguMjEtMjIuMDRaIj48L3BhdGg+PGc+PGc+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJtMTU2LjE5LDE5MC43OWMxNS4zLDkuMjMsMjcuMjIsMjEuMjQsMzQuNzQsMzMuODItMS41NiwxLjQ0LTMuOTQsMS45LTcuMTMsMS4zNy0xOC41My0yLjc2LTM4LjUxLTEyLjE4LTU5Ljk0LTI4LjI3bDEzLjk5LTE1Ljg0YzYuMTYsMi4zMSwxMi4zMiw1LjI4LDE4LjM1LDguOTJaIj48L3BhdGg+PHBhdGggY2xhc3M9ImNscy01IiBkPSJtMTUzLjcxLDE2My44OGwtMTUuODgsMTcuOTljNi4xNiwyLjMxLDEyLjMyLDUuMjgsMTguMzUsOC45MiwxNS4zLDkuMjMsMjcuMjIsMjEuMjQsMzQuNzQsMzMuODIsOS4xNy05LjU5LTM3LjIxLTYwLjcyLTM3LjIxLTYwLjcyWiI+PC9wYXRoPjwvZz48Zz48cGF0aCBjbGFzcz0iY2xzLTQiIGQ9Im02OC40LDE0Mi4yNWMtMjYuNjQtNS45Mi00OS4zNi0yMi4xMy02My44My00NC4yNmgwYy0xLjY2LTYuMTUtMy4xLTExLjgyLTQuMzMtMTcuMDItLjY4LTIuNzkuMTMtNS4zMSwyLjQ0LTcuNTUsMTQuNDQtMTQuNDEsMzAuMTEtMjQuMzYsNDcuMDMtMjkuODYsMi40Mi0uNzUsNC42Ny0uMzksNi43NSwxLjA3LDIuMDQsMS41LDMuMSwzLjUyLDMuMTYsNi4wNi4zMiwzMS45MywzLjI2LDYyLjQ1LDguODMsOTEuNTYtLjAxLDAtLjAyLDAtLjA1LS4wMVoiPjwvcGF0aD48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Im02NS4yMywyMjEuOTRjNC4wOS0xNS4xNywxMC45Ni0zMS43NywyMC4zLTQ4LjkzLDMwLjU5LTQ4LjM1LDUxLjE2LTEwMy45Miw2MS43MS0xNjYuNzEuNDItMi4yOSwxLjYyLTQuMDMsMy42Mi01LjIyLDIuMDEtMS4xNyw0LjExLTEuMzksNi4zMi0uNjUsMTguNTUsNi40LDM1Ljc3LDE5LjA5LDUxLjY2LDM4LjA2LDEuODIsMi4yMSwyLjI5LDQuNjgsMS40Miw3LjQxLTI1LjIyLDcxLjc2LTY4LjE3LDEzMC42Mi0xMjguODYsMTc2LjU2LTQuNTYsMy4zNy0xMS4yNyw0LjA1LTE2LjE3LS41MloiPjwvcGF0aD48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Im02OC40NSwxNDIuMjZjMi4wMywxMC4yOSw0LjQ1LDIwLjQyLDcuMzMsMzAuMzguNTYsMS45NSwyLjExLDMuMzEsNC4xMiwzLjYxLDIsLjMsMy44OS0uNTQsNS0yLjI0LjIxLS4zMy40My0uNjYuNjQtLjk5LTkuMzQsMTcuMTUtMTYuMjEsMzMuNzUtMjAuMyw0OC45Mi0uNTEtLjQ2LTEtLjk2LTEuNDUtMS41MS0yOC40Mi0zNS4wNC00Ni43OC03Ni43OC01OS4yMi0xMjIuNDUsMTQuNDgsMjIuMTQsMzcuMjQsMzguMzcsNjMuODksNDQuMjhaIj48L3BhdGg+PC9nPjwvZz48L2c+PC9nPjwvc3ZnPg==" alt="Kie-Tec">
+      
+      
+    </div>
+
+    <span class="gate-eyebrow">Conteúdo reservado</span>
+    <h1>Mapeamento e diagnóstico de processos</h1>
+    <p class="gate-lead">Material dirigido à Kie-Tec. Informe a senha enviada pela nossa equipe para acessar a metodologia e o investimento.</p>
+
+    <form id="gate-form" novalidate>
+      <label class="gate-label" for="pass">Senha de acesso</label>
+      <div class="gate-field">
+        <input id="pass" name="pass" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="gate-err">
+        <button type="button" id="toggle-pass" aria-label="Mostrar senha">Mostrar</button>
+      </div>
+      <p class="gate-err" id="gate-err" role="alert" hidden>Senha incorreta. Confira e tente novamente.</p>
+      <button class="gate-btn" type="submit">Acessar</button>
+    </form>
+
+    <p class="gate-foot">Kie-Tec · Mapeamento e diagnóstico de processos</p>
+  </div>
+</div>
+
+<div id="doc" hidden>
+<nav class="xsw"><a class="home" href="../index.html">‹ Seleção de documentos</a><span class="tab">Proposta comercial</span><a class="tab" href="../metodologia/index.html">Metodologia e entregáveis ›</a></nav>
+<div class="page">
+
+<header class="cobrand">
+  <img class="kt" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJDYW1hZGFfMiIgZGF0YS1uYW1lPSJDYW1hZGEgMiIgdmlld0JveD0iMCAwIDY3My40NiAyMjYuMTkiPjxkZWZzPjxzdHlsZT4gICAgICAuY2xzLTEgeyAgICAgICAgZmlsbDogIzU4NTk1YjsgICAgICB9ICAgICAgLmNscy0xLCAuY2xzLTIsIC5jbHMtMywgLmNscy00LCAuY2xzLTUgeyAgICAgICAgZmlsbC1ydWxlOiBldmVub2RkOyAgICAgIH0gICAgICAuY2xzLTIgeyAgICAgICAgZmlsbDogIzA5YzBkZTsgICAgICB9ICAgICAgLmNscy0zIHsgICAgICAgIGZpbGw6ICMwMDk2Yjg7ICAgICAgfSAgICAgIC5jbHMtNCB7ICAgICAgICBmaWxsOiAjMDA3NGFiOyAgICAgIH0gICAgICAuY2xzLTUgeyAgICAgICAgZmlsbDogI2FjZDllMzsgICAgICB9ICAgIDwvc3R5bGU+PC9kZWZzPjxnIGlkPSJDYW1hZGFfMS0yIiBkYXRhLW5hbWU9IkNhbWFkYSAxIj48Zz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im00MTguMjgsMTI0LjY2Yy00LjM3LTQuNC05LjY5LTYuNjItMTYuMDUtNi42MnMtMTEuNjgsMi4yNS0xNi4xNCw2LjczYy00LjQ0LDQuNDktNi43MSw5LjgyLTYuNzEsMTYuMTQsMCwxLjk2LjIyLDMuOS42OSw1Ljc5bDM4LjIxLTIyLjA0aDBabS0zMi4xMSwzMi41M2M0LjM1LDQuNDMsOS42OSw2LjYyLDE2LjA2LDYuNjIsNi45NSwwLDEyLjc1LTIuNDIsMTcuMTgtNy44MS44OC0xLjI3LDEuODMtMi41MiwyLjc2LTMuNzYsMS4yMS0xLjU4LDIuODUtMi45Nyw0Ljk0LTIuOTcsMS42NywwLDMuMTMuNiw0LjM3LDEuNzEsMS4yNywxLjE0LDEuOTQsMi42LDEuOTQsNC4zMSwwLDEuMDgtLjMxLDIuMS0uNzYsMy4wN2wtLjAyLjAzLS4wMi4wM2MtMi45NCw1LjUxLTcuMzQsOS43LTEyLjc3LDEyLjc1LTUuNDYsMy4wNi0xMS4zNiw0Ljc3LTE3LjYyLDQuNzctOS42NywwLTE3LjkzLTMuNDQtMjQuNzctMTAuMjctNi44NS02LjgyLTEwLjMtMTUuMTMtMTAuMy0yNC43OXMzLjQ3LTE3LjkxLDEwLjMtMjQuNzJjNi44My02LjgzLDE1LjEtMTAuMjcsMjQuNzctMTAuMjcsMy42OSwwLDcuMzQuNzMsMTAuODMsMS45Miw0LjU0LDEuNTYsOC42OCw0LjAzLDEyLjQ0LDYuOTksMy41OCwyLjc5LDcuODcsNi45OCw3Ljg3LDExLjg4LDAsMi4yNC0xLjA5LDMuOTQtMy4wMyw1LjAxbC00NC4xNywyNS41aDBabS0yOS4zMi00NS4yNXY1Ny45MWMwLDMuOTItMi4xOCw2LjEtNi4xLDYuMXMtNi4xMi0yLjE3LTYuMTItNi4xdi01Ny45MWMwLTMuOTMsMi4yMi02LjA1LDYuMTItNi4wNXM2LjEsMi4xNCw2LjEsNi4wNWgwWm0tLjEtMjAuNDJjLTEuNjcsMS42MS0zLjY4LDIuNDQtNiwyLjQ0cy00LjM1LS44Mi02LjAzLTIuNDRjLTEuNjgtMS42NS0yLjU0LTMuNjQtMi41NC02cy44Ny00LjM4LDIuNTMtNi4wNGMxLjY3LTEuNjcsMy42OC0yLjUzLDYuMDQtMi41M3M0LjM2Ljg4LDYuMDEsMi41M2MxLjY2LDEuNjYsMi41MywzLjY5LDIuNTMsNi4wNHMtLjg2LDQuMzUtMi41NSw2aDBabS03My4yMyw4My40YzIuMjEtMS4zNywzLjMtMy4yNCwzLjMtNS44NHYtMjAuMDVsOC41Ny04LjE2LDIzLjYzLDMyLjI4Yy40NC41OC45NywxLjA3LDEuNjIsMS40bC4wNy4wNC4wNy4wNGMyLjY2LDEuNjYsNS4wOCwxLjc1LDcuNi0uMjMuNy0uNTMsMS4zMy0xLjE1LDEuODYtMS44NSwxLjczLTIuNjIsMS41NS01LjAyLS4zLTcuNTRsLTI0LjY2LTMzLjUzLDIwLjYzLTE5LjNjLjYtLjgsMS4xNC0xLjY0LDEuNjYtMi41LDEuMTYtMi43NC43Mi01LjA2LTEuMy03LjI1LS41OS0uNTktMS4yNy0xLjE1LTIuMDItMS41NC0yLjg3LTEuMTYtNS4zNi0uODQtNy42NSwxLjI4bC0yOS43OCwyOC4zOHYtNTAuNTJjMC0xLjkxLS42OS0zLjQ4LTIuMDQtNC44My0xLjM1LTEuMzUtMi45Mi0yLjA0LTQuODMtMi4wNC0uOTQsMC0xLjgxLjIzLTIuNjIuNzFsLS4wNy4wNS0uMDguMDRjLTIuNjIsMS4yMi0zLjc4LDMuMi0zLjc4LDYuMDh2ODkuMDZjMCwyLjYxLDEuMSw0LjQ5LDMuMzIsNS44NiwyLjMsMS40MSw0LjUsMS4zLDYuODItLjAxWiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTQ2Ni4wNywxMjUuMDdjNy4xOCwwLDEzLjAxLDUuODIsMTMuMDEsMTMuMDFzLTUuODIsMTMuMDEtMTMuMDEsMTMuMDEtMTMuMDEtNS44Mi0xMy4wMS0xMy4wMSw1LjgyLTEzLjAxLDEzLjAxLTEzLjAxWiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTY2OC41LDE1OS41MWMtMS4wNCwwLTEuNjkuMTMtMi44Ny43OC00LjU2LDIuMzUtOC4yMSw0LjE3LTE0Ljk5LDQuMTctMTUuMTIsMC0yMy45OC05LjUxLTIzLjk4LTIzLjQ2czguODYtMjMuNDYsMjMuOTgtMjMuNDZjNi43OCwwLDEwLjQzLDEuODIsMTQuOTksNC4xNywxLjE3LjY1LDEuODIuNzgsMi44Ny43OCwyLjc0LDAsNC45NS0yLjc0LDQuOTUtNS4yMSwwLTEuOTYtMS4wNC0zLjUyLTIuNjEtNC41Ni00LjQzLTIuODctMTAuOTUtNi4yNi0yMS4yNC02LjI2LTE4LjUxLDAtMzQuOCwxMi43Ny0zNC44LDM0LjU0czE2LjI5LDM0LjU0LDM0LjgsMzQuNTRjMTAuMywwLDE2LjgxLTMuMzksMjEuMjQtNi4yNiwxLjU2LTEuMDQsMi42MS0yLjYxLDIuNjEtNC41NiwwLTIuNDgtMi4yMi01LjIxLTQuOTUtNS4yMWgwWiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTUyNy4yMiwxNjMuOTRjLTIuMjIsMC0zLjY1LDEuMTctNy44MiwxLjE3LTMuMjYsMC04LjQ3LS4xMy04LjQ3LTcuODJ2LTM5LjM2aDE0Ljg2czAsMCwwLDBoLjEzYzIuNjUtLjEzLDQuNjktMi4xNyw0LjgyLTQuODJ2LS4xM3MwLDAsMCwwdi0uMTNzMCwwLDAsMHYtLjEzczAsMCwwLDB2LS4xM2MtLjEzLTIuNjUtMi4xNy00LjY5LTQuODItNC44MmgtLjEzczAsMCwwLDBoLS4xM3MwLDAsMCwwaC0xNC43M3YtMTAuNDNjMC0uMi0uMDItLjQtLjA2LS41OS0uNC0yLjc5LTIuODItNC45NS01LjcyLTQuOTVoMGMtMy4xOCwwLTUuNzgsMi42LTUuNzgsNS43OHY0LjRjMCwuMjEuMDEuNDEuMDMuNjFsLS4wMy4wM3Y1LjE0aC05LjI5Yy0yLjgsMC01LjA4LDIuMjktNS4wOCw1LjA4aDBjMCwyLjQ2LDEuNzcsNC41Miw0LjEsNC45OS4yMy4wNi40Ny4xLjczLjFoOS4yNXY0MC40YzAsMTYuMTYsMTIuOSwxNy4yLDE5LjAzLDE3LjIsNC4xNywwLDcuNjktLjkxLDEwLjgyLTIuMzUsMS44Mi0uOTEsMy0yLjM1LDMtNC41NiwwLTIuNzQtMi4zNS00LjY5LTQuNjktNC42OVoiPjwvcGF0aD48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im01NTcuODcsMTU3LjI3YzQuMzUsNC40Myw5LjY5LDYuNjIsMTYuMDYsNi42Miw2Ljk1LDAsMTIuNzUtMi40MiwxNy4xOC03LjgxLjg4LTEuMjcsMS44Mi0yLjUyLDIuNzYtMy43NiwxLjIxLTEuNTgsMi44NS0yLjk3LDQuOTQtMi45NywxLjY3LDAsMy4xMy42LDQuMzcsMS43MSwxLjI3LDEuMTQsMS45NCwyLjYsMS45NCw0LjMxLDAsMS4wOC0uMzEsMi4xLS43NiwzLjA3bC0uMDIuMDMtLjAyLjAzYy0yLjk0LDUuNTEtNy4zNCw5LjctMTIuNzcsMTIuNzUtNS40NiwzLjA2LTExLjM2LDQuNzctMTcuNjIsNC43Ny05LjY3LDAtMTcuOTMtMy40NC0yNC43Ny0xMC4yNy02Ljg1LTYuODItMTAuMy0xNS4xMy0xMC4zLTI0Ljc5czMuNDctMTcuOTEsMTAuMy0yNC43MmM2Ljg0LTYuODQsMTUuMS0xMC4yNywyNC43Ny0xMC4yNywzLjY5LDAsNy4zNC43MywxMC44MywxLjkyLDQuNTQsMS41Niw4LjY4LDQuMDMsMTIuNDQsNi45OSwzLjU4LDIuNzksNy44Nyw2Ljk4LDcuODcsMTEuODgsMCwyLjI0LTEuMDksMy45NC0zLjAzLDUuMDFsLTQ0LjE3LDI1LjVoMFptMzIuMTEtMzIuNTNjLTQuMzctNC40LTkuNjktNi42Mi0xNi4wNS02LjYycy0xMS42OCwyLjI1LTE2LjE0LDYuNzNjLTQuNDQsNC40OS02LjcxLDkuODItNi43MSwxNi4xNCwwLDEuOTYuMjIsMy45LjY5LDUuNzlsMzguMjEtMjIuMDRaIj48L3BhdGg+PGc+PGc+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJtMTU2LjE5LDE5MC43OWMxNS4zLDkuMjMsMjcuMjIsMjEuMjQsMzQuNzQsMzMuODItMS41NiwxLjQ0LTMuOTQsMS45LTcuMTMsMS4zNy0xOC41My0yLjc2LTM4LjUxLTEyLjE4LTU5Ljk0LTI4LjI3bDEzLjk5LTE1Ljg0YzYuMTYsMi4zMSwxMi4zMiw1LjI4LDE4LjM1LDguOTJaIj48L3BhdGg+PHBhdGggY2xhc3M9ImNscy01IiBkPSJtMTUzLjcxLDE2My44OGwtMTUuODgsMTcuOTljNi4xNiwyLjMxLDEyLjMyLDUuMjgsMTguMzUsOC45MiwxNS4zLDkuMjMsMjcuMjIsMjEuMjQsMzQuNzQsMzMuODIsOS4xNy05LjU5LTM3LjIxLTYwLjcyLTM3LjIxLTYwLjcyWiI+PC9wYXRoPjwvZz48Zz48cGF0aCBjbGFzcz0iY2xzLTQiIGQ9Im02OC40LDE0Mi4yNWMtMjYuNjQtNS45Mi00OS4zNi0yMi4xMy02My44My00NC4yNmgwYy0xLjY2LTYuMTUtMy4xLTExLjgyLTQuMzMtMTcuMDItLjY4LTIuNzkuMTMtNS4zMSwyLjQ0LTcuNTUsMTQuNDQtMTQuNDEsMzAuMTEtMjQuMzYsNDcuMDMtMjkuODYsMi40Mi0uNzUsNC42Ny0uMzksNi43NSwxLjA3LDIuMDQsMS41LDMuMSwzLjUyLDMuMTYsNi4wNi4zMiwzMS45MywzLjI2LDYyLjQ1LDguODMsOTEuNTYtLjAxLDAtLjAyLDAtLjA1LS4wMVoiPjwvcGF0aD48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Im02NS4yMywyMjEuOTRjNC4wOS0xNS4xNywxMC45Ni0zMS43NywyMC4zLTQ4LjkzLDMwLjU5LTQ4LjM1LDUxLjE2LTEwMy45Miw2MS43MS0xNjYuNzEuNDItMi4yOSwxLjYyLTQuMDMsMy42Mi01LjIyLDIuMDEtMS4xNyw0LjExLTEuMzksNi4zMi0uNjUsMTguNTUsNi40LDM1Ljc3LDE5LjA5LDUxLjY2LDM4LjA2LDEuODIsMi4yMSwyLjI5LDQuNjgsMS40Miw3LjQxLTI1LjIyLDcxLjc2LTY4LjE3LDEzMC42Mi0xMjguODYsMTc2LjU2LTQuNTYsMy4zNy0xMS4yNyw0LjA1LTE2LjE3LS41MloiPjwvcGF0aD48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Im02OC40NSwxNDIuMjZjMi4wMywxMC4yOSw0LjQ1LDIwLjQyLDcuMzMsMzAuMzguNTYsMS45NSwyLjExLDMuMzEsNC4xMiwzLjYxLDIsLjMsMy44OS0uNTQsNS0yLjI0LjIxLS4zMy40My0uNjYuNjQtLjk5LTkuMzQsMTcuMTUtMTYuMjEsMzMuNzUtMjAuMyw0OC45Mi0uNTEtLjQ2LTEtLjk2LTEuNDUtMS41MS0yOC40Mi0zNS4wNC00Ni43OC03Ni43OC01OS4yMi0xMjIuNDUsMTQuNDgsMjIuMTQsMzcuMjQsMzguMzcsNjMuODksNDQuMjhaIj48L3BhdGg+PC9nPjwvZz48L2c+PC9nPjwvc3ZnPg==" alt="Kie-Tec">
+  
+  
+  <span class="role">Abordagem de trabalho</span><button type="button" class="logout" id="logout">Sair</button>
+</header>
+
+<!-- ============ CAPA ============ -->
+<div class="cover">
+  <p class="eyebrow">Recursos Humanos · Diagnóstico de processos</p>
+  <h1>Mapeamento e diagnóstico de processos</h1>
+  <div class="accent"></div>
+  <p class="lead">Este documento apresenta como conduziremos o mapeamento e o diagnóstico dos processos da área de Recursos Humanos: a forma de trabalho, o caminho que percorreremos e o que é entregue ao final. O objetivo é claro — entender como os processos funcionam hoje, padronizá-los e revelar onde há espaço para ganhar tempo e qualidade.</p>
+  <p class="stamp"><b>Material dirigido à Kie-Tec.</b> Descreve a metodologia e o investimento da frente de mapeamento e diagnóstico de processos. Os exemplos de entrega usam dados fictícios.</p>
+</div>
+
+<!-- ============ 01 ============ -->
+<section>
+  <div class="head">
+    <p class="num">01</p>
+    <div><h2>Nossa abordagem</h2></div>
+  </div>
+
+  <div class="indent">
+    <div class="prose">
+      <p>Mapeamos os processos como eles realmente acontecem — não como estão no manual. Cada processo é representado em uma notação visual padrão (BPMN), clara para quem gere e para quem executa, e sobre esse desenho acrescentamos uma camada de dados: tempo, filas e pontos de retrabalho. Assim o resultado não é um desenho decorativo, e sim um retrato de onde o trabalho flui bem e onde ele trava.</p>
+      <p>O diagnóstico entrega duas coisas nesta fase: o mapeamento completo do setor e a indicação clara das oportunidades de melhoria a serem exploradas.</p>
+    </div>
+
+    <div class="split" style="margin-top:44px">
+      <div>
+        <h3>Mapeamento completo</h3>
+        <p>Todos os processos priorizados, mapeados em um padrão único e comparável. Dá a visão completa da capacidade e da carga de trabalho do setor, e serve de base para padronizar e treinar.</p>
+      </div>
+      <div>
+        <h3>Oportunidades a explorar</h3>
+        <p>Indicamos quais processos e frentes têm maior potencial de ganho, para serem estudados a fundo com ferramentas de análise de processos — Mapa de Fluxo de Valor ou Balanceamento de Operações — em uma etapa futura.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 ============ -->
+<section>
+  <div class="head">
+    <p class="num">02</p>
+    <div>
+      <h2>Como conduzimos o trabalho</h2>
+      <p class="sub">Uma dupla de especialistas em análise de processos ao longo de 9 dias úteis, somando 144 horas de trabalho, organizadas em quatro etapas — cada uma com a duração proporcional ao que exige. O cliente acompanha e valida ao longo do caminho.</p>
+    </div>
+  </div>
+
+  <div class="indent">
+    <div class="gantt">
+      <div class="g-scale">
+        <span class="cap">Etapa</span>
+        <div class="ticks" id="ticks"></div>
+      </div>
+      <div id="gantt"></div>
+    </div>
+    <p class="fine" style="margin-top:18px; max-width:600px">Escala em dias úteis. Os dois especialistas trabalham em paralelo, 8 horas por pessoa a cada dia — 16 horas de trabalho por dia de projeto.</p>
+
+    <div class="etapas" id="etapas"></div>
+  </div>
+</section>
+
+<!-- ============ 03 ============ -->
+<section>
+  <div class="head">
+    <p class="num">03</p>
+    <div><h2>O que o cliente recebe</h2></div>
+  </div>
+
+  <div class="indent">
+    <div class="recebe">
+      <div><span class="i">01</span><p><strong>Inventário e priorização</strong> dos processos do setor.</p></div>
+      <div><span class="i">02</span><p><strong>Mapas padronizados do estado atual</strong> — base para treinar, padronizar e reduzir a dependência de pessoas.</p></div>
+      <div><span class="i">03</span><p><strong>Diagnóstico com oportunidades priorizadas</strong> de melhoria, sustentadas por dados de tempo e qualidade.</p></div>
+      <div><span class="i">04</span><p><strong>Indicação dos processos com maior potencial de ganho</strong>, recomendados para aprofundamento em uma etapa futura.</p></div>
+      <div><span class="i">05</span><p><strong>Recomendação dos próximos passos</strong>, com base no que o diagnóstico revelar.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 ============ -->
+<section>
+  <div class="head">
+    <p class="num">04</p>
+    <div><h2>Como trabalhamos juntos</h2></div>
+  </div>
+
+  <div class="indent">
+    <div class="prose">
+      <p>O resultado depende de proximidade com as áreas. Precisamos de acesso às pessoas que executam os processos, e validamos cada mapa com elas — são a fonte mais confiável de como o trabalho realmente ocorre. Ao longo do projeto, o gestor de RH participa das definições de prioridade e da validação dos mapas.</p>
+    </div>
+
+    <div class="split" style="margin-top:44px">
+      <div>
+        <h3>Tratamento de informações</h3>
+        <p>Trabalhamos com processos, fluxos e volumes, preservando os dados pessoais dos colaboradores e as diretrizes de privacidade da LGPD. Os exemplos usados nos mapas são anonimizados.</p>
+        <p>Não produzimos ranking ou avaliação individual de desempenho — os resultados são sempre entregues de forma agregada, por processo, função ou equipe.</p>
+      </div>
+      <div>
+        <h3>Gestão da mudança</h3>
+        <p>Comunicamos com clareza o que será observado, por quê e como os resultados serão usados, mantendo um canal aberto para dúvidas ao longo do diagnóstico.</p>
+        <p>O objetivo é reduzir qualquer percepção de vigilância e garantir que as equipes participem com confiança.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 05 ============ -->
+<section>
+  <div class="head">
+    <p class="num">05</p>
+    <div><h2>Equipe e dedicação</h2></div>
+  </div>
+
+  <div class="indent">
+    <div class="equipe">
+      <div><b>2</b><span>especialistas em análise de processos</span></div>
+      <div><b>72h</b><span>de dedicação por especialista</span></div>
+      <div><b>144h</b><span>de dedicação total</span></div>
+      <div><b>9</b><span>dias úteis, em quatro etapas</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 ============ -->
+<section>
+  <div class="head">
+    <p class="num">06</p>
+    <div><h2>Investimento</h2></div>
+  </div>
+
+  <div class="indent">
+    <div class="invest">
+      <div class="row">
+        <p class="t">Serviços profissionais
+          <span class="d">144 horas de trabalho da dupla de especialistas, a R$ 200,00 por hora.</span>
+        </p>
+        <span class="v">R$ 28.800,00</span>
+      </div>
+      <div class="row">
+        <p class="t">Despesas
+          <span class="d">Hospedagem, alimentação e deslocamento da dupla durante os períodos presenciais.</span>
+        </p>
+        <span class="v">R$ 7.568,00</span>
+      </div>
+
+      <div class="desp">
+        <table>
+          <thead>
+            <tr>
+              <th>Item</th>
+              <th class="r">Quant.</th>
+              <th class="r">Valor unitário</th>
+              <th class="r">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Hospedagem</td><td class="n r">14</td><td class="n r">R$ 200,00</td><td class="n r">R$ 2.800,00</td></tr>
+            <tr><td>Alimentação</td><td class="n r">28</td><td class="n r">R$ 50,00</td><td class="n r">R$ 1.400,00</td></tr>
+            <tr><td>Combustível</td><td class="n r">2</td><td class="n r">R$ 1.472,00</td><td class="n r">R$ 2.944,00</td></tr>
+            <tr><td>Pedágio</td><td class="n r">2</td><td class="n r">R$ 212,00</td><td class="n r">R$ 424,00</td></tr>
+            <tr><td>Subtotal de despesas</td><td class="r"></td><td class="r"></td><td class="n r">R$ 7.568,00</td></tr>
+          </tbody>
+        </table>
+        <p class="desp-note">Hospedagem e deslocamento podem ser contratados diretamente pela Kie-Tec ou pelo cliente, caso haja fornecedor ou política própria. Nessa hipótese, os itens correspondentes são deduzidos do total desta proposta.</p>
+      </div>
+
+      <div class="row total">
+        <p class="t">Total</p>
+        <span class="v">R$ 36.368,00</span>
+      </div>
+    </div>
+
+    <dl class="cond">
+      <div><dt>Formato</dt><dd>Valor fechado pela fase, sem custos adicionais.</dd></div>
+      <div><dt>Licenças de software</dt><dd>Não se aplica — o diagnóstico não exige licenciamento.</dd></div>
+      <div><dt>Validade</dt><dd>30 dias a contar da data deste documento.</dd></div>
+    </dl>
+  </div>
+</section>
+
+</div>
+
+<!-- ============ ENCERRAMENTO ============ -->
+<div class="closing">
+  <div class="inner">
+    <h2>Processos claros. Capacidade medida. Melhorias priorizadas por evidência.</h2>
+    <p>Ao final do diagnóstico, a área de RH terá o retrato de como o trabalho realmente acontece, os números que sustentam esse retrato e uma lista de oportunidades ordenada por impacto — além do modelo documentado para repetir o trabalho em outras áreas.</p>
+    <div class="sign">
+      <div>
+        
+        <p>Kie-Tec · Mapeamento e diagnóstico de processos</p>
+      </div>
+      <p>Mapeamento e Diagnóstico de Processos<br>Abordagem de trabalho · julho de 2026</p>
+    </div>
+  </div>
+</div>
+
+<script>
+(function(){
+  /* ---------- cronograma ---------- */
+  /* A trilha tem 18 colunas de meio dia, ou seja, 9 dias úteis. */
+  var t=document.getElementById('ticks');
+  if(t){for(var i=1;i<=18;i++){var s=document.createElement('span');s.textContent=(i%2===0)?(i/2):'';t.appendChild(s);}}
+
+  var PLANO=[
+    {n:'01', t:'Observação e entrevistas',   d:'32 horas',          ini:1,  dur:4},
+    {n:'02', t:'Mapeamento dos processos',   d:'32 horas',          ini:5,  dur:4},
+    {n:'03', t:'Medição',                    d:'48 horas',          ini:9,  dur:6},
+    {n:'04', t:'Análise, consolidação e entrega', d:'32 horas · online', ini:15, dur:4, fim:true}
+  ];
+  var g=document.getElementById('gantt');
+  PLANO.forEach(function(p){
+    var row=document.createElement('div'); row.className='g-row';
+    row.innerHTML=
+      '<div><span class="g-n">'+p.n+'</span><span class="g-t">'+p.t+'</span><span class="g-d">'+p.d+'</span></div>'+
+      '<div class="g-track"><div class="g-bar'+(p.fim?' final':'')+'" style="grid-column:'+p.ini+' / span '+p.dur+'"></div></div>';
+    g.appendChild(row);
+  });
+
+  /* ---------- exemplos ---------- */
+  var MOCK={
+    reg:'<div class="ev"><span class="id">Registro · observação</span><p>A mesma informação do candidato é digitada em dois sistemas e em uma planilha de acompanhamento da área.</p><span class="src">3 acompanhamentos · confirmado em entrevista</span></div>'+
+        '<div class="ev"><span class="id">Registro · entrevista</span><p>A equipe aponta concentração de solicitações no início e no fim do ciclo, sem controle de fila.</p><span class="src">2 entrevistas · a confirmar com relatório de volume</span></div>',
+
+    mapa:'<div class="mock" style="padding:20px">'+
+      '<svg viewBox="0 0 560 500" role="img" aria-label="Mapa de processo de avaliação de período de experiência, com as raias RH e Encarregados, dois formulários, um ponto de decisão sobre prorrogação do contrato e dois desfechos.">'+
+      '<defs><marker id="lpsArrow" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto">'+
+      '<path d="M0,0 L6,3 L0,6 z" fill="var(--client-3)"/></marker></defs>'+
+      '<g font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="var(--ink-2)">'+
+      '<rect x="0" y="0" width="30" height="500" fill="var(--tint)"/>'+
+      '<rect x="30" y="0" width="530" height="30" fill="var(--tint)"/>'+
+      '<rect x="0.5" y="0.5" width="559" height="499" fill="none" stroke="var(--rule)"/>'+
+      '<line x1="30" y1="0" x2="30" y2="500" stroke="var(--rule)"/>'+
+      '<line x1="30" y1="30" x2="560" y2="30" stroke="var(--rule)"/>'+
+      '<line x1="300" y1="0" x2="300" y2="500" stroke="var(--rule)"/>'+
+      '<text transform="rotate(-90 15 254)" x="15" y="254" text-anchor="middle" font-size="10.5" fill="var(--muted)">PS-LPS-501 · Avaliação de Período de Experiência</text>'+
+      '<text x="165" y="20" text-anchor="middle" font-size="12" font-weight="600" fill="var(--client)">RH</text>'+
+      '<text x="430" y="20" text-anchor="middle" font-size="12" font-weight="600" fill="var(--client)">Encarregados</text>'+
+      '<text x="112" y="48" text-anchor="middle" font-size="9.5" fill="var(--muted)">Início</text>'+
+      '<circle cx="112" cy="70" r="13" fill="var(--paper)" stroke="var(--client-3)" stroke-width="1.4"/>'+
+      '<line x1="112" y1="83" x2="112" y2="100" stroke="var(--client-3)" stroke-width="1.2" marker-end="url(#lpsArrow)"/>'+
+      '<rect x="42" y="106" width="140" height="52" rx="4" fill="var(--paper)" stroke="var(--client-3)" stroke-width="1.2"/>'+
+      '<text x="112" y="128" text-anchor="middle">Passar o FOR-LPS-501</text>'+
+      '<text x="112" y="142" text-anchor="middle">ao encarregado</text>'+
+      '<line x1="182" y1="132" x2="200" y2="132" stroke="var(--client-3)" stroke-width="1.2" marker-end="url(#lpsArrow)"/>'+
+      '<path d="M204,110 H274 L284,120 V154 H204 Z" fill="var(--paper)" stroke="var(--client-3)" stroke-width="1.1"/>'+
+      '<path d="M274,110 V120 H284" fill="none" stroke="var(--client-3)" stroke-width="1.1"/>'+
+      '<text x="242" y="137" text-anchor="middle" font-size="10">FOR-LPS-501</text>'+
+      '<line x1="284" y1="132" x2="356" y2="132" stroke="var(--client-3)" stroke-width="1.2" marker-end="url(#lpsArrow)"/>'+
+      '<rect x="360" y="106" width="140" height="52" rx="4" fill="var(--paper)" stroke="var(--client-3)" stroke-width="1.2"/>'+
+      '<text x="430" y="128" text-anchor="middle">Preencher o formulário</text>'+
+      '<text x="430" y="142" text-anchor="middle">e assinar</text>'+
+      '<line x1="430" y1="158" x2="430" y2="202" stroke="var(--client-3)" stroke-width="1.2" marker-end="url(#lpsArrow)"/>'+
+      '<rect x="360" y="206" width="140" height="64" rx="4" fill="var(--paper)" stroke="var(--client-3)" stroke-width="1.2"/>'+
+      '<text x="430" y="226" text-anchor="middle">Devolver ao RH 1 dia</text>'+
+      '<text x="430" y="240" text-anchor="middle">antes do fim de cada</text>'+
+      '<text x="430" y="254" text-anchor="middle">período</text>'+
+      '<line x1="360" y1="238" x2="288" y2="238" stroke="var(--client-3)" stroke-width="1.2" marker-end="url(#lpsArrow)"/>'+
+      '<path d="M204,214 H274 L284,224 V262 H204 Z" fill="var(--paper)" stroke="var(--client-3)" stroke-width="1.1"/>'+
+      '<path d="M274,214 V224 H284" fill="none" stroke="var(--client-3)" stroke-width="1.1"/>'+
+      '<text x="242" y="236" text-anchor="middle" font-size="10">FOR-LPS-501</text>'+
+      '<text x="242" y="249" text-anchor="middle" font-size="10">preenchido</text>'+
+      '<line x1="204" y1="238" x2="148" y2="238" stroke="var(--client-3)" stroke-width="1.2" marker-end="url(#lpsArrow)"/>'+
+      '<text x="112" y="182" text-anchor="middle" font-size="10" fill="var(--muted)">O contrato será</text>'+
+      '<text x="112" y="194" text-anchor="middle" font-size="10" fill="var(--muted)">prorrogado?</text>'+
+      '<path d="M112,206 L144,238 L112,270 L80,238 Z" fill="var(--paper)" stroke="var(--client)" stroke-width="1.3"/>'+
+      '<line x1="112" y1="270" x2="112" y2="300" stroke="var(--client-3)" stroke-width="1.2"/>'+
+      '<line x1="90" y1="300" x2="222" y2="300" stroke="var(--client-3)" stroke-width="1.2"/>'+
+      '<line x1="90" y1="300" x2="90" y2="322" stroke="var(--client-3)" stroke-width="1.2" marker-end="url(#lpsArrow)"/>'+
+      '<line x1="222" y1="300" x2="222" y2="322" stroke="var(--client-3)" stroke-width="1.2" marker-end="url(#lpsArrow)"/>'+
+      '<text x="96" y="316" font-size="10" fill="var(--muted)">Sim</text>'+
+      '<text x="228" y="316" font-size="10" fill="var(--muted)">Não</text>'+
+      '<rect x="35" y="326" width="110" height="52" rx="4" fill="var(--paper)" stroke="var(--client-3)" stroke-width="1.2"/>'+
+      '<text x="90" y="348" text-anchor="middle">Prorrogar o período</text>'+
+      '<text x="90" y="362" text-anchor="middle">ou efetivar</text>'+
+      '<rect x="167" y="326" width="110" height="64" rx="4" fill="var(--paper)" stroke="var(--client-3)" stroke-width="1.2"/>'+
+      '<text x="222" y="346" text-anchor="middle">Chamar o</text>'+
+      '<text x="222" y="360" text-anchor="middle">colaborador, dar</text>'+
+      '<text x="222" y="374" text-anchor="middle">retorno e encerrar</text>'+
+      '<line x1="90" y1="378" x2="90" y2="410" stroke="var(--client-3)" stroke-width="1.2"/>'+
+      '<line x1="222" y1="390" x2="222" y2="410" stroke="var(--client-3)" stroke-width="1.2"/>'+
+      '<line x1="90" y1="410" x2="222" y2="410" stroke="var(--client-3)" stroke-width="1.2"/>'+
+      '<line x1="156" y1="410" x2="156" y2="424" stroke="var(--client-3)" stroke-width="1.2" marker-end="url(#lpsArrow)"/>'+
+      '<circle cx="156" cy="442" r="13" fill="var(--paper)" stroke="var(--client)" stroke-width="2.4"/>'+
+      '<text x="156" y="474" text-anchor="middle" font-size="9.5" fill="var(--muted)">Fim</text>'+
+      /* marcadores de oportunidade de melhoria */
+      '<circle cx="284" cy="110" r="9" fill="var(--flag)"/>'+
+      '<text x="284" y="113.5" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF">1</text>'+
+      '<circle cx="500" cy="206" r="9" fill="var(--flag)"/>'+
+      '<text x="500" y="209.5" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF">2</text>'+
+      '</g></svg>'+
+      '<div class="op-leg">'+
+      '<p class="op-t">Oportunidades de melhoria identificadas</p>'+
+      '<p><span class="op-n">1</span>Formulário em papel circulando entre as duas áreas — candidato a digitalização.</p>'+
+      '<p><span class="op-n">2</span>Devolução com prazo fixo e sem controle ou aviso — risco de perder o prazo do período.</p>'+
+      '</div></div>',
+
+    cap:'<div class="mock"><div class="cap-chart" id="capChart"></div>'+
+      '<div class="legend"><span><i class="pill" style="width:14px"></i>trabalho que chega</span>'+
+      '<span><i class="pill q" style="width:14px"></i>capacidade</span></div></div>',
+
+    causa:'<div class="mock"><p class="tree"><b>Prazo de abertura de vaga excedido</b><br>'+
+      'Falta de gente <span class="no">— descartada</span><br>'+
+      'Falta de treinamento <span class="no">— descartada</span><br>'+
+      'Processo mal desenhado <span class="ok">— confirmada</span><br>'+
+      'Falta de regra clara <span class="ok">— confirmada</span><br>'+
+      'Falta de ferramenta <span class="ok">— confirmada</span></p></div>',
+
+    prior:'<div class="mock"><svg viewBox="0 0 200 128" role="img" aria-label="Matriz de priorização das oportunidades por impacto e esforço">'+
+      '<g font-family="system-ui,sans-serif" font-size="6">'+
+      '<rect x="26" y="8" width="166" height="98" fill="none" stroke="var(--line)"/>'+
+      '<line x1="109" y1="8" x2="109" y2="106" stroke="var(--line)"/><line x1="26" y1="57" x2="192" y2="57" stroke="var(--line)"/>'+
+      '<text x="33" y="20" fill="var(--client)" font-size="5.4" font-weight="600">FAZER AGORA</text>'+
+      '<text x="150" y="20" fill="var(--muted)" font-size="5.4">PROJETO</text>'+
+      '<text x="33" y="101" fill="var(--muted)" font-size="5.4">AJUSTE SIMPLES</text>'+
+      '<text x="150" y="101" fill="var(--muted)" font-size="5.4">AVALIAR</text>'+
+      '<text x="15" y="57" fill="var(--muted)" font-size="5.4" transform="rotate(-90 15 57)" text-anchor="middle">impacto</text>'+
+      '<text x="109" y="122" fill="var(--muted)" font-size="5.4" text-anchor="middle">esforço</text>'+
+      '<circle cx="52" cy="26" r="4.6" fill="var(--client)"/><circle cx="76" cy="38" r="4.6" fill="var(--client)"/>'+
+      '<circle cx="64" cy="48" r="4.2" fill="var(--client)" opacity=".55"/>'+
+      '<circle cx="131" cy="30" r="4.2" fill="var(--client-2)"/><circle cx="155" cy="44" r="4.2" fill="var(--client-2)"/>'+
+      '<circle cx="70" cy="78" r="3.8" fill="var(--rule)"/><circle cx="92" cy="92" r="3.8" fill="var(--rule)"/>'+
+      '<circle cx="162" cy="88" r="3.8" fill="var(--rule)"/>'+
+      '</g></svg></div>'
+  };
+
+  var ETAPAS=[
+    {n:'Etapa 1',t:'Observação e entrevistas',d:'32 horas',
+     o:'Entender como as áreas de RH funcionam hoje e ver como o trabalho realmente acontece — não como está descrito em algum manual.',
+     a:['Reunião de abertura com a liderança de RH, para alinhar expectativas, riscos e o que já se sabe sobre os problemas.',
+        'Levantamento de quais processos existem em cada área — recrutamento, treinamento, cultura, remuneração e benefícios, facilities, saúde, HRBPs e demais atividades do ciclo de pessoas — e definição em conjunto de quais observar primeiro.',
+        'Acompanhamento do time de RH trabalhando no dia a dia, nas áreas priorizadas.',
+        'Entrevistas com quem executa cada processo, para entender etapas, decisões e dificuldades.',
+        'Cruzamento com dados de sistemas — relatórios, planilhas de volume — quando disponíveis, para confirmar o que foi observado e ouvido.'],
+     e:'Lista priorizada dos processos e registro consolidado de como cada um funciona na prática, com as evidências que sustentam esse retrato.',
+     f:['Planilha','Documento'],
+     leg:'Cada registro guarda a fonte que o originou, para que qualquer conclusão possa ser rastreada depois.',
+     m:'reg'},
+
+    {n:'Etapa 2',t:'Mapeamento completo dos processos',d:'32 horas',
+     o:'Ter o desenho pronto de cada processo priorizado.',
+     a:['Desenho de cada processo em fluxograma padrão, com as etapas, os responsáveis e os pontos de decisão.',
+        'Validação de cada mapa com quem executa o processo, para garantir que reflete a realidade.',
+        'Consolidação de todos os mapas em um único repositório do setor.'],
+     e:'Mapa completo e validado de todos os processos priorizados do setor.',
+     f:['BPMN','PDF','Repositório'],
+     leg:'Exemplo de um mapa entregue: raias por responsável, os formulários que circulam, o ponto de decisão e os dois desfechos possíveis. Os marcadores em destaque assinalam, já sobre o desenho, os pontos com oportunidade de melhoria — que depois entram na priorização da etapa final. Cada processo do setor é desenhado neste mesmo padrão, o que torna todos comparáveis entre si.',
+     m:'mapa', wide:true},
+
+    {n:'Etapa 3',t:'Medição',d:'48 horas',
+     o:'Ter números concretos sobre tempo, capacidade e qualidade do trabalho.',
+     a:['Medição de quanto tempo cada atividade leva, e onde há fila, espera e retrabalho.',
+        'Comparação entre quanto trabalho chega para cada equipe e quanto ela consegue dar conta, para identificar onde há sobrecarga e onde há ociosidade.',
+        'Avaliação da qualidade do que é entregue e se o time consegue atender no prazo esperado — não olhamos só para horas trabalhadas.'],
+     e:'Painel com os números de tempo, capacidade e qualidade de cada processo mapeado.',
+     f:['Painel','Planilha'],
+     leg:'A comparação por equipe mostra de imediato onde o trabalho que chega supera a capacidade disponível.',
+     m:'cap'},
+
+    {n:'Etapa 4',t:'Análise, consolidação e entrega das propostas de melhoria',d:'32 horas · entrega final',
+     mod:'Etapa online',
+     o:'Entender por que cada problema acontece e entregar o panorama de oportunidades com os próximos passos.',
+     a:['Para cada processo com problema identificado, investigação da causa: falta de gente, falta de treinamento, processo mal desenhado, falta de regra clara ou falta de ferramenta.',
+        'Cruzamento das causas com os números levantados na etapa de medição, para confirmar cada hipótese com evidência.',
+        'Reunião de todos os pontos de oportunidade identificados, com a recomendação de ação para cada um: cortar, simplificar, padronizar, digitalizar ou automatizar.',
+        'Priorização das oportunidades por impacto e esforço, e indicação de quais processos têm maior potencial de ganho para serem aprofundados em uma etapa futura.',
+        'Apresentação final à liderança de RH, conduzida a distância, com o modelo documentado para ser repetido em outras áreas.'],
+     e:'Diagnóstico de causa por problema e o diagnóstico completo, com as oportunidades priorizadas, as recomendações de próximos passos e o modelo replicável.',
+     f:['Documento','Apresentação','Planilha'],
+     leg:'Cada causa possível é testada e registrada — inclusive as descartadas, que evitam decisões tomadas pelo motivo errado. Em seguida, as oportunidades confirmadas são posicionadas por impacto e esforço.',
+     m:'analise'}
+  ];
+  MOCK.analise = MOCK.causa + MOCK.prior;
+
+  var host=document.getElementById('etapas');
+  ETAPAS.forEach(function(s){
+    var el=document.createElement('article');
+    el.className='etapa'+(s.wide?' wide':'')+(s.m?'':' solo');
+    el.innerHTML=
+      '<div>'+
+        '<div class="etapa-h"><span class="etapa-n">'+s.n+'</span><span class="etapa-d">'+s.d+'</span>'+
+          (s.mod?'<span class="tag tag-mod">'+s.mod+'</span>':'')+'</div>'+
+        '<h3>'+s.t+'</h3>'+
+        '<p class="etapa-obj">'+s.o+'</p>'+
+        '<p class="lbl">Atividades</p>'+
+        '<ul class="list">'+s.a.map(function(x){return '<li>'+x+'</li>'}).join('')+'</ul>'+
+        '<div class="etapa-e"><p class="lbl">Entregável</p><p>'+s.e+'</p>'+
+        '<div class="fmts">'+s.f.map(function(x){return '<span class="tag">'+x+'</span>'}).join('')+'</div></div>'+
+      '</div>'+
+      (s.m
+        ? '<div class="demo"><p class="lbl" style="margin-bottom:0">Exemplo da entrega</p>'+MOCK[s.m]+
+          '<p class="fine" style="font-size:12.5px">'+s.leg+'</p></div>'
+        : '');
+    host.appendChild(el);
+  });
+
+  var CAP=[['R&S',96,80],['T&D',88,80],['Cultura',72,80],['C&B',104,80],['Facilities',78,80],['Saúde',68,80],['HRBP',112,80]];
+  var cc=document.getElementById('capChart');
+  if(cc){
+    CAP.forEach(function(r){
+      var row=document.createElement('div'); row.className='row';
+      var nm=document.createElement('span'); nm.className='nm'; nm.textContent=r[0];
+      var bars=document.createElement('div'); bars.className='bars';
+      var a=document.createElement('i'); a.style.width=Math.round(r[1]/120*100)+'%';
+      a.style.background=r[1]>r[2]?'var(--flag)':'var(--client-2)';
+      var b=document.createElement('i'); b.style.width=Math.round(r[2]/120*100)+'%'; b.style.background='var(--rule)';
+      bars.appendChild(a); bars.appendChild(b);
+      row.appendChild(nm); row.appendChild(bars); cc.appendChild(row);
+    });
+  }
+})();
+</script>
+
+</div>
+<script>
+(function(){
+  var SENHA = 'Kietec2026';
+  var CHAVE = 'kietec_ok';
+
+  var gate = document.getElementById('gate');
+  var doc  = document.getElementById('doc');
+  var form = document.getElementById('gate-form');
+  var pass = document.getElementById('pass');
+  var err  = document.getElementById('gate-err');
+
+  function abrir(){
+    gate.hidden = true;
+    doc.hidden = false;
+    document.body.classList.remove('locked');
+  }
+
+  if (sessionStorage.getItem(CHAVE) === '1') {
+    abrir();
+  } else {
+    document.body.classList.add('locked');
+    pass.focus();
+  }
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    if (pass.value.trim() === SENHA) {
+      sessionStorage.setItem(CHAVE, '1');
+      err.hidden = true;
+      abrir();
+      window.scrollTo(0, 0);
+    } else {
+      err.hidden = false;
+      pass.value = '';
+      pass.focus();
+    }
+  });
+
+  var toggle = document.getElementById('toggle-pass');
+  toggle.addEventListener('click', function(){
+    var mostrar = pass.type === 'password';
+    pass.type = mostrar ? 'text' : 'password';
+    toggle.textContent = mostrar ? 'Ocultar' : 'Mostrar';
+    toggle.setAttribute('aria-label', mostrar ? 'Ocultar senha' : 'Mostrar senha');
+    pass.focus();
+  });
+
+  var sair = document.getElementById('logout');
+  if (sair) {
+    sair.addEventListener('click', function(){
+      sessionStorage.removeItem(CHAVE);
+      location.reload();
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

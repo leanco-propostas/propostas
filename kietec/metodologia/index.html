@@ -1,0 +1,1006 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="description" content="Metodologia, artefatos e modelos de entregavel para o mapeamento e diagnostico de processos de Recursos Humanos.">
+<meta name="theme-color" content="#33526B">
+<title>Metodologia e Modelos de Entregável · Mapeamento e Diagnóstico de Processos</title>
+
+<style>
+/* Documento: branco sempre, independente do tema do navegador. */
+:root,
+:root[data-theme="dark"],
+:root[data-theme="light"]{
+  --paper:#FFFFFF;
+  --tint:#F1F7FA;
+  --tint-2:#F7FAFC;
+  --line:#E2EAEF;
+  --rule:#CCDBE3;
+  --ink:#2A4358;
+  --ink-2:#4B667D;
+  --muted:#8399AC;
+
+  /* azul-escuro — títulos e voz do documento */
+  --brand:#33526B;
+  --brand-2:#7B9CB6;
+
+  /* Kie-Tec — cor da marca / estrutura */
+  --client:#0074AB;
+  --client-2:#09C0DE;
+  --client-3:#0096B8;
+  --client-soft:#E3F5FA;
+
+  --flag:#9C6534;
+  --flag-soft:#F6ECE2;
+  --ok:#3F7A5A;
+
+  --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"Cascadia Mono","SF Mono",Menlo,Consolas,monospace;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth; color-scheme:light; background:#FFFFFF}
+body{
+  margin:0; background:#FFFFFF; color:var(--ink-2);
+  font-family:var(--sans); font-size:17px; line-height:1.74;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%; height:auto}
+.page{max-width:940px; margin:0 auto; padding:0 28px}
+
+h1,h2,h3,h4{font-family:var(--serif); font-weight:600; text-wrap:balance; margin:0; color:var(--brand)}
+h1{font-size:clamp(32px,4.6vw,50px); line-height:1.06; letter-spacing:-.018em}
+h2{font-size:clamp(24px,2.8vw,32px); line-height:1.16; letter-spacing:-.012em}
+h3{font-size:19px; line-height:1.34; letter-spacing:-.004em}
+h4{font-size:16px; line-height:1.3}
+p{margin:0 0 18px}
+strong{font-weight:600; color:var(--brand)}
+.prose{max-width:660px}
+.prose p:last-child{margin-bottom:0}
+.lead{font-size:19.5px; line-height:1.6; color:var(--ink); font-weight:400}
+.fine{font-size:13.5px; line-height:1.62; color:var(--muted); margin:0}
+.lbl{font-size:10.5px; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); font-weight:650; margin:0 0 14px}
+
+/* ---------- co-branding ---------- */
+.cobrand{display:flex; align-items:center; gap:22px; flex-wrap:wrap; padding:32px 0 26px; border-bottom:1px solid var(--line)}
+.cobrand img{display:block; width:auto}
+.cobrand .kt{height:34px}
+.cobrand .lc{height:30px}
+.cobrand .sep{flex:0 0 1px; width:1px; height:28px; background:var(--rule)}
+.cobrand .role{margin-left:auto; font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); font-weight:650}
+
+/* ---------- capa ---------- */
+.cover{padding:66px 0 0}
+.cover .eyebrow{font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--client); font-weight:700; margin:0 0 18px}
+.cover h1{max-width:16ch}
+.cover .accent{width:74px; height:3px; background:linear-gradient(90deg,var(--client) 0%,var(--client-2) 100%); margin:30px 0 0; border-radius:2px}
+.cover .lead{margin:28px 0 0; max-width:60ch}
+.cover .stamp{margin-top:40px; padding-top:20px; border-top:1px solid var(--line); max-width:680px; font-size:13.5px; line-height:1.65; color:var(--muted)}
+.cover .stamp b{color:var(--ink); font-weight:600}
+
+/* ---------- seções ---------- */
+section{padding:84px 0 0}
+.head{margin-bottom:32px}
+@media (min-width:860px){.head{display:grid; grid-template-columns:64px minmax(0,1fr); gap:28px; align-items:start}}
+.head .num{font-family:var(--serif); font-size:18px; color:var(--client); font-weight:600; margin:0 0 8px; line-height:1.55}
+@media (min-width:860px){.head .num{margin:0; text-align:right; padding-top:7px}}
+.head h2{margin:0}
+.head .sub{margin:16px 0 0; color:var(--ink-2); font-size:16.5px; max-width:640px}
+@media (min-width:860px){.indent{padding-left:92px}}
+
+/* ---------- duas colunas ---------- */
+.split{display:grid; grid-template-columns:1fr; gap:32px; padding-top:34px; margin-top:6px; border-top:1px solid var(--line)}
+@media (min-width:760px){
+  .split{grid-template-columns:1fr 1fr; gap:0}
+  .split > div{padding-right:44px}
+  .split > div + div{padding-right:0; padding-left:44px; border-left:1px solid var(--line)}
+}
+.split h3{margin-bottom:12px}
+.split p{font-size:16px; color:var(--ink-2); margin-bottom:0}
+.split p + p{margin-top:14px}
+
+ul.list{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:12px}
+ul.list li{position:relative; padding-left:24px; font-size:16px; line-height:1.62; color:var(--ink-2)}
+ul.list li::before{content:""; position:absolute; left:0; top:11.5px; width:10px; height:1px; background:var(--client-2)}
+
+.tag{display:inline-block; font-size:10.5px; letter-spacing:.1em; text-transform:uppercase; padding:4px 10px; background:var(--client-soft); color:var(--client); font-weight:650; border-radius:2px}
+.tag-mod{background:var(--brand); color:#FFFFFF}
+.tag-opt{background:var(--flag-soft); color:var(--flag)}
+
+/* ---------- princípio (destaque) ---------- */
+.principle{margin-top:34px; padding:28px 30px; background:var(--tint); border:1px solid var(--line); border-left:3px solid var(--client); border-radius:3px}
+.principle h3{color:var(--brand); margin-bottom:10px}
+.principle p{margin:0; font-size:16px; color:var(--ink-2); max-width:64ch}
+
+/* ---------- conciliação fases x etapas ---------- */
+.phases{border-top:1px solid var(--line); margin-top:8px}
+.phase-row{display:grid; grid-template-columns:1fr; gap:14px; padding:26px 0; border-bottom:1px solid var(--line)}
+@media (min-width:760px){.phase-row{grid-template-columns:220px minmax(0,1fr); gap:32px}}
+.phase-k .pn{font-family:var(--mono); font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:var(--client); font-weight:700}
+.phase-k h3{margin:6px 0 0; color:var(--brand)}
+.phase-k .maps{display:block; margin-top:8px; font-size:12.5px; color:var(--muted); font-family:var(--mono)}
+.phase-v p{margin:0; font-size:16px; color:var(--ink-2)}
+
+/* ---------- etapas ---------- */
+.etapa{display:grid; grid-template-columns:1fr; gap:8px; padding:38px 0; border-top:1px solid var(--line)}
+.etapa-h{display:flex; align-items:baseline; gap:14px; flex-wrap:wrap; margin-bottom:6px}
+.etapa-n{font-family:var(--mono); font-size:10.5px; font-weight:700; color:var(--client); letter-spacing:.16em; text-transform:uppercase}
+.etapa-ph{font-family:var(--mono); font-size:10.5px; color:var(--muted); letter-spacing:.08em}
+.etapa h3{margin:0 0 6px}
+.etapa-obj{font-size:16.5px; color:var(--ink); margin:0 0 22px; max-width:62ch}
+.grid4{display:grid; grid-template-columns:1fr; gap:22px 40px}
+@media (min-width:720px){.grid4{grid-template-columns:1fr 1fr}}
+.grid4 .cell .lbl{margin-bottom:10px}
+.grid4 ul.list li{font-size:15px}
+.grid4 .cell p{margin:0; font-size:15px; color:var(--ink-2)}
+
+/* ---------- modelos / mocks ---------- */
+.models{display:flex; flex-direction:column; gap:34px; margin-top:8px}
+.model{border-top:1px solid var(--line); padding-top:30px}
+.model-h{display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:6px}
+.model-n{font-family:var(--mono); font-size:10.5px; font-weight:700; color:var(--client); letter-spacing:.16em; text-transform:uppercase}
+.model h3{margin:0}
+.model-desc{margin:8px 0 20px; font-size:15.5px; color:var(--ink-2); max-width:64ch}
+.mock{background:var(--paper); border:1px solid var(--line); border-radius:3px; padding:20px}
+.mock svg{display:block; width:100%; height:auto}
+.mock-cap{margin:12px 0 0; font-size:12.5px; line-height:1.55; color:var(--muted)}
+
+/* ficha de mapeamento */
+.doc{font-size:13px}
+.doc-top{display:flex; justify-content:space-between; align-items:flex-start; gap:16px; padding-bottom:14px; border-bottom:2px solid var(--brand); flex-wrap:wrap}
+.doc-top .t{font-family:var(--serif); font-size:17px; color:var(--brand); font-weight:600}
+.doc-top .code{font-family:var(--mono); font-size:11px; color:var(--client); font-weight:700; text-align:right; line-height:1.7}
+.doc-meta{display:grid; grid-template-columns:repeat(2,1fr); gap:10px 26px; padding:16px 0; border-bottom:1px solid var(--line)}
+@media (min-width:620px){.doc-meta{grid-template-columns:repeat(4,1fr)}}
+.doc-meta dt{font-size:9.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); font-weight:650; margin-bottom:3px}
+.doc-meta dd{margin:0; font-size:13px; color:var(--ink)}
+.doc-cols{display:grid; grid-template-columns:1fr; gap:18px 30px; padding:16px 0}
+@media (min-width:620px){.doc-cols{grid-template-columns:1fr 1fr}}
+.doc-cols .lbl{margin-bottom:9px}
+.doc-cols ul{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:7px}
+.doc-cols li{font-size:12.5px; color:var(--ink-2); padding-left:16px; position:relative}
+.doc-cols li::before{content:""; position:absolute; left:0; top:9px; width:7px; height:1px; background:var(--client-2)}
+
+/* procedimento escrito (POP) */
+.pop-sec{margin-top:16px}
+.pop-steps{list-style:none; counter-reset:pop; padding:0; margin:0; display:flex; flex-direction:column; gap:11px}
+.pop-steps li{position:relative; padding-left:32px; font-size:12.5px; color:var(--ink-2); line-height:1.55; counter-increment:pop}
+.pop-steps li::before{content:counter(pop,decimal-leading-zero); position:absolute; left:0; top:1px; font-family:var(--mono); font-size:10.5px; font-weight:700; color:var(--client)}
+
+.mtable td.c,.mtable th.c{text-align:center}
+
+/* tabelas de mock */
+.mtable{border-collapse:collapse; width:100%; table-layout:fixed}
+.mtable thead th{text-align:left; font-size:9.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); font-weight:650; padding:0 10px 9px 0; border-bottom:1px solid var(--line)}
+.mtable tbody td{padding:9px 10px 9px 0; font-size:12.5px; color:var(--ink-2); border-bottom:1px solid var(--line); vertical-align:middle; line-height:1.4}
+.mtable tbody td:first-child{color:var(--ink)}
+.mtable tbody tr:last-child td{border-bottom:0}
+.mtable .n{font-family:var(--mono); font-variant-numeric:tabular-nums}
+.mtable .r{text-align:right}
+.pill-i{display:inline-block; font-size:10px; font-weight:650; padding:3px 9px; border-radius:20px}
+.pill-alta{background:var(--flag-soft); color:var(--flag)}
+.pill-media{background:var(--client-soft); color:var(--client)}
+.pill-baixa{background:var(--tint); color:var(--muted)}
+
+/* painel KPIs */
+.kpis{display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:3px; overflow:hidden; margin-bottom:18px}
+@media (min-width:620px){.kpis{grid-template-columns:repeat(4,1fr)}}
+.kpi{background:var(--paper); padding:16px 16px 18px}
+.kpi b{display:block; font-family:var(--serif); font-size:26px; color:var(--brand); line-height:1; font-variant-numeric:tabular-nums}
+.kpi span{display:block; margin-top:8px; font-size:11px; color:var(--muted); line-height:1.4}
+.kpi i{font-style:normal; color:var(--flag)}
+.cap-chart{display:flex; flex-direction:column; gap:11px}
+.cap-chart .row{display:grid; grid-template-columns:64px minmax(0,1fr); gap:12px; align-items:center}
+.cap-chart .nm{color:var(--muted); text-align:right; font-size:11px; font-family:var(--mono)}
+.cap-chart .bars{display:flex; flex-direction:column; gap:3px}
+.cap-chart i{display:block; height:6px; border-radius:3px}
+.legend{display:flex; gap:18px; margin-top:14px; font-size:10.5px; color:var(--muted); flex-wrap:wrap}
+.legend i{display:inline-block; width:14px; height:6px; border-radius:3px; margin-right:6px; vertical-align:middle}
+
+/* apresentação executiva (slide) */
+.slide{background:linear-gradient(160deg,#213C52 0%,#33526B 60%,#3B5E79 100%); border-radius:6px; padding:34px 34px 30px; color:#EAF1F6}
+.slide .s-lbl{font-size:10px; letter-spacing:.2em; text-transform:uppercase; color:var(--client-2); font-weight:700}
+.slide h4{color:#FFFFFF; font-size:22px; margin:10px 0 22px; font-family:var(--serif)}
+.slide-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:24px}
+.slide-grid .m b{display:block; font-family:var(--serif); font-size:30px; color:#FFFFFF; line-height:1; font-variant-numeric:tabular-nums}
+.slide-grid .m span{display:block; margin-top:7px; font-size:11px; color:#B9CCDB; line-height:1.4}
+.slide-cols{display:grid; grid-template-columns:1fr; gap:18px 30px; padding-top:20px; border-top:1px solid rgba(255,255,255,.18)}
+@media (min-width:620px){.slide-cols{grid-template-columns:1fr 1fr}}
+.slide-cols .c-lbl{font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--client-2); font-weight:700; margin-bottom:10px}
+.slide-cols ul{list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:8px}
+.slide-cols li{font-size:13px; color:#D6E2EC; padding-left:16px; position:relative; line-height:1.45}
+.slide-cols li::before{content:""; position:absolute; left:0; top:9px; width:8px; height:1px; background:var(--client-2)}
+
+/* diagrama de acompanhamento (notion) */
+.board{display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin-top:4px}
+@media (min-width:720px){.board{grid-template-columns:repeat(4,1fr)}}
+.col{background:var(--tint-2); border:1px solid var(--line); border-radius:4px; padding:12px}
+.col-h{display:flex; align-items:center; gap:8px; margin-bottom:12px}
+.col-h span{font-size:11px; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--ink)}
+.col-h .dot{width:8px; height:8px; border-radius:50%}
+.dot-done{background:var(--ok)} .dot-doing{background:var(--client)} .dot-next{background:var(--brand-2)} .dot-wait{background:var(--rule)}
+.card-n{background:var(--paper); border:1px solid var(--line); border-radius:3px; padding:9px 11px; margin-bottom:8px; font-size:11.5px; color:var(--ink-2); line-height:1.4}
+.card-n:last-child{margin-bottom:0}
+.card-n b{display:block; color:var(--ink); font-size:12px; font-weight:600; margin-bottom:2px}
+.card-n small{display:inline-block; margin-top:5px; font-size:9.5px; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); font-weight:650}
+
+/* ---------- entregas (lista numerada) ---------- */
+.recebe{border-top:1px solid var(--line); max-width:800px; margin-top:8px}
+.recebe > div{display:grid; grid-template-columns:38px minmax(0,1fr); gap:20px; padding:20px 0; border-bottom:1px solid var(--line); align-items:baseline}
+.recebe .i{font-family:var(--serif); font-size:15px; color:var(--client); font-weight:600}
+.recebe p{margin:0; font-size:16px; color:var(--ink-2); line-height:1.6}
+.recebe .opt{display:inline-block; margin-left:8px}
+
+/* ---------- encerramento ---------- */
+.closing{background:var(--brand); color:#EAF0F5; margin-top:100px; padding:64px 0 56px}
+.closing .inner{max-width:940px; margin:0 auto; padding:0 28px}
+.closing h2{color:#FFFFFF; max-width:22ch}
+.closing p{max-width:56ch; color:#C4D3DF; font-size:17px; margin:20px 0 0}
+.closing .sign{display:flex; justify-content:space-between; align-items:flex-end; gap:32px; flex-wrap:wrap; margin-top:52px; padding-top:26px; border-top:1px solid rgba(255,255,255,.18)}
+.closing .sign img{width:96px; display:block; margin-bottom:12px; filter:brightness(0) invert(1)}
+.closing .sign p{margin:0; font-size:13.5px; line-height:1.6; color:#A9BDCC; max-width:none}
+
+a{color:var(--client)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important; animation:none!important; scroll-behavior:auto!important}}
+@media print{body{font-size:11pt} section,.etapa,.model,.phase-row{page-break-inside:avoid} .closing{background:#33526B!important; -webkit-print-color-adjust:exact; print-color-adjust:exact}}
+
+/* seletor de documentos */
+.xsw{position:sticky;top:0;z-index:90;display:flex;gap:4px;align-items:center;background:#fff;border-bottom:1px solid var(--line);padding:8px 16px;font-family:var(--sans);font-size:12.5px}
+.xsw .home{color:var(--muted);margin-right:auto;text-decoration:none;padding:6px 4px}
+.xsw .home:hover{color:var(--client)}
+.xsw .tab{padding:6px 13px;border-radius:6px;text-decoration:none}
+.xsw a.tab{color:var(--ink-2)}
+.xsw a.tab:hover{background:var(--tint);color:var(--client)}
+.xsw span.tab{background:var(--client-soft);color:var(--client);font-weight:650}
+/* cronograma */
+.gantt{border-top:1px solid var(--line);margin-top:6px}
+.g-scale{display:none}
+@media(min-width:760px){
+ .g-scale{display:grid;grid-template-columns:236px minmax(0,1fr);gap:26px;padding:10px 0 12px}
+ .g-scale .cap{font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);font-weight:650;align-self:end}
+ .g-scale .ticks{display:grid;grid-template-columns:repeat(18,1fr);gap:2px;padding:0 6px}
+ .g-scale .ticks span{font-family:var(--mono);font-size:9.5px;color:var(--muted);text-align:center;font-variant-numeric:tabular-nums}
+}
+.g-row{display:grid;grid-template-columns:1fr;gap:12px;padding:16px 0;border-top:1px solid var(--line);align-items:center}
+@media(min-width:760px){.g-row{grid-template-columns:236px minmax(0,1fr);gap:26px}}
+.g-n{font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;color:var(--client);font-weight:700}
+.g-t{display:block;font-size:15.5px;font-weight:600;color:var(--brand);line-height:1.35;margin-top:5px;font-family:var(--sans)}
+.g-d{display:block;font-family:var(--mono);font-size:11.5px;color:var(--muted);margin-top:5px;font-variant-numeric:tabular-nums}
+.g-track{display:grid;grid-template-columns:repeat(18,1fr);gap:2px;background:var(--tint);border-radius:3px;padding:6px}
+.g-bar{height:11px;border-radius:2px;background:var(--client)}
+.g-bar.final{background:var(--brand)}
+</style>
+</head>
+<body>
+<nav class="xsw"><a class="home" href="../index.html">‹ Seleção de documentos</a><a class="tab" href="../proposta/index.html">‹ Proposta comercial</a><span class="tab">Metodologia e entregáveis</span></nav>
+
+<div class="page">
+
+<header class="cobrand">
+  <img class="kt" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJDYW1hZGFfMiIgZGF0YS1uYW1lPSJDYW1hZGEgMiIgdmlld0JveD0iMCAwIDY3My40NiAyMjYuMTkiPjxkZWZzPjxzdHlsZT4gICAgICAuY2xzLTEgeyAgICAgICAgZmlsbDogIzU4NTk1YjsgICAgICB9ICAgICAgLmNscy0xLCAuY2xzLTIsIC5jbHMtMywgLmNscy00LCAuY2xzLTUgeyAgICAgICAgZmlsbC1ydWxlOiBldmVub2RkOyAgICAgIH0gICAgICAuY2xzLTIgeyAgICAgICAgZmlsbDogIzA5YzBkZTsgICAgICB9ICAgICAgLmNscy0zIHsgICAgICAgIGZpbGw6ICMwMDk2Yjg7ICAgICAgfSAgICAgIC5jbHMtNCB7ICAgICAgICBmaWxsOiAjMDA3NGFiOyAgICAgIH0gICAgICAuY2xzLTUgeyAgICAgICAgZmlsbDogI2FjZDllMzsgICAgICB9ICAgIDwvc3R5bGU+PC9kZWZzPjxnIGlkPSJDYW1hZGFfMS0yIiBkYXRhLW5hbWU9IkNhbWFkYSAxIj48Zz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im00MTguMjgsMTI0LjY2Yy00LjM3LTQuNC05LjY5LTYuNjItMTYuMDUtNi42MnMtMTEuNjgsMi4yNS0xNi4xNCw2LjczYy00LjQ0LDQuNDktNi43MSw5LjgyLTYuNzEsMTYuMTQsMCwxLjk2LjIyLDMuOS42OSw1Ljc5bDM4LjIxLTIyLjA0aDBabS0zMi4xMSwzMi41M2M0LjM1LDQuNDMsOS42OSw2LjYyLDE2LjA2LDYuNjIsNi45NSwwLDEyLjc1LTIuNDIsMTcuMTgtNy44MS44OC0xLjI3LDEuODMtMi41MiwyLjc2LTMuNzYsMS4yMS0xLjU4LDIuODUtMi45Nyw0Ljk0LTIuOTcsMS42NywwLDMuMTMuNiw0LjM3LDEuNzEsMS4yNywxLjE0LDEuOTQsMi42LDEuOTQsNC4zMSwwLDEuMDgtLjMxLDIuMS0uNzYsMy4wN2wtLjAyLjAzLS4wMi4wM2MtMi45NCw1LjUxLTcuMzQsOS43LTEyLjc3LDEyLjc1LTUuNDYsMy4wNi0xMS4zNiw0Ljc3LTE3LjYyLDQuNzctOS42NywwLTE3LjkzLTMuNDQtMjQuNzctMTAuMjctNi44NS02LjgyLTEwLjMtMTUuMTMtMTAuMy0yNC43OXMzLjQ3LTE3LjkxLDEwLjMtMjQuNzJjNi44My02LjgzLDE1LjEtMTAuMjcsMjQuNzctMTAuMjcsMy42OSwwLDcuMzQuNzMsMTAuODMsMS45Miw0LjU0LDEuNTYsOC42OCw0LjAzLDEyLjQ0LDYuOTksMy41OCwyLjc5LDcuODcsNi45OCw3Ljg3LDExLjg4LDAsMi4yNC0xLjA5LDMuOTQtMy4wMyw1LjAxbC00NC4xNywyNS41aDBabS0yOS4zMi00NS4yNXY1Ny45MWMwLDMuOTItMi4xOCw2LjEtNi4xLDYuMXMtNi4xMi0yLjE3LTYuMTItNi4xdi01Ny45MWMwLTMuOTMsMi4yMi02LjA1LDYuMTItNi4wNXM2LjEsMi4xNCw2LjEsNi4wNWgwWm0tLjEtMjAuNDJjLTEuNjcsMS42MS0zLjY4LDIuNDQtNiwyLjQ0cy00LjM1LS44Mi02LjAzLTIuNDRjLTEuNjgtMS42NS0yLjU0LTMuNjQtMi41NC02cy44Ny00LjM4LDIuNTMtNi4wNGMxLjY3LTEuNjcsMy42OC0yLjUzLDYuMDQtMi41M3M0LjM2Ljg4LDYuMDEsMi41M2MxLjY2LDEuNjYsMi41MywzLjY5LDIuNTMsNi4wNHMtLjg2LDQuMzUtMi41NSw2aDBabS03My4yMyw4My40YzIuMjEtMS4zNywzLjMtMy4yNCwzLjMtNS44NHYtMjAuMDVsOC41Ny04LjE2LDIzLjYzLDMyLjI4Yy40NC41OC45NywxLjA3LDEuNjIsMS40bC4wNy4wNC4wNy4wNGMyLjY2LDEuNjYsNS4wOCwxLjc1LDcuNi0uMjMuNy0uNTMsMS4zMy0xLjE1LDEuODYtMS44NSwxLjczLTIuNjIsMS41NS01LjAyLS4zLTcuNTRsLTI0LjY2LTMzLjUzLDIwLjYzLTE5LjNjLjYtLjgsMS4xNC0xLjY0LDEuNjYtMi41LDEuMTYtMi43NC43Mi01LjA2LTEuMy03LjI1LS41OS0uNTktMS4yNy0xLjE1LTIuMDItMS41NC0yLjg3LTEuMTYtNS4zNi0uODQtNy42NSwxLjI4bC0yOS43OCwyOC4zOHYtNTAuNTJjMC0xLjkxLS42OS0zLjQ4LTIuMDQtNC44My0xLjM1LTEuMzUtMi45Mi0yLjA0LTQuODMtMi4wNC0uOTQsMC0xLjgxLjIzLTIuNjIuNzFsLS4wNy4wNS0uMDguMDRjLTIuNjIsMS4yMi0zLjc4LDMuMi0zLjc4LDYuMDh2ODkuMDZjMCwyLjYxLDEuMSw0LjQ5LDMuMzIsNS44NiwyLjMsMS40MSw0LjUsMS4zLDYuODItLjAxWiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTQ2Ni4wNywxMjUuMDdjNy4xOCwwLDEzLjAxLDUuODIsMTMuMDEsMTMuMDFzLTUuODIsMTMuMDEtMTMuMDEsMTMuMDEtMTMuMDEtNS44Mi0xMy4wMS0xMy4wMSw1LjgyLTEzLjAxLDEzLjAxLTEzLjAxWiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTY2OC41LDE1OS41MWMtMS4wNCwwLTEuNjkuMTMtMi44Ny43OC00LjU2LDIuMzUtOC4yMSw0LjE3LTE0Ljk5LDQuMTctMTUuMTIsMC0yMy45OC05LjUxLTIzLjk4LTIzLjQ2czguODYtMjMuNDYsMjMuOTgtMjMuNDZjNi43OCwwLDEwLjQzLDEuODIsMTQuOTksNC4xNywxLjE3LjY1LDEuODIuNzgsMi44Ny43OCwyLjc0LDAsNC45NS0yLjc0LDQuOTUtNS4yMSwwLTEuOTYtMS4wNC0zLjUyLTIuNjEtNC41Ni00LjQzLTIuODctMTAuOTUtNi4yNi0yMS4yNC02LjI2LTE4LjUxLDAtMzQuOCwxMi43Ny0zNC44LDM0LjU0czE2LjI5LDM0LjU0LDM0LjgsMzQuNTRjMTAuMywwLDE2LjgxLTMuMzksMjEuMjQtNi4yNiwxLjU2LTEuMDQsMi42MS0yLjYxLDIuNjEtNC41NiwwLTIuNDgtMi4yMi01LjIxLTQuOTUtNS4yMWgwWiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTUyNy4yMiwxNjMuOTRjLTIuMjIsMC0zLjY1LDEuMTctNy44MiwxLjE3LTMuMjYsMC04LjQ3LS4xMy04LjQ3LTcuODJ2LTM5LjM2aDE0Ljg2czAsMCwwLDBoLjEzYzIuNjUtLjEzLDQuNjktMi4xNyw0LjgyLTQuODJ2LS4xM3MwLDAsMCwwdi0uMTNzMCwwLDAsMHYtLjEzczAsMCwwLDB2LS4xM2MtLjEzLTIuNjUtMi4xNy00LjY5LTQuODItNC44MmgtLjEzczAsMCwwLDBoLS4xM3MwLDAsMCwwaC0xNC43M3YtMTAuNDNjMC0uMi0uMDItLjQtLjA2LS41OS0uNC0yLjc5LTIuODItNC45NS01LjcyLTQuOTVoMGMtMy4xOCwwLTUuNzgsMi42LTUuNzgsNS43OHY0LjRjMCwuMjEuMDEuNDEuMDMuNjFsLS4wMy4wM3Y1LjE0aC05LjI5Yy0yLjgsMC01LjA4LDIuMjktNS4wOCw1LjA4aDBjMCwyLjQ2LDEuNzcsNC41Miw0LjEsNC45OS4yMy4wNi40Ny4xLjczLjFoOS4yNXY0MC40YzAsMTYuMTYsMTIuOSwxNy4yLDE5LjAzLDE3LjIsNC4xNywwLDcuNjktLjkxLDEwLjgyLTIuMzUsMS44Mi0uOTEsMy0yLjM1LDMtNC41NiwwLTIuNzQtMi4zNS00LjY5LTQuNjktNC42OVoiPjwvcGF0aD48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im01NTcuODcsMTU3LjI3YzQuMzUsNC40Myw5LjY5LDYuNjIsMTYuMDYsNi42Miw2Ljk1LDAsMTIuNzUtMi40MiwxNy4xOC03LjgxLjg4LTEuMjcsMS44Mi0yLjUyLDIuNzYtMy43NiwxLjIxLTEuNTgsMi44NS0yLjk3LDQuOTQtMi45NywxLjY3LDAsMy4xMy42LDQuMzcsMS43MSwxLjI3LDEuMTQsMS45NCwyLjYsMS45NCw0LjMxLDAsMS4wOC0uMzEsMi4xLS43NiwzLjA3bC0uMDIuMDMtLjAyLjAzYy0yLjk0LDUuNTEtNy4zNCw5LjctMTIuNzcsMTIuNzUtNS40NiwzLjA2LTExLjM2LDQuNzctMTcuNjIsNC43Ny05LjY3LDAtMTcuOTMtMy40NC0yNC43Ny0xMC4yNy02Ljg1LTYuODItMTAuMy0xNS4xMy0xMC4zLTI0Ljc5czMuNDctMTcuOTEsMTAuMy0yNC43MmM2Ljg0LTYuODQsMTUuMS0xMC4yNywyNC43Ny0xMC4yNywzLjY5LDAsNy4zNC43MywxMC44MywxLjkyLDQuNTQsMS41Niw4LjY4LDQuMDMsMTIuNDQsNi45OSwzLjU4LDIuNzksNy44Nyw2Ljk4LDcuODcsMTEuODgsMCwyLjI0LTEuMDksMy45NC0zLjAzLDUuMDFsLTQ0LjE3LDI1LjVoMFptMzIuMTEtMzIuNTNjLTQuMzctNC40LTkuNjktNi42Mi0xNi4wNS02LjYycy0xMS42OCwyLjI1LTE2LjE0LDYuNzNjLTQuNDQsNC40OS02LjcxLDkuODItNi43MSwxNi4xNCwwLDEuOTYuMjIsMy45LjY5LDUuNzlsMzguMjEtMjIuMDRaIj48L3BhdGg+PGc+PGc+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJtMTU2LjE5LDE5MC43OWMxNS4zLDkuMjMsMjcuMjIsMjEuMjQsMzQuNzQsMzMuODItMS41NiwxLjQ0LTMuOTQsMS45LTcuMTMsMS4zNy0xOC41My0yLjc2LTM4LjUxLTEyLjE4LTU5Ljk0LTI4LjI3bDEzLjk5LTE1Ljg0YzYuMTYsMi4zMSwxMi4zMiw1LjI4LDE4LjM1LDguOTJaIj48L3BhdGg+PHBhdGggY2xhc3M9ImNscy01IiBkPSJtMTUzLjcxLDE2My44OGwtMTUuODgsMTcuOTljNi4xNiwyLjMxLDEyLjMyLDUuMjgsMTguMzUsOC45MiwxNS4zLDkuMjMsMjcuMjIsMjEuMjQsMzQuNzQsMzMuODIsOS4xNy05LjU5LTM3LjIxLTYwLjcyLTM3LjIxLTYwLjcyWiI+PC9wYXRoPjwvZz48Zz48cGF0aCBjbGFzcz0iY2xzLTQiIGQ9Im02OC40LDE0Mi4yNWMtMjYuNjQtNS45Mi00OS4zNi0yMi4xMy02My44My00NC4yNmgwYy0xLjY2LTYuMTUtMy4xLTExLjgyLTQuMzMtMTcuMDItLjY4LTIuNzkuMTMtNS4zMSwyLjQ0LTcuNTUsMTQuNDQtMTQuNDEsMzAuMTEtMjQuMzYsNDcuMDMtMjkuODYsMi40Mi0uNzUsNC42Ny0uMzksNi43NSwxLjA3LDIuMDQsMS41LDMuMSwzLjUyLDMuMTYsNi4wNi4zMiwzMS45MywzLjI2LDYyLjQ1LDguODMsOTEuNTYtLjAxLDAtLjAyLDAtLjA1LS4wMVoiPjwvcGF0aD48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Im02NS4yMywyMjEuOTRjNC4wOS0xNS4xNywxMC45Ni0zMS43NywyMC4zLTQ4LjkzLDMwLjU5LTQ4LjM1LDUxLjE2LTEwMy45Miw2MS43MS0xNjYuNzEuNDItMi4yOSwxLjYyLTQuMDMsMy42Mi01LjIyLDIuMDEtMS4xNyw0LjExLTEuMzksNi4zMi0uNjUsMTguNTUsNi40LDM1Ljc3LDE5LjA5LDUxLjY2LDM4LjA2LDEuODIsMi4yMSwyLjI5LDQuNjgsMS40Miw3LjQxLTI1LjIyLDcxLjc2LTY4LjE3LDEzMC42Mi0xMjguODYsMTc2LjU2LTQuNTYsMy4zNy0xMS4yNyw0LjA1LTE2LjE3LS41MloiPjwvcGF0aD48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Im02OC40NSwxNDIuMjZjMi4wMywxMC4yOSw0LjQ1LDIwLjQyLDcuMzMsMzAuMzguNTYsMS45NSwyLjExLDMuMzEsNC4xMiwzLjYxLDIsLjMsMy44OS0uNTQsNS0yLjI0LjIxLS4zMy40My0uNjYuNjQtLjk5LTkuMzQsMTcuMTUtMTYuMjEsMzMuNzUtMjAuMyw0OC45Mi0uNTEtLjQ2LTEtLjk2LTEuNDUtMS41MS0yOC40Mi0zNS4wNC00Ni43OC03Ni43OC01OS4yMi0xMjIuNDUsMTQuNDgsMjIuMTQsMzcuMjQsMzguMzcsNjMuODksNDQuMjhaIj48L3BhdGg+PC9nPjwvZz48L2c+PC9nPjwvc3ZnPg==" alt="Kie-Tec">
+  <span class="role">Metodologia · Material técnico</span>
+</header>
+
+<!-- ============ CAPA ============ -->
+<div class="cover">
+  <p class="eyebrow">Recursos Humanos · Mapeamento e diagnóstico de processos</p>
+  <h1>Como conduzimos o trabalho — método, artefatos e entregas</h1>
+  <div class="accent"></div>
+  <p class="lead">Este material detalha nossa metodologia de mapeamento e diagnóstico de processos: o que fazemos em cada etapa, como fazemos, o que fica registrado e o que é entregue. Ao final, uma galeria com modelos dos artefatos que o cliente recebe.</p>
+  <p class="stamp"><b>Material técnico Kie-Tec</b>, referente à frente de mapeamento e diagnóstico de processos de Recursos Humanos. <b>Todos os exemplos usam dados fictícios</b>, apenas para ilustrar o formato das entregas. Documento reservado.</p>
+</div>
+
+<!-- ============ 01 · METODOLOGIA ============ -->
+<section>
+  <div class="head">
+    <p class="num">01</p>
+    <div>
+      <h2>Nossa metodologia</h2>
+      <p class="sub">Um método próprio, em que a teoria está a serviço do resultado — não o contrário.</p>
+    </div>
+  </div>
+
+  <div class="indent">
+    <div class="prose">
+      <p>Mapeamos os processos como eles realmente acontecem — não como estão no manual. Cada processo é representado em notação visual padrão (BPMN), clara para quem gere e para quem executa, e sobre esse desenho acrescentamos uma camada de dados: tempo, filas e pontos de retrabalho. O resultado não é um desenho decorativo, e sim um retrato de onde o trabalho flui e onde trava.</p>
+      <p>O que nos diferencia é a <strong>profundidade sob medida</strong>. Não gastamos a mesma energia em todo processo: aprofundamos onde há maior potencial de ganho e desenhamos de forma mais macro onde o processo já é estável. Assim entregamos rigor onde ele gera valor, sem transformar o projeto em burocracia que acaba engavetada.</p>
+    </div>
+
+    <div class="principle">
+      <h3>Profundidade calibrada pelo ganho</h3>
+      <p>Em processos com um gargalo claro, avançamos direto para a melhoria e o desenho do processo futuro, começando a medir o ganho imediatamente. Em processos estáveis, mantemos um mapa macro. Para nós, a entrega não é o papel — é a melhoria do processo e o resultado que ela gera.</p>
+    </div>
+
+    <div class="split">
+      <div>
+        <h3>Um piloto que abre caminho</h3>
+        <p>Esta frente é um piloto, em uma área enxuta. Serve para demonstrar o método em escala controlada e revelar, já durante o trabalho, as frentes seguintes — inclusive a evolução para automação dos processos com maior retorno.</p>
+      </div>
+      <div>
+        <h3>Mão na massa</h3>
+        <p>Trabalhamos próximos de quem executa. Ao longo do projeto registramos as oportunidades que surgem e as priorizamos em conjunto com o cliente, mantendo o foco no resultado. O rigor documental existe para sustentar a decisão, não para substituí-la.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 02 · ESTRUTURA ============ -->
+<section>
+  <div class="head">
+    <p class="num">02</p>
+    <div>
+      <h2>Estrutura do trabalho — três fases, quatro etapas</h2>
+      <p class="sub">As três fases descrevem a lógica do projeto; as quatro etapas são como a execução acontece na prática. São a mesma coisa em dois níveis de leitura.</p>
+    </div>
+  </div>
+
+  <div class="indent">
+    <div class="phases">
+      <div class="phase-row">
+        <div class="phase-k">
+          <span class="pn">Fase 1</span>
+          <h3>Enquadramento de negócio</h3>
+          <span class="maps">Etapa 1</span>
+        </div>
+        <div class="phase-v"><p>Entender e delimitar o problema: alinhar objetivos e riscos com a liderança, levantar os processos existentes e definir, em conjunto, o que observar primeiro e por quê.</p></div>
+      </div>
+      <div class="phase-row">
+        <div class="phase-k">
+          <span class="pn">Fase 2</span>
+          <h3>Descoberta e mapeamento</h3>
+          <span class="maps">Etapas 1 · 2 · 3</span>
+        </div>
+        <div class="phase-v"><p>Ver o trabalho acontecer, desenhar cada processo priorizado em BPMN e medir tempo, capacidade e qualidade. É onde o retrato do estado atual ganha evidência e números.</p></div>
+      </div>
+      <div class="phase-row">
+        <div class="phase-k">
+          <span class="pn">Fase 3</span>
+          <h3>Diagnóstico · assessment</h3>
+          <span class="maps">Etapa 4</span>
+        </div>
+        <div class="phase-v"><p>Investigar a causa de cada problema, priorizar as oportunidades por impacto e esforço e consolidar tudo em um diagnóstico com recomendações — encerrado por uma apresentação executiva dos ganhos.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 03 · CRONOGRAMA ============ -->
+<section>
+  <div class="head">
+    <p class="num">03</p>
+    <div>
+      <h2>Cronograma e priorização</h2>
+      <p class="sub">Nove dias úteis, uma dupla de especialistas em paralelo, em quatro etapas encadeadas — 144 horas no total.</p>
+    </div>
+  </div>
+
+  <div class="indent">
+    <div class="gantt">
+      <div class="g-scale"><span class="cap">Etapa</span><div class="ticks"><span></span><span>1</span><span></span><span>2</span><span></span><span>3</span><span></span><span>4</span><span></span><span>5</span><span></span><span>6</span><span></span><span>7</span><span></span><span>8</span><span></span><span>9</span></div></div>
+      <div class="g-row">
+        <div><span class="g-n">01</span><span class="g-t">Observação e entrevistas</span><span class="g-d">32 horas</span></div>
+        <div class="g-track"><div class="g-bar" style="grid-column:1 / span 4"></div></div>
+      </div>
+      <div class="g-row">
+        <div><span class="g-n">02</span><span class="g-t">Mapeamento dos processos</span><span class="g-d">32 horas</span></div>
+        <div class="g-track"><div class="g-bar" style="grid-column:5 / span 4"></div></div>
+      </div>
+      <div class="g-row">
+        <div><span class="g-n">03</span><span class="g-t">Medição</span><span class="g-d">48 horas</span></div>
+        <div class="g-track"><div class="g-bar" style="grid-column:9 / span 6"></div></div>
+      </div>
+      <div class="g-row">
+        <div><span class="g-n">04</span><span class="g-t">Análise, consolidação e entrega</span><span class="g-d">32 horas · online</span></div>
+        <div class="g-track"><div class="g-bar final" style="grid-column:15 / span 4"></div></div>
+      </div>
+    </div>
+    <p class="fine" style="margin-top:16px;max-width:640px">Escala em dias úteis. Os dois especialistas trabalham em paralelo, 8 horas por pessoa a cada dia — 16 horas de trabalho por dia de projeto. A etapa final é conduzida a distância.</p>
+
+    <div class="principle" style="margin-top:32px">
+      <h3>Como priorizamos onde aprofundar</h3>
+      <p>Nem todo processo recebe o mesmo nível de detalhe. Definimos com a liderança quais aprofundar primeiro, considerando volume e frequência, dor relatada pela equipe, impacto no cliente interno e risco ou exigência de compliance. Onde o ganho é evidente, avançamos direto para a melhoria; onde o processo é estável, mantemos um mapa macro.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 04 · DETALHAMENTO POR ETAPA ============ -->
+<section>
+  <div class="head">
+    <p class="num">04</p>
+    <div>
+      <h2>Detalhamento por etapa</h2>
+      <p class="sub">Para cada etapa: o que fazemos, como fazemos, o que fica registrado e o que é entregue.</p>
+    </div>
+  </div>
+
+  <div class="indent">
+
+    <article class="etapa">
+      <div class="etapa-h"><span class="etapa-n">Etapa 1</span><span class="etapa-ph">Fases 1 e 2 · Observação e entrevistas</span></div>
+      <h3>Observação e entrevistas</h3>
+      <p class="etapa-obj">Entender como a área funciona hoje e ver como o trabalho realmente acontece — não como está descrito em um manual.</p>
+      <div class="grid4">
+        <div class="cell">
+          <p class="lbl">O que fazemos</p>
+          <ul class="list">
+            <li>Reunião de abertura com a liderança para alinhar objetivos, riscos e o que já se sabe dos problemas</li>
+            <li>Levantamento dos processos de cada área e definição conjunta de quais observar primeiro</li>
+            <li>Acompanhamento do time no dia a dia e entrevistas com quem executa</li>
+          </ul>
+        </div>
+        <div class="cell">
+          <p class="lbl">Como fazemos</p>
+          <ul class="list">
+            <li>Observação direta e entrevistas estruturadas por processo</li>
+            <li>Cruzamento com relatórios e planilhas de volume, quando disponíveis</li>
+            <li>Cada registro guarda a fonte que o originou, para rastrear qualquer conclusão</li>
+          </ul>
+        </div>
+        <div class="cell">
+          <p class="lbl">O que fica registrado</p>
+          <p>Lista priorizada de processos e registro consolidado de como cada um funciona, com as evidências que o sustentam. Acompanhamento de etapas e ações no painel do projeto (Notion).</p>
+        </div>
+        <div class="cell">
+          <p class="lbl">O que é entregue</p>
+          <p>Inventário e priorização dos processos do setor.</p>
+          <div style="margin-top:12px"><span class="tag">Planilha</span> <span class="tag">Documento</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="etapa">
+      <div class="etapa-h"><span class="etapa-n">Etapa 2</span><span class="etapa-ph">Fase 2 · Mapeamento</span></div>
+      <h3>Mapeamento dos processos</h3>
+      <p class="etapa-obj">Ter o desenho pronto e validado de cada processo priorizado, comparável entre si.</p>
+      <div class="grid4">
+        <div class="cell">
+          <p class="lbl">O que fazemos</p>
+          <ul class="list">
+            <li>Desenho de cada processo em fluxograma padrão, com etapas, responsáveis e pontos de decisão</li>
+            <li>Validação de cada mapa com quem executa o processo</li>
+            <li>Consolidação de todos os mapas em um repositório único do setor</li>
+          </ul>
+        </div>
+        <div class="cell">
+          <p class="lbl">Como fazemos</p>
+          <ul class="list">
+            <li>Notação BPMN, com raias por responsável e marcação de oportunidades sobre o próprio desenho</li>
+            <li>Profundidade calibrada: detalhe fino nos processos de maior ganho, mapa macro nos estáveis</li>
+            <li>Rodada de validação com a área antes de fechar cada mapa</li>
+          </ul>
+        </div>
+        <div class="cell">
+          <p class="lbl">O que fica registrado</p>
+          <p>Mapa BPMN validado de cada processo priorizado, versionado no repositório do projeto, com os pontos de oportunidade assinalados.</p>
+        </div>
+        <div class="cell">
+          <p class="lbl">O que é entregue</p>
+          <p>Mapa completo e validado de todos os processos priorizados do setor.</p>
+          <div style="margin-top:12px"><span class="tag">BPMN</span> <span class="tag">PDF</span> <span class="tag">Repositório</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="etapa">
+      <div class="etapa-h"><span class="etapa-n">Etapa 3</span><span class="etapa-ph">Fase 2 · Medição</span></div>
+      <h3>Medição</h3>
+      <p class="etapa-obj">Ter números concretos sobre tempo, capacidade e qualidade do trabalho.</p>
+      <div class="grid4">
+        <div class="cell">
+          <p class="lbl">O que fazemos</p>
+          <ul class="list">
+            <li>Medição do tempo de cada atividade e dos pontos de fila, espera e retrabalho</li>
+            <li>Comparação entre o trabalho que chega e a capacidade de cada equipe</li>
+            <li>Avaliação de qualidade e atendimento de prazo — não só horas trabalhadas</li>
+          </ul>
+        </div>
+        <div class="cell">
+          <p class="lbl">Como fazemos</p>
+          <ul class="list">
+            <li>Cronoanálise das atividades e leitura de volume por processo</li>
+            <li>Indicadores de capacidade × carga por equipe e função</li>
+            <li>Dados agregados por processo, sem avaliação individual de desempenho</li>
+          </ul>
+        </div>
+        <div class="cell">
+          <p class="lbl">O que fica registrado</p>
+          <p>Base de medição por processo, com os indicadores de tempo, capacidade e qualidade que alimentam o diagnóstico.</p>
+        </div>
+        <div class="cell">
+          <p class="lbl">O que é entregue</p>
+          <p>Painel com os números de tempo, capacidade e qualidade de cada processo mapeado.</p>
+          <div style="margin-top:12px"><span class="tag">Painel</span> <span class="tag">Planilha</span></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="etapa">
+      <div class="etapa-h"><span class="etapa-n">Etapa 4</span><span class="etapa-ph">Fase 3 · Diagnóstico e entrega</span><span class="tag tag-mod">Etapa online</span></div>
+      <h3>Análise, consolidação e entrega</h3>
+      <p class="etapa-obj">Entender por que cada problema acontece e entregar o panorama de oportunidades com os próximos passos.</p>
+      <div class="grid4">
+        <div class="cell">
+          <p class="lbl">O que fazemos</p>
+          <ul class="list">
+            <li>Investigação da causa de cada problema identificado</li>
+            <li>Priorização das oportunidades por impacto e esforço</li>
+            <li>Apresentação final à liderança, com o modelo replicável em outras áreas</li>
+          </ul>
+        </div>
+        <div class="cell">
+          <p class="lbl">Como fazemos</p>
+          <ul class="list">
+            <li>Análise de causa cruzada com os números da medição, para confirmar cada hipótese com evidência</li>
+            <li>Recomendação de ação por oportunidade: cortar, simplificar, padronizar, digitalizar ou automatizar</li>
+            <li>Indicação dos processos com maior potencial para aprofundamento ou automação</li>
+          </ul>
+        </div>
+        <div class="cell">
+          <p class="lbl">O que fica registrado</p>
+          <p>Diagnóstico de causa por problema, lista de oportunidades priorizada e o modelo replicável — além da apresentação executiva consolidada.</p>
+        </div>
+        <div class="cell">
+          <p class="lbl">O que é entregue</p>
+          <p>Diagnóstico completo com oportunidades priorizadas e próximos passos, mais a <strong>apresentação executiva</strong> dos ganhos.</p>
+          <div style="margin-top:12px"><span class="tag">Documento</span> <span class="tag">Apresentação</span> <span class="tag">Planilha</span></div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<!-- ============ 05 · MODELOS DE ENTREGÁVEL ============ -->
+<section>
+  <div class="head">
+    <p class="num">05</p>
+    <div>
+      <h2>Modelos de entregável</h2>
+      <p class="sub">Exemplos do formato de cada artefato que o cliente recebe. Todos com dados fictícios, apenas para ilustrar a apresentação e o nível de detalhe.</p>
+    </div>
+  </div>
+
+  <div class="indent">
+    <div class="models">
+
+      <!-- Modelo 1 — BPMN -->
+      <div class="model">
+        <div class="model-h"><span class="model-n">Modelo 01</span><h3>Mapa de processo · BPMN</h3></div>
+        <p class="model-desc">Cada processo priorizado é desenhado em notação BPMN, com raias por responsável, formulários que circulam, pontos de decisão e desfechos. Os marcadores assinalam, sobre o próprio desenho, as oportunidades de melhoria que entram na priorização.</p>
+        <div class="mock">
+          <svg viewBox="0 0 560 500" role="img" aria-label="Modelo de mapa de processo em BPMN, com raias RH e Encarregados, formulários, um ponto de decisão e dois desfechos, com dois marcadores de oportunidade de melhoria.">
+            <defs><marker id="ar" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#0096B8"/></marker></defs>
+            <g font-family="system-ui,-apple-system,sans-serif" font-size="11" fill="#4B667D">
+              <rect x="0" y="0" width="30" height="500" fill="#F1F7FA"/>
+              <rect x="30" y="0" width="530" height="30" fill="#F1F7FA"/>
+              <rect x="0.5" y="0.5" width="559" height="499" fill="none" stroke="#CCDBE3"/>
+              <line x1="30" y1="0" x2="30" y2="500" stroke="#CCDBE3"/>
+              <line x1="30" y1="30" x2="560" y2="30" stroke="#CCDBE3"/>
+              <line x1="300" y1="0" x2="300" y2="500" stroke="#CCDBE3"/>
+              <text transform="rotate(-90 15 254)" x="15" y="254" text-anchor="middle" font-size="10.5" fill="#8399AC">Processo exemplo · dados fictícios</text>
+              <text x="165" y="20" text-anchor="middle" font-size="12" font-weight="600" fill="#0074AB">RH</text>
+              <text x="430" y="20" text-anchor="middle" font-size="12" font-weight="600" fill="#0074AB">Encarregados</text>
+              <text x="112" y="48" text-anchor="middle" font-size="9.5" fill="#8399AC">Início</text>
+              <circle cx="112" cy="70" r="13" fill="#FFFFFF" stroke="#0096B8" stroke-width="1.4"/>
+              <line x1="112" y1="83" x2="112" y2="100" stroke="#0096B8" stroke-width="1.2" marker-end="url(#ar)"/>
+              <rect x="42" y="106" width="140" height="52" rx="4" fill="#FFFFFF" stroke="#0096B8" stroke-width="1.2"/>
+              <text x="112" y="128" text-anchor="middle">Encaminhar</text>
+              <text x="112" y="142" text-anchor="middle">o formulário</text>
+              <line x1="182" y1="132" x2="200" y2="132" stroke="#0096B8" stroke-width="1.2" marker-end="url(#ar)"/>
+              <path d="M204,110 H274 L284,120 V154 H204 Z" fill="#FFFFFF" stroke="#0096B8" stroke-width="1.1"/>
+              <path d="M274,110 V120 H284" fill="none" stroke="#0096B8" stroke-width="1.1"/>
+              <text x="242" y="137" text-anchor="middle" font-size="10">Formulário</text>
+              <line x1="284" y1="132" x2="356" y2="132" stroke="#0096B8" stroke-width="1.2" marker-end="url(#ar)"/>
+              <rect x="360" y="106" width="140" height="52" rx="4" fill="#FFFFFF" stroke="#0096B8" stroke-width="1.2"/>
+              <text x="430" y="128" text-anchor="middle">Preencher</text>
+              <text x="430" y="142" text-anchor="middle">e assinar</text>
+              <line x1="430" y1="158" x2="430" y2="202" stroke="#0096B8" stroke-width="1.2" marker-end="url(#ar)"/>
+              <rect x="360" y="206" width="140" height="52" rx="4" fill="#FFFFFF" stroke="#0096B8" stroke-width="1.2"/>
+              <text x="430" y="228" text-anchor="middle">Devolver ao RH</text>
+              <text x="430" y="242" text-anchor="middle">no prazo</text>
+              <line x1="360" y1="232" x2="288" y2="232" stroke="#0096B8" stroke-width="1.2" marker-end="url(#ar)"/>
+              <text x="112" y="182" text-anchor="middle" font-size="10" fill="#8399AC">Aprovado?</text>
+              <path d="M112,196 L144,228 L112,260 L80,228 Z" fill="#FFFFFF" stroke="#0074AB" stroke-width="1.3"/>
+              <line x1="112" y1="260" x2="112" y2="290" stroke="#0096B8" stroke-width="1.2"/>
+              <line x1="90" y1="290" x2="222" y2="290" stroke="#0096B8" stroke-width="1.2"/>
+              <line x1="90" y1="290" x2="90" y2="312" stroke="#0096B8" stroke-width="1.2" marker-end="url(#ar)"/>
+              <line x1="222" y1="290" x2="222" y2="312" stroke="#0096B8" stroke-width="1.2" marker-end="url(#ar)"/>
+              <text x="96" y="306" font-size="10" fill="#8399AC">Sim</text>
+              <text x="228" y="306" font-size="10" fill="#8399AC">Não</text>
+              <rect x="35" y="316" width="110" height="52" rx="4" fill="#FFFFFF" stroke="#0096B8" stroke-width="1.2"/>
+              <text x="90" y="338" text-anchor="middle">Registrar e</text>
+              <text x="90" y="352" text-anchor="middle">efetivar</text>
+              <rect x="167" y="316" width="110" height="52" rx="4" fill="#FFFFFF" stroke="#0096B8" stroke-width="1.2"/>
+              <text x="222" y="338" text-anchor="middle">Retornar e</text>
+              <text x="222" y="352" text-anchor="middle">encerrar</text>
+              <line x1="90" y1="368" x2="90" y2="398" stroke="#0096B8" stroke-width="1.2"/>
+              <line x1="222" y1="368" x2="222" y2="398" stroke="#0096B8" stroke-width="1.2"/>
+              <line x1="90" y1="398" x2="222" y2="398" stroke="#0096B8" stroke-width="1.2"/>
+              <line x1="156" y1="398" x2="156" y2="414" stroke="#0096B8" stroke-width="1.2" marker-end="url(#ar)"/>
+              <circle cx="156" cy="432" r="13" fill="#FFFFFF" stroke="#0074AB" stroke-width="2.4"/>
+              <text x="156" y="464" text-anchor="middle" font-size="9.5" fill="#8399AC">Fim</text>
+              <circle cx="284" cy="110" r="9" fill="#9C6534"/>
+              <text x="284" y="113.5" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF">1</text>
+              <circle cx="500" cy="206" r="9" fill="#9C6534"/>
+              <text x="500" y="209.5" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF">2</text>
+            </g>
+          </svg>
+          <p class="mock-cap"><strong style="color:#9C6534">1</strong> &nbsp;Formulário em papel circulando entre áreas — candidato a digitalização. &nbsp;&nbsp; <strong style="color:#9C6534">2</strong> &nbsp;Devolução com prazo fixo e sem controle — risco de perder o prazo. &nbsp;·&nbsp; Exemplo com dados fictícios.</p>
+        </div>
+      </div>
+
+      <!-- Modelo 2 — Ficha de mapeamento -->
+      <div class="model">
+        <div class="model-h"><span class="model-n">Modelo 02</span><h3>Ficha de mapeamento do processo · documento</h3></div>
+        <p class="model-desc">Cada processo mapeado ganha uma ficha padronizada — entregue em PDF e editável — com identificação, objetivo, entradas e saídas, sistemas envolvidos, indicadores e as etapas resumidas. É o documento que padroniza e permite treinar a equipe.</p>
+        <div class="mock doc">
+          <div class="doc-top">
+            <div class="t">Avaliação de período de experiência</div>
+            <div class="code">FICHA DE PROCESSO<br>PRC-RH-014 · v1.0</div>
+          </div>
+          <dl class="doc-meta">
+            <div><dt>Área</dt><dd>Recursos Humanos</dd></div>
+            <div><dt>Responsável</dt><dd>Coordenação de RH</dd></div>
+            <div><dt>Frequência</dt><dd>Mensal</dd></div>
+            <div><dt>Sistemas</dt><dd>ERP · Planilha</dd></div>
+          </dl>
+          <div class="doc-cols">
+            <div>
+              <p class="lbl">Objetivo</p>
+              <p style="font-size:12.5px;color:#4B667D;margin:0">Avaliar e formalizar a efetivação ou o encerramento do contrato ao fim do período de experiência, dentro do prazo legal.</p>
+              <p class="lbl" style="margin-top:16px">Entradas</p>
+              <ul><li>Admissão registrada</li><li>Formulário de avaliação</li><li>Parecer do encarregado</li></ul>
+            </div>
+            <div>
+              <p class="lbl">Saídas</p>
+              <ul><li>Decisão registrada (efetivar / encerrar)</li><li>Contrato atualizado</li><li>Comunicação ao colaborador</li></ul>
+              <p class="lbl" style="margin-top:16px">Indicadores</p>
+              <ul><li>Prazo de conclusão (dias)</li><li>% dentro do prazo legal</li><li>Retrabalho por formulário incompleto</li></ul>
+            </div>
+          </div>
+          <table class="mtable" style="margin-top:6px">
+            <thead><tr><th style="width:34px">#</th><th>Etapa</th><th>Responsável</th><th style="width:120px">Sistema / artefato</th></tr></thead>
+            <tbody>
+              <tr><td class="n">1</td><td>Encaminhar formulário ao encarregado</td><td>RH</td><td>FOR-014</td></tr>
+              <tr><td class="n">2</td><td>Preencher avaliação e assinar</td><td>Encarregado</td><td>FOR-014</td></tr>
+              <tr><td class="n">3</td><td>Analisar e decidir efetivação</td><td>RH</td><td>ERP</td></tr>
+              <tr><td class="n">4</td><td>Registrar decisão e comunicar</td><td>RH</td><td>ERP</td></tr>
+            </tbody>
+          </table>
+          <p class="mock-cap">Ficha ilustrativa · dados fictícios.</p>
+        </div>
+      </div>
+
+      <!-- Modelo 3 — POP / Procedimento escrito -->
+      <div class="model">
+        <div class="model-h"><span class="model-n">Modelo 03</span><h3>Procedimento escrito · POP</h3></div>
+        <p class="model-desc">Além do mapa visual, cada processo priorizado é descrito por escrito em um procedimento operacional padrão: passo a passo em linguagem clara, com responsáveis, registros associados e critérios. É o documento que padroniza a execução e serve de base para treinar a equipe.</p>
+        <div class="mock doc">
+          <div class="doc-top">
+            <div class="t">Avaliação de período de experiência</div>
+            <div class="code">POP-RH-014 · v1.0<br>Página 1 de 1</div>
+          </div>
+          <dl class="doc-meta">
+            <div><dt>Área</dt><dd>Recursos Humanos</dd></div>
+            <div><dt>Responsável</dt><dd>Coordenação de RH</dd></div>
+            <div><dt>Aprovação</dt><dd>Gerência de RH</dd></div>
+            <div><dt>Vigência</dt><dd>08/2026</dd></div>
+          </dl>
+          <div class="pop-sec">
+            <p class="lbl">Objetivo</p>
+            <p style="font-size:12.5px;color:#4B667D;margin:0">Padronizar a avaliação e a formalização da efetivação ou do encerramento do contrato ao fim do período de experiência, dentro do prazo legal.</p>
+          </div>
+          <div class="pop-sec">
+            <p class="lbl">Procedimento</p>
+            <ol class="pop-steps">
+              <li>O RH encaminha o formulário <strong>FOR-014</strong> ao encarregado, com a data-limite de devolução.</li>
+              <li>O encarregado preenche a avaliação, registra o parecer e assina.</li>
+              <li>O encarregado devolve o formulário ao RH até 1 dia antes do fim do período.</li>
+              <li>O RH analisa o parecer e decide entre efetivar, prorrogar ou encerrar.</li>
+              <li>O RH registra a decisão no ERP e comunica o colaborador e o encarregado.</li>
+            </ol>
+          </div>
+          <div class="doc-cols" style="margin-top:6px">
+            <div>
+              <p class="lbl">Registros associados</p>
+              <ul><li>FOR-014 — Formulário de avaliação</li><li>Termo de efetivação ou encerramento</li></ul>
+            </div>
+            <div>
+              <p class="lbl">Controle de revisão</p>
+              <ul><li>v1.0 — emissão inicial</li></ul>
+            </div>
+          </div>
+          <p class="mock-cap">Procedimento ilustrativo · dados fictícios.</p>
+        </div>
+      </div>
+
+      <!-- Modelo 4 — Catálogo de documentos -->
+      <div class="model">
+        <div class="model-h"><span class="model-n">Modelo 04</span><h3>Catálogo de documentos</h3></div>
+        <p class="model-desc">Todos os formulários, registros e procedimentos identificados são reunidos em um catálogo por processo, com código, tipo e onde são usados. É a visão que mostra que o setor foi mapeado por inteiro — nada fica solto.</p>
+        <div class="mock">
+          <table class="mtable">
+            <thead><tr><th style="width:104px">Código</th><th>Documento</th><th style="width:100px">Tipo</th><th style="width:120px">Processo</th></tr></thead>
+            <tbody>
+              <tr><td class="n">FOR-014</td><td>Avaliação de período de experiência</td><td>Formulário</td><td>Experiência</td></tr>
+              <tr><td class="n">FOR-008</td><td>Requisição de pessoal</td><td>Formulário</td><td>Recrutamento</td></tr>
+              <tr><td class="n">POP-RH-014</td><td>Procedimento de avaliação de experiência</td><td>Procedimento</td><td>Experiência</td></tr>
+              <tr><td class="n">POP-RH-003</td><td>Procedimento de admissão</td><td>Procedimento</td><td>Admissão</td></tr>
+              <tr><td class="n">CHK-RH-01</td><td>Checklist de documentos admissionais</td><td>Checklist</td><td>Admissão</td></tr>
+              <tr><td class="n">MAP-RH-014</td><td>Mapa BPMN — avaliação de experiência</td><td>Mapa</td><td>Experiência</td></tr>
+            </tbody>
+          </table>
+          <p class="mock-cap">Catálogo ilustrativo · dados fictícios.</p>
+        </div>
+      </div>
+
+      <!-- Modelo 5 — Painel de medição -->
+      <div class="model">
+        <div class="model-h"><span class="model-n">Modelo 05</span><h3>Painel de medição · indicadores</h3></div>
+        <p class="model-desc">Os números levantados na medição são consolidados em um painel de indicadores por processo: tempo, capacidade contra carga, retrabalho e prazo. É o que sustenta o diagnóstico com evidência, em vez de percepção.</p>
+        <div class="mock">
+          <div class="kpis">
+            <div class="kpi"><b>6,2<span style="font-size:13px"> d</span></b><span>Tempo médio do processo</span></div>
+            <div class="kpi"><b><i>18%</i></b><span>Retrabalho identificado</span></div>
+            <div class="kpi"><b>7</b><span>Processos priorizados</span></div>
+            <div class="kpi"><b><i>2</i></b><span>Equipes acima da capacidade</span></div>
+          </div>
+          <p class="lbl">Carga que chega × capacidade — por equipe</p>
+          <div class="cap-chart">
+            <div class="row"><span class="nm">R&amp;S</span><div class="bars"><i style="width:80%;background:#9C6534"></i><i style="width:67%;background:#CCDBE3"></i></div></div>
+            <div class="row"><span class="nm">T&amp;D</span><div class="bars"><i style="width:73%;background:#09C0DE"></i><i style="width:67%;background:#CCDBE3"></i></div></div>
+            <div class="row"><span class="nm">Cultura</span><div class="bars"><i style="width:60%;background:#09C0DE"></i><i style="width:67%;background:#CCDBE3"></i></div></div>
+            <div class="row"><span class="nm">C&amp;B</span><div class="bars"><i style="width:87%;background:#9C6534"></i><i style="width:67%;background:#CCDBE3"></i></div></div>
+            <div class="row"><span class="nm">Facilities</span><div class="bars"><i style="width:65%;background:#09C0DE"></i><i style="width:67%;background:#CCDBE3"></i></div></div>
+          </div>
+          <div class="legend"><span><i style="background:#09C0DE"></i>trabalho que chega</span><span><i style="background:#CCDBE3"></i>capacidade</span><span><i style="background:#9C6534"></i>acima da capacidade</span></div>
+          <p class="mock-cap">Painel ilustrativo · dados fictícios.</p>
+        </div>
+      </div>
+
+      <!-- Modelo 6 — Lista de oportunidades -->
+      <div class="model">
+        <div class="model-h"><span class="model-n">Modelo 06</span><h3>Lista de oportunidades priorizada</h3></div>
+        <p class="model-desc">As oportunidades identificadas são posicionadas por impacto e esforço e organizadas em uma lista com a recomendação de ação para cada uma. É o que orienta a decisão sobre o que fazer primeiro.</p>
+        <div class="mock">
+          <div style="display:grid;grid-template-columns:1fr;gap:22px" class="opp-wrap">
+            <table class="mtable">
+              <thead><tr><th style="width:30px">#</th><th>Oportunidade</th><th style="width:78px">Impacto</th><th style="width:78px">Esforço</th><th style="width:118px">Recomendação</th></tr></thead>
+              <tbody>
+                <tr><td class="n">1</td><td>Digitalizar formulário de avaliação</td><td><span class="pill-i pill-alta">Alto</span></td><td><span class="pill-i pill-baixa">Baixo</span></td><td>Fazer agora</td></tr>
+                <tr><td class="n">2</td><td>Controle de prazo com alerta</td><td><span class="pill-i pill-alta">Alto</span></td><td><span class="pill-i pill-media">Médio</span></td><td>Fazer agora</td></tr>
+                <tr><td class="n">3</td><td>Padronizar admissão entre unidades</td><td><span class="pill-i pill-media">Médio</span></td><td><span class="pill-i pill-media">Médio</span></td><td>Projeto</td></tr>
+                <tr><td class="n">4</td><td>Eliminar dupla digitação no ERP</td><td><span class="pill-i pill-media">Médio</span></td><td><span class="pill-i pill-baixa">Baixo</span></td><td>Ajuste simples</td></tr>
+                <tr><td class="n">5</td><td>Integrar planilha de acompanhamento</td><td><span class="pill-i pill-baixa">Baixo</span></td><td><span class="pill-i pill-media">Médio</span></td><td>Avaliar</td></tr>
+              </tbody>
+            </table>
+            <svg viewBox="0 0 200 128" role="img" aria-label="Matriz de priorização por impacto e esforço" style="max-width:320px;margin:0 auto">
+              <g font-family="system-ui,sans-serif" font-size="6">
+                <rect x="26" y="8" width="166" height="98" fill="none" stroke="#E2EAEF"/>
+                <line x1="109" y1="8" x2="109" y2="106" stroke="#E2EAEF"/><line x1="26" y1="57" x2="192" y2="57" stroke="#E2EAEF"/>
+                <text x="33" y="20" fill="#0074AB" font-size="5.4" font-weight="600">FAZER AGORA</text>
+                <text x="150" y="20" fill="#8399AC" font-size="5.4">PROJETO</text>
+                <text x="33" y="101" fill="#8399AC" font-size="5.4">AJUSTE SIMPLES</text>
+                <text x="150" y="101" fill="#8399AC" font-size="5.4">AVALIAR</text>
+                <text x="15" y="57" fill="#8399AC" font-size="5.4" transform="rotate(-90 15 57)" text-anchor="middle">impacto</text>
+                <text x="109" y="122" fill="#8399AC" font-size="5.4" text-anchor="middle">esforço</text>
+                <circle cx="52" cy="26" r="4.6" fill="#0074AB"/><text x="52" y="28" text-anchor="middle" font-size="5" fill="#fff" font-weight="700">1</text>
+                <circle cx="80" cy="34" r="4.6" fill="#0074AB"/><text x="80" y="36" text-anchor="middle" font-size="5" fill="#fff" font-weight="700">2</text>
+                <circle cx="140" cy="40" r="4.2" fill="#09C0DE"/><text x="140" y="42" text-anchor="middle" font-size="5" fill="#fff" font-weight="700">3</text>
+                <circle cx="60" cy="80" r="4.2" fill="#9C6534"/><text x="60" y="82" text-anchor="middle" font-size="5" fill="#fff" font-weight="700">4</text>
+                <circle cx="150" cy="86" r="3.8" fill="#CCDBE3"/><text x="150" y="88" text-anchor="middle" font-size="5" fill="#4B667D" font-weight="700">5</text>
+              </g>
+            </svg>
+          </div>
+          <p class="mock-cap">Lista e matriz ilustrativas · dados fictícios.</p>
+        </div>
+      </div>
+
+      <!-- Modelo 7 — Apresentação executiva -->
+      <div class="model">
+        <div class="model-h"><span class="model-n">Modelo 07</span><h3>Apresentação executiva · entrega imprescindível</h3></div>
+        <p class="model-desc">Ao final do diagnóstico, consolidamos os resultados em uma apresentação curta e direta, com os highlights, as oportunidades e os ganhos. É o documento que a liderança usa para levar o resultado à diretoria — menos denso que a documentação técnica, focado na decisão.</p>
+        <div class="mock" style="border:none;padding:0">
+          <div class="slide">
+            <span class="s-lbl">Diagnóstico de processos · RH · Resumo executivo</span>
+            <h4>O que encontramos e o que muda</h4>
+            <div class="slide-grid">
+              <div class="m"><b>7</b><span>processos mapeados e medidos</span></div>
+              <div class="m"><b>12</b><span>oportunidades priorizadas</span></div>
+              <div class="m"><b>~30%</b><span>de tempo potencial a recuperar</span></div>
+            </div>
+            <div class="slide-cols">
+              <div>
+                <p class="c-lbl">Principais oportunidades</p>
+                <ul>
+                  <li>Digitalizar formulários que ainda circulam em papel</li>
+                  <li>Controle de prazos com alerta automático</li>
+                  <li>Eliminar dupla digitação entre sistemas</li>
+                </ul>
+              </div>
+              <div>
+                <p class="c-lbl">Ganhos esperados</p>
+                <ul>
+                  <li>Menos retrabalho e menor risco de perder prazos legais</li>
+                  <li>Mais capacidade da equipe sem aumentar o time</li>
+                  <li>Base pronta para evoluir para automação</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <p class="mock-cap" style="padding:0 4px">Apresentação executiva ilustrativa · dados fictícios.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 06 · COMO TRABALHAMOS JUNTOS ============ -->
+<section>
+  <div class="head">
+    <p class="num">06</p>
+    <div>
+      <h2>Como trabalhamos juntos</h2>
+      <p class="sub">O que precisamos do cliente, o tratamento das informações e o cuidado com as pessoas.</p>
+    </div>
+  </div>
+
+  <div class="indent">
+    <div class="prose">
+      <p>O resultado depende de proximidade com as áreas. Precisamos de acesso às pessoas que executam os processos e validamos cada mapa com elas — são a fonte mais confiável de como o trabalho realmente ocorre. A liderança participa das definições de prioridade e da validação dos mapas.</p>
+    </div>
+
+    <div class="split">
+      <div>
+        <h3>Tratamento de informações</h3>
+        <p>Trabalhamos com processos, fluxos e volumes, preservando os dados pessoais dos colaboradores e as diretrizes da LGPD. Os exemplos usados nos mapas são anonimizados.</p>
+        <p>Não produzimos ranking ou avaliação individual de desempenho — os resultados são sempre entregues de forma agregada, por processo, função ou equipe.</p>
+      </div>
+      <div>
+        <h3>Gestão da mudança</h3>
+        <p>Comunicamos com clareza o que será observado, por quê e como os resultados serão usados, com um canal aberto para dúvidas ao longo do trabalho.</p>
+        <p>O objetivo é reduzir qualquer percepção de vigilância e garantir que as equipes participem com confiança.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 07 · GESTÃO E ACOMPANHAMENTO ============ -->
+<section>
+  <div class="head">
+    <p class="num">07</p>
+    <div>
+      <h2>Gestão e acompanhamento do projeto</h2>
+      <p class="sub">O cliente acompanha o andamento em tempo real — não recebe só o resultado no fim.</p>
+    </div>
+  </div>
+
+  <div class="indent">
+    <div class="prose">
+      <p>Conduzimos o projeto em um painel de acompanhamento (Notion), organizado por etapas, ações e entregáveis. Cada frente tem responsável e status atualizado, e o cliente enxerga a qualquer momento o que já foi concluído, o que está em andamento e o que vem a seguir. O controle é por <strong>etapa e entrega</strong> — objetivo e verificável.</p>
+    </div>
+
+    <div class="board" style="margin-top:26px">
+      <div class="col">
+        <div class="col-h"><span class="dot dot-done"></span><span>Concluído</span></div>
+        <div class="card-n"><b>Reunião de abertura</b>Alinhamento e priorização<small>Etapa 1</small></div>
+        <div class="card-n"><b>Inventário de processos</b>7 processos priorizados<small>Entregue</small></div>
+      </div>
+      <div class="col">
+        <div class="col-h"><span class="dot dot-doing"></span><span>Em andamento</span></div>
+        <div class="card-n"><b>Mapeamento BPMN</b>4 de 7 mapas validados<small>Etapa 2</small></div>
+        <div class="card-n"><b>Cronoanálise</b>Coleta em campo<small>Etapa 3</small></div>
+      </div>
+      <div class="col">
+        <div class="col-h"><span class="dot dot-next"></span><span>A seguir</span></div>
+        <div class="card-n"><b>Painel de medição</b>Consolidação dos números<small>Etapa 3</small></div>
+        <div class="card-n"><b>Análise de causa</b>Por processo priorizado<small>Etapa 4</small></div>
+      </div>
+      <div class="col">
+        <div class="col-h"><span class="dot dot-wait"></span><span>Entregas</span></div>
+        <div class="card-n"><b>Diagnóstico final</b>Oportunidades priorizadas<small>Etapa 4</small></div>
+        <div class="card-n"><b>Apresentação executiva</b>Highlights e ganhos<small>Etapa 4</small></div>
+      </div>
+    </div>
+    <p class="fine" style="margin-top:16px">Quadro ilustrativo do painel de acompanhamento · dados fictícios.</p>
+
+    <div class="split">
+      <div>
+        <h3>O que entra no acompanhamento</h3>
+        <ul class="list">
+          <li>Etapas e ações do projeto, com responsável e status</li>
+          <li>Entregáveis por etapa, com data de conclusão</li>
+          <li>Registro das decisões e das oportunidades identificadas ao longo do caminho</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Disponível sob demanda</h3>
+        <ul class="list">
+          <li>Transcrição das conversas e reuniões</li>
+          <li>Atas e lista de participação</li>
+          <li>Pacote consolidado de documentos para o arquivo de projeto do cliente</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 08 · ESCOPO DESTA FASE ============ -->
+<section>
+  <div class="head">
+    <p class="num">08</p>
+    <div>
+      <h2>Escopo desta fase e próximos passos</h2>
+      <p class="sub">O que está incluído nesta fase, o que fica para depois e como o trabalho evolui.</p>
+    </div>
+  </div>
+
+  <div class="indent">
+    <div class="split">
+      <div>
+        <h3>Incluído nesta fase</h3>
+        <ul class="list">
+          <li>Mapeamento e diagnóstico dos processos priorizados de RH</li>
+          <li>Todos os artefatos e entregas descritos neste material</li>
+          <li>Apresentação executiva dos ganhos à liderança</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Não incluído nesta fase</h3>
+        <ul class="list">
+          <li>Implementação das melhorias nos processos</li>
+          <li>Automação dos processos priorizados</li>
+          <li>Aprofundamento dos processos indicados para etapa futura</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="principle" style="margin-top:32px">
+      <h3>Como o trabalho evolui</h3>
+      <p>Esta fase é um piloto, em uma área enxuta. Ao final, os processos com maior potencial ficam indicados para as etapas seguintes — implementação das melhorias e, onde faz sentido, automação —, contratadas separadamente conforme as prioridades validadas.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 09 · O QUE O CLIENTE RECEBE ============ -->
+<section>
+  <div class="head">
+    <p class="num">09</p>
+    <div><h2>O que o cliente recebe</h2></div>
+  </div>
+
+  <div class="indent">
+    <div class="recebe">
+      <div><span class="i">01</span><p><strong>Inventário e priorização</strong> dos processos, com o <strong>catálogo de documentos</strong> do setor.</p></div>
+      <div><span class="i">02</span><p><strong>Mapas BPMN e procedimentos escritos (POP)</strong> validados do estado atual — base para padronizar, treinar e reduzir a dependência de pessoas.</p></div>
+      <div><span class="i">03</span><p><strong>Painel de medição</strong> com tempo, capacidade e qualidade por processo.</p></div>
+      <div><span class="i">04</span><p><strong>Diagnóstico com oportunidades priorizadas</strong> por impacto e esforço, com a recomendação de ação de cada uma.</p></div>
+      <div><span class="i">05</span><p><strong>Apresentação executiva</strong> dos ganhos, para levar o resultado à diretoria.</p></div>
+      <div><span class="i">06</span><p><strong>Indicação dos processos com maior potencial</strong>, recomendados para aprofundamento ou automação em etapa futura.</p></div>
+      <div><span class="i">—</span><p>Sob demanda: transcrições, atas, lista de participação e pacote consolidado de documentos. <span class="opt"><span class="tag tag-opt">Opcional</span></span></p></div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<!-- ============ ENCERRAMENTO ============ -->
+<div class="closing">
+  <div class="inner">
+    <h2>Método onde ele gera valor. Resultado sempre.</h2>
+    <p>Entregamos o rigor de documentação que sustenta a decisão — mapas, medição, diagnóstico e uma apresentação executiva — sem transformar o projeto em burocracia. Como piloto, esta frente mostra o método em escala controlada e abre caminho para as próximas, inclusive a automação dos processos de maior retorno.</p>
+    <div class="sign">
+      <div>
+        <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGlkPSJDYW1hZGFfMiIgZGF0YS1uYW1lPSJDYW1hZGEgMiIgdmlld0JveD0iMCAwIDY3My40NiAyMjYuMTkiPjxkZWZzPjxzdHlsZT4gICAgICAuY2xzLTEgeyAgICAgICAgZmlsbDogIzU4NTk1YjsgICAgICB9ICAgICAgLmNscy0xLCAuY2xzLTIsIC5jbHMtMywgLmNscy00LCAuY2xzLTUgeyAgICAgICAgZmlsbC1ydWxlOiBldmVub2RkOyAgICAgIH0gICAgICAuY2xzLTIgeyAgICAgICAgZmlsbDogIzA5YzBkZTsgICAgICB9ICAgICAgLmNscy0zIHsgICAgICAgIGZpbGw6ICMwMDk2Yjg7ICAgICAgfSAgICAgIC5jbHMtNCB7ICAgICAgICBmaWxsOiAjMDA3NGFiOyAgICAgIH0gICAgICAuY2xzLTUgeyAgICAgICAgZmlsbDogI2FjZDllMzsgICAgICB9ICAgIDwvc3R5bGU+PC9kZWZzPjxnIGlkPSJDYW1hZGFfMS0yIiBkYXRhLW5hbWU9IkNhbWFkYSAxIj48Zz48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im00MTguMjgsMTI0LjY2Yy00LjM3LTQuNC05LjY5LTYuNjItMTYuMDUtNi42MnMtMTEuNjgsMi4yNS0xNi4xNCw2LjczYy00LjQ0LDQuNDktNi43MSw5LjgyLTYuNzEsMTYuMTQsMCwxLjk2LjIyLDMuOS42OSw1Ljc5bDM4LjIxLTIyLjA0aDBabS0zMi4xMSwzMi41M2M0LjM1LDQuNDMsOS42OSw2LjYyLDE2LjA2LDYuNjIsNi45NSwwLDEyLjc1LTIuNDIsMTcuMTgtNy44MS44OC0xLjI3LDEuODMtMi41MiwyLjc2LTMuNzYsMS4yMS0xLjU4LDIuODUtMi45Nyw0Ljk0LTIuOTcsMS42NywwLDMuMTMuNiw0LjM3LDEuNzEsMS4yNywxLjE0LDEuOTQsMi42LDEuOTQsNC4zMSwwLDEuMDgtLjMxLDIuMS0uNzYsMy4wN2wtLjAyLjAzLS4wMi4wM2MtMi45NCw1LjUxLTcuMzQsOS43LTEyLjc3LDEyLjc1LTUuNDYsMy4wNi0xMS4zNiw0Ljc3LTE3LjYyLDQuNzctOS42NywwLTE3LjkzLTMuNDQtMjQuNzctMTAuMjctNi44NS02LjgyLTEwLjMtMTUuMTMtMTAuMy0yNC43OXMzLjQ3LTE3LjkxLDEwLjMtMjQuNzJjNi44My02LjgzLDE1LjEtMTAuMjcsMjQuNzctMTAuMjcsMy42OSwwLDcuMzQuNzMsMTAuODMsMS45Miw0LjU0LDEuNTYsOC42OCw0LjAzLDEyLjQ0LDYuOTksMy41OCwyLjc5LDcuODcsNi45OCw3Ljg3LDExLjg4LDAsMi4yNC0xLjA5LDMuOTQtMy4wMyw1LjAxbC00NC4xNywyNS41aDBabS0yOS4zMi00NS4yNXY1Ny45MWMwLDMuOTItMi4xOCw2LjEtNi4xLDYuMXMtNi4xMi0yLjE3LTYuMTItNi4xdi01Ny45MWMwLTMuOTMsMi4yMi02LjA1LDYuMTItNi4wNXM2LjEsMi4xNCw2LjEsNi4wNWgwWm0tLjEtMjAuNDJjLTEuNjcsMS42MS0zLjY4LDIuNDQtNiwyLjQ0cy00LjM1LS44Mi02LjAzLTIuNDRjLTEuNjgtMS42NS0yLjU0LTMuNjQtMi41NC02cy44Ny00LjM4LDIuNTMtNi4wNGMxLjY3LTEuNjcsMy42OC0yLjUzLDYuMDQtMi41M3M0LjM2Ljg4LDYuMDEsMi41M2MxLjY2LDEuNjYsMi41MywzLjY5LDIuNTMsNi4wNHMtLjg2LDQuMzUtMi41NSw2aDBabS03My4yMyw4My40YzIuMjEtMS4zNywzLjMtMy4yNCwzLjMtNS44NHYtMjAuMDVsOC41Ny04LjE2LDIzLjYzLDMyLjI4Yy40NC41OC45NywxLjA3LDEuNjIsMS40bC4wNy4wNC4wNy4wNGMyLjY2LDEuNjYsNS4wOCwxLjc1LDcuNi0uMjMuNy0uNTMsMS4zMy0xLjE1LDEuODYtMS44NSwxLjczLTIuNjIsMS41NS01LjAyLS4zLTcuNTRsLTI0LjY2LTMzLjUzLDIwLjYzLTE5LjNjLjYtLjgsMS4xNC0xLjY0LDEuNjYtMi41LDEuMTYtMi43NC43Mi01LjA2LTEuMy03LjI1LS41OS0uNTktMS4yNy0xLjE1LTIuMDItMS41NC0yLjg3LTEuMTYtNS4zNi0uODQtNy42NSwxLjI4bC0yOS43OCwyOC4zOHYtNTAuNTJjMC0xLjkxLS42OS0zLjQ4LTIuMDQtNC44My0xLjM1LTEuMzUtMi45Mi0yLjA0LTQuODMtMi4wNC0uOTQsMC0xLjgxLjIzLTIuNjIuNzFsLS4wNy4wNS0uMDguMDRjLTIuNjIsMS4yMi0zLjc4LDMuMi0zLjc4LDYuMDh2ODkuMDZjMCwyLjYxLDEuMSw0LjQ5LDMuMzIsNS44NiwyLjMsMS40MSw0LjUsMS4zLDYuODItLjAxWiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTQ2Ni4wNywxMjUuMDdjNy4xOCwwLDEzLjAxLDUuODIsMTMuMDEsMTMuMDFzLTUuODIsMTMuMDEtMTMuMDEsMTMuMDEtMTMuMDEtNS44Mi0xMy4wMS0xMy4wMSw1LjgyLTEzLjAxLDEzLjAxLTEzLjAxWiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTY2OC41LDE1OS41MWMtMS4wNCwwLTEuNjkuMTMtMi44Ny43OC00LjU2LDIuMzUtOC4yMSw0LjE3LTE0Ljk5LDQuMTctMTUuMTIsMC0yMy45OC05LjUxLTIzLjk4LTIzLjQ2czguODYtMjMuNDYsMjMuOTgtMjMuNDZjNi43OCwwLDEwLjQzLDEuODIsMTQuOTksNC4xNywxLjE3LjY1LDEuODIuNzgsMi44Ny43OCwyLjc0LDAsNC45NS0yLjc0LDQuOTUtNS4yMSwwLTEuOTYtMS4wNC0zLjUyLTIuNjEtNC41Ni00LjQzLTIuODctMTAuOTUtNi4yNi0yMS4yNC02LjI2LTE4LjUxLDAtMzQuOCwxMi43Ny0zNC44LDM0LjU0czE2LjI5LDM0LjU0LDM0LjgsMzQuNTRjMTAuMywwLDE2LjgxLTMuMzksMjEuMjQtNi4yNiwxLjU2LTEuMDQsMi42MS0yLjYxLDIuNjEtNC41NiwwLTIuNDgtMi4yMi01LjIxLTQuOTUtNS4yMWgwWiI+PC9wYXRoPjxwYXRoIGNsYXNzPSJjbHMtMSIgZD0ibTUyNy4yMiwxNjMuOTRjLTIuMjIsMC0zLjY1LDEuMTctNy44MiwxLjE3LTMuMjYsMC04LjQ3LS4xMy04LjQ3LTcuODJ2LTM5LjM2aDE0Ljg2czAsMCwwLDBoLjEzYzIuNjUtLjEzLDQuNjktMi4xNyw0LjgyLTQuODJ2LS4xM3MwLDAsMCwwdi0uMTNzMCwwLDAsMHYtLjEzczAsMCwwLDB2LS4xM2MtLjEzLTIuNjUtMi4xNy00LjY5LTQuODItNC44MmgtLjEzczAsMCwwLDBoLS4xM3MwLDAsMCwwaC0xNC43M3YtMTAuNDNjMC0uMi0uMDItLjQtLjA2LS41OS0uNC0yLjc5LTIuODItNC45NS01LjcyLTQuOTVoMGMtMy4xOCwwLTUuNzgsMi42LTUuNzgsNS43OHY0LjRjMCwuMjEuMDEuNDEuMDMuNjFsLS4wMy4wM3Y1LjE0aC05LjI5Yy0yLjgsMC01LjA4LDIuMjktNS4wOCw1LjA4aDBjMCwyLjQ2LDEuNzcsNC41Miw0LjEsNC45OS4yMy4wNi40Ny4xLjczLjFoOS4yNXY0MC40YzAsMTYuMTYsMTIuOSwxNy4yLDE5LjAzLDE3LjIsNC4xNywwLDcuNjktLjkxLDEwLjgyLTIuMzUsMS44Mi0uOTEsMy0yLjM1LDMtNC41NiwwLTIuNzQtMi4zNS00LjY5LTQuNjktNC42OVoiPjwvcGF0aD48cGF0aCBjbGFzcz0iY2xzLTEiIGQ9Im01NTcuODcsMTU3LjI3YzQuMzUsNC40Myw5LjY5LDYuNjIsMTYuMDYsNi42Miw2Ljk1LDAsMTIuNzUtMi40MiwxNy4xOC03LjgxLjg4LTEuMjcsMS44Mi0yLjUyLDIuNzYtMy43NiwxLjIxLTEuNTgsMi44NS0yLjk3LDQuOTQtMi45NywxLjY3LDAsMy4xMy42LDQuMzcsMS43MSwxLjI3LDEuMTQsMS45NCwyLjYsMS45NCw0LjMxLDAsMS4wOC0uMzEsMi4xLS43NiwzLjA3bC0uMDIuMDMtLjAyLjAzYy0yLjk0LDUuNTEtNy4zNCw5LjctMTIuNzcsMTIuNzUtNS40NiwzLjA2LTExLjM2LDQuNzctMTcuNjIsNC43Ny05LjY3LDAtMTcuOTMtMy40NC0yNC43Ny0xMC4yNy02Ljg1LTYuODItMTAuMy0xNS4xMy0xMC4zLTI0Ljc5czMuNDctMTcuOTEsMTAuMy0yNC43MmM2Ljg0LTYuODQsMTUuMS0xMC4yNywyNC43Ny0xMC4yNywzLjY5LDAsNy4zNC43MywxMC44MywxLjkyLDQuNTQsMS41Niw4LjY4LDQuMDMsMTIuNDQsNi45OSwzLjU4LDIuNzksNy44Nyw2Ljk4LDcuODcsMTEuODgsMCwyLjI0LTEuMDksMy45NC0zLjAzLDUuMDFsLTQ0LjE3LDI1LjVoMFptMzIuMTEtMzIuNTNjLTQuMzctNC40LTkuNjktNi42Mi0xNi4wNS02LjYycy0xMS42OCwyLjI1LTE2LjE0LDYuNzNjLTQuNDQsNC40OS02LjcxLDkuODItNi43MSwxNi4xNCwwLDEuOTYuMjIsMy45LjY5LDUuNzlsMzguMjEtMjIuMDRaIj48L3BhdGg+PGc+PGc+PHBhdGggY2xhc3M9ImNscy0yIiBkPSJtMTU2LjE5LDE5MC43OWMxNS4zLDkuMjMsMjcuMjIsMjEuMjQsMzQuNzQsMzMuODItMS41NiwxLjQ0LTMuOTQsMS45LTcuMTMsMS4zNy0xOC41My0yLjc2LTM4LjUxLTEyLjE4LTU5Ljk0LTI4LjI3bDEzLjk5LTE1Ljg0YzYuMTYsMi4zMSwxMi4zMiw1LjI4LDE4LjM1LDguOTJaIj48L3BhdGg+PHBhdGggY2xhc3M9ImNscy01IiBkPSJtMTUzLjcxLDE2My44OGwtMTUuODgsMTcuOTljNi4xNiwyLjMxLDEyLjMyLDUuMjgsMTguMzUsOC45MiwxNS4zLDkuMjMsMjcuMjIsMjEuMjQsMzQuNzQsMzMuODIsOS4xNy05LjU5LTM3LjIxLTYwLjcyLTM3LjIxLTYwLjcyWiI+PC9wYXRoPjwvZz48Zz48cGF0aCBjbGFzcz0iY2xzLTQiIGQ9Im02OC40LDE0Mi4yNWMtMjYuNjQtNS45Mi00OS4zNi0yMi4xMy02My44My00NC4yNmgwYy0xLjY2LTYuMTUtMy4xLTExLjgyLTQuMzMtMTcuMDItLjY4LTIuNzkuMTMtNS4zMSwyLjQ0LTcuNTUsMTQuNDQtMTQuNDEsMzAuMTEtMjQuMzYsNDcuMDMtMjkuODYsMi40Mi0uNzUsNC42Ny0uMzksNi43NSwxLjA3LDIuMDQsMS41LDMuMSwzLjUyLDMuMTYsNi4wNi4zMiwzMS45MywzLjI2LDYyLjQ1LDguODMsOTEuNTYtLjAxLDAtLjAyLDAtLjA1LS4wMVoiPjwvcGF0aD48cGF0aCBjbGFzcz0iY2xzLTIiIGQ9Im02NS4yMywyMjEuOTRjNC4wOS0xNS4xNywxMC45Ni0zMS43NywyMC4zLTQ4LjkzLDMwLjU5LTQ4LjM1LDUxLjE2LTEwMy45Miw2MS43MS0xNjYuNzEuNDItMi4yOSwxLjYyLTQuMDMsMy42Mi01LjIyLDIuMDEtMS4xNyw0LjExLTEuMzksNi4zMi0uNjUsMTguNTUsNi40LDM1Ljc3LDE5LjA5LDUxLjY2LDM4LjA2LDEuODIsMi4yMSwyLjI5LDQuNjgsMS40Miw3LjQxLTI1LjIyLDcxLjc2LTY4LjE3LDEzMC42Mi0xMjguODYsMTc2LjU2LTQuNTYsMy4zNy0xMS4yNyw0LjA1LTE2LjE3LS41MloiPjwvcGF0aD48cGF0aCBjbGFzcz0iY2xzLTMiIGQ9Im02OC40NSwxNDIuMjZjMi4wMywxMC4yOSw0LjQ1LDIwLjQyLDcuMzMsMzAuMzguNTYsMS45NSwyLjExLDMuMzEsNC4xMiwzLjYxLDIsLjMsMy44OS0uNTQsNS0yLjI0LjIxLS4zMy40My0uNjYuNjQtLjk5LTkuMzQsMTcuMTUtMTYuMjEsMzMuNzUtMjAuMyw0OC45Mi0uNTEtLjQ2LTEtLjk2LTEuNDUtMS41MS0yOC40Mi0zNS4wNC00Ni43OC03Ni43OC01OS4yMi0xMjIuNDUsMTQuNDgsMjIuMTQsMzcuMjQsMzguMzcsNjMuODksNDQuMjhaIj48L3BhdGg+PC9nPjwvZz48L2c+PC9nPjwvc3ZnPg==" alt="Kie-Tec">
+        <p>Mapeamento e diagnóstico de processos<br>Material de metodologia · agosto de 2026</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
