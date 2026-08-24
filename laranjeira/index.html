@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terraplenagem Laranjeira · Proposta Lean Company</title>
+  <meta name="description" content="Proposta de consultoria de gestão e BPO financeiro da Lean Company para a Terraplenagem Laranjeira, Londrina — PR." />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="theme-color" content="#174A2A" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#capa">Ir para o conteúdo</a>
+
+  <!-- TELA DE ACESSO -->
+  <div id="access" class="access" role="dialog" aria-modal="true" aria-labelledby="access-title">
+    <div class="access__card">
+      <div class="access__logos" aria-label="Terraplenagem Laranjeira e Lean Company">
+        <img src="assets/cliente-simbolo.webp" alt="Terraplenagem Laranjeira" class="access__client-logo" />
+        <span class="access__plus" aria-hidden="true">×</span>
+        <img src="assets/lean-logo-white.png" alt="Lean Company" class="access__lean-logo" />
+      </div>
+      <span class="access__tag">Conteúdo reservado</span>
+      <h1 id="access-title" class="access__title">Proposta para a Terraplenagem Laranjeira</h1>
+      <p class="access__desc">Material preparado pela Lean Company com base na conversa com Renan e Reverson.</p>
+      <form id="access-form" class="access__form" autocomplete="off">
+        <label class="access__label" for="password">Senha de acesso</label>
+        <div class="access__field">
+          <input type="password" id="password" name="password" placeholder="••••••••" required aria-describedby="access-error" />
+          <button type="button" id="toggle-pass" class="access__toggle" aria-label="Mostrar senha">Mostrar</button>
+        </div>
+        <p id="access-error" class="access__error" role="alert" aria-live="polite" hidden>Senha incorreta. Tente novamente.</p>
+        <button type="submit" class="access__btn">Acessar proposta</button>
+      </form>
+      <p class="access__footer">Terraplenagem Laranjeira · Londrina — PR &nbsp;·&nbsp; Lean Company</p>
+    </div>
+  </div>
+
+  <!-- CONTEÚDO -->
+  <div id="site" class="site" hidden>
+    <div class="progress" aria-hidden="true"><span id="progress-bar" class="progress__bar"></span></div>
+
+    <header class="header">
+      <div class="header__inner">
+        <a href="#capa" class="header__brand" aria-label="Voltar ao início">
+          <img src="assets/cliente-simbolo.webp" alt="" class="header__client-mark" aria-hidden="true" />
+          <span class="header__client-name">Terraplenagem Laranjeira</span>
+        </a>
+        <nav class="nav" id="nav" aria-label="Seções da proposta">
+          <a href="#capa" class="nav__link">Início</a>
+          <a href="#cenario" class="nav__link">Hoje</a>
+          <a href="#consultoria" class="nav__link">Consultoria</a>
+          <a href="#servicos" class="nav__link">Serviços</a>
+          <a href="#propostas" class="nav__link">Valores</a>
+          <a href="#inicio" class="nav__link">Como começa</a>
+        </nav>
+        <div class="header__right">
+          <img src="assets/lean-wordmark-blue.png" alt="Lean Company" class="header__lean" />
+          <button id="logout" class="header__logout" type="button">Encerrar</button>
+          <button id="menu-toggle" class="header__burger" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- CAPA -->
+      <section id="capa" class="cover section-anchor">
+        <div class="cover__inner">
+          <div class="cover__content">
+            <span class="cover__label">Proposta de gestão · Londrina — PR</span>
+            <h2 class="cover__title">Mais controle para saber o que entra, o que sai e o que cada máquina realmente deixa.</h2>
+            <p class="cover__text">O primeiro passo é organizar as informações da empresa. Depois, transformar essa base em números confiáveis para acompanhar o caixa, o resultado e cada máquina da operação.</p>
+            <div class="cover__actions">
+              <a href="#cenario" class="btn btn--primary">Ver o que propomos</a>
+            </div>
+            <div class="cover__sign">
+              <span>Preparado por</span>
+              <img src="assets/lean-wordmark-blue.png" alt="Lean Company" />
+            </div>
+          </div>
+          <figure class="cover__figure">
+            <div class="cover__image-wrap">
+              <img src="assets/cliente-hero.webp" alt="Peça institucional da Terraplenagem Laranjeira com máquinas da operação" class="cover__image" />
+            </div>
+            <figcaption>Terraplenagem · locação de máquinas · operação no Paraná</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="headline" aria-label="Resumo da proposta">
+        <p class="headline__text">Saber o que entrou. Saber o que saiu. <strong>Saber onde estão as máquinas e quanto cada uma deixou.</strong></p>
+      </section>
+
+      <!-- CENÁRIO -->
+      <section id="cenario" class="section section-anchor">
+        <div class="section__head">
+          <span class="eyebrow">O que entendemos hoje</span>
+          <h3 class="section__title">As informações existem, mas ainda estão espalhadas.</h3>
+          <p class="section__lead">O desafio inicial não é criar análise sofisticada. É construir uma base simples, confiável e que funcione no dia a dia.</p>
+        </div>
+
+        <div class="fact-grid">
+          <article class="fact-card">
+            <span class="fact-card__num">01</span>
+            <h4>Financeiro</h4>
+            <p>Receitas, despesas e documentos estão distribuídos entre planilhas, papéis e informações que ficam com as pessoas.</p>
+          </article>
+          <article class="fact-card">
+            <span class="fact-card__num">02</span>
+            <h4>Contas e CNPJs</h4>
+            <p>Hoje existem cinco CNPJs e movimentações pessoais e empresariais que precisam ser entendidas e organizadas.</p>
+          </article>
+          <article class="fact-card">
+            <span class="fact-card__num">03</span>
+            <h4>Máquinas</h4>
+            <p>A operação tem cerca de 15 máquinas em diferentes locais, ainda sem uma visão central de localização, receita, custos e resultado.</p>
+          </article>
+          <article class="fact-card">
+            <span class="fact-card__num">04</span>
+            <h4>Fechamentos</h4>
+            <p>Para fechar uma obra ou entender o resultado de uma máquina, muitas informações precisam ser buscadas novamente.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ORDEM -->
+      <section class="section section--alt">
+        <div class="section__head section__head--wide">
+          <span class="eyebrow">A ordem importa</span>
+          <h3 class="section__title">Antes de analisar melhor, precisamos organizar melhor.</h3>
+        </div>
+        <div class="path" aria-label="Sequência de organização da gestão">
+          <div class="path__step"><span>1</span><strong>Organizar</strong><small>contas, documentos e responsabilidades</small></div>
+          <div class="path__arrow" aria-hidden="true">→</div>
+          <div class="path__step"><span>2</span><strong>Implantar</strong><small>rotina e sistema simples</small></div>
+          <div class="path__arrow" aria-hidden="true">→</div>
+          <div class="path__step"><span>3</span><strong>Conferir</strong><small>se os números fecham</small></div>
+          <div class="path__arrow" aria-hidden="true">→</div>
+          <div class="path__step"><span>4</span><strong>Analisar</strong><small>caixa e resultado da empresa</small></div>
+          <div class="path__arrow" aria-hidden="true">→</div>
+          <div class="path__step path__step--highlight"><span>5</span><strong>Aprofundar</strong><small>resultado por máquina</small></div>
+        </div>
+      </section>
+
+      <!-- CONSULTORIA -->
+      <section id="consultoria" class="section section-anchor">
+        <div class="section__head">
+          <span class="eyebrow">Consultoria</span>
+          <h3 class="section__title">O que a Lean vai colocar de pé com a Laranjeira</h3>
+          <p class="section__lead">Quatro frentes, em uma sequência simples: primeiro a base; depois a análise.</p>
+        </div>
+
+        <div class="work-grid">
+          <article class="work-card">
+            <span class="work-card__tag">Frente 01</span>
+            <h4>Colocar o financeiro em ordem</h4>
+            <p>Organizar a movimentação financeira e deixar claro como a rotina deve funcionar.</p>
+            <ul>
+              <li>Separar movimentações pessoais e empresariais</li>
+              <li>Entender o uso atual dos cinco CNPJs e revisar a estrutura junto à contabilidade</li>
+              <li>Definir rotina de contas a pagar, receber e conciliação</li>
+            </ul>
+          </article>
+          <article class="work-card">
+            <span class="work-card__tag">Frente 02</span>
+            <h4>Implantar uma forma simples de trabalhar</h4>
+            <p>Escolher uma ferramenta adequada e organizar quem faz cada parte do processo.</p>
+            <ul>
+              <li>Escolher e implantar um sistema financeiro simples</li>
+              <li>Organizar cadastros e classificações</li>
+              <li>Definir quem lança, quem confere e quem acompanha</li>
+            </ul>
+          </article>
+          <article class="work-card">
+            <span class="work-card__tag">Frente 03</span>
+            <h4>Transformar lançamentos em números úteis</h4>
+            <p>Com a base funcionando, construir uma leitura clara da empresa.</p>
+            <ul>
+              <li>DRE e fluxo de caixa</li>
+              <li>Contas a pagar e receber</li>
+              <li>Conferência e melhoria contínua da qualidade das informações</li>
+            </ul>
+          </article>
+          <article class="work-card work-card--highlight">
+            <span class="work-card__tag">Frente 04</span>
+            <h4>Entender quanto cada máquina deixa</h4>
+            <p>Depois da base financeira confiável, abrir o resultado por máquina e acompanhar melhor a operação.</p>
+            <ul>
+              <li>Localização e obra atual da máquina</li>
+              <li>Receita, diesel, manutenção, mão de obra e demais custos identificáveis</li>
+              <li>Resultado individual por máquina</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <!-- PERGUNTAS -->
+      <section class="section section--dark">
+        <div class="questions">
+          <div class="questions__intro">
+            <span class="eyebrow eyebrow--orange">Onde queremos chegar</span>
+            <h3 class="section__title section__title--light">Perguntas simples precisam ter respostas simples.</h3>
+            <p>Hoje, responder algumas perguntas exige procurar notas, planilhas e informações espalhadas. A estrutura proposta serve para mudar isso.</p>
+          </div>
+          <div class="questions__list">
+            <div>Quanto faturamos?</div>
+            <div>Quanto gastamos?</div>
+            <div>Quanto temos a pagar e receber?</div>
+            <div>Onde está cada máquina?</div>
+            <div>Quanto cada máquina faturou?</div>
+            <div>Quanto cada máquina realmente deixou?</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- DOIS SERVIÇOS -->
+      <section id="servicos" class="section section-anchor">
+        <div class="section__head section__head--wide">
+          <span class="eyebrow">Dois trabalhos diferentes</span>
+          <h3 class="section__title">A Laranjeira pode contratar os serviços juntos ou separadamente.</h3>
+          <p class="section__lead">A consultoria estrutura e acompanha a gestão. O BPO pode assumir a execução diária da rotina financeira.</p>
+        </div>
+
+        <div class="service-compare">
+          <article class="service-card service-card--consult">
+            <span class="service-card__label">Consultoria</span>
+            <h4>Organiza · implanta · analisa · melhora</h4>
+            <p>A Lean desenha a forma de trabalhar, implanta os controles e acompanha os números com os donos.</p>
+            <div class="service-card__bottom">Pode funcionar com a equipe interna executando a rotina.</div>
+          </article>
+          <div class="service-plus" aria-hidden="true">+</div>
+          <article class="service-card service-card--bpo">
+            <span class="service-card__label">BPO Financeiro</span>
+            <h4>Lança · confere · concilia · mantém</h4>
+            <p>A Lean assume o operacional financeiro seguindo os processos definidos e mantendo a base atualizada.</p>
+            <div class="service-card__bottom">Opcional. Não é condição para contratar a consultoria.</div>
+          </article>
+        </div>
+      </section>
+
+      <!-- PROPOSTAS -->
+      <section id="propostas" class="section section--alt section-anchor">
+        <div class="section__head">
+          <span class="eyebrow">Proposta comercial</span>
+          <h3 class="section__title">Duas soluções, com valores separados.</h3>
+          <p class="section__lead">Assim, a Laranjeira escolhe se quer apenas a consultoria, apenas o BPO ou os dois trabalhos juntos.</p>
+        </div>
+
+        <div class="offer-stack">
+          <article class="offer offer--consult">
+            <div class="offer__top">
+              <div>
+                <span class="offer__kicker">Proposta 01</span>
+                <h4>Consultoria de gestão</h4>
+                <p>Atuação híbrida entre trabalho presencial na Laranjeira e dedicação da equipe Lean no escritório, de acordo com a necessidade de cada etapa.</p>
+              </div>
+              <span class="recommendation">Recomendado para começar</span>
+            </div>
+
+            <div class="consult-options">
+              <div class="consult-option consult-option--featured">
+                <span class="consult-option__label">4 dias de atuação por mês</span>
+                <strong>R$ 5.760<span>/mês</span></strong>
+                <p>Recomendamos iniciar assim por pelo menos <b>4 meses</b> para acelerar a organização, a implantação do sistema e a construção da base.</p>
+              </div>
+              <div class="consult-option">
+                <span class="consult-option__label">2 dias de atuação por mês</span>
+                <strong>R$ 3.120<span>/mês</span></strong>
+                <p>Opção de menor frequência. Após o período inicial, reavaliamos juntos se duas atuações por mês passam a ser suficientes.</p>
+              </div>
+            </div>
+
+            <div class="offer__notes">
+              <div><span>Formato</span><strong>Híbrido</strong></div>
+              <div><span>Pagamento</span><strong>Mensal via boleto</strong></div>
+              <div><span>Visita presencial</span><strong>R$ 335 por visita realizada</strong></div>
+            </div>
+            <p class="offer__foot">A despesa presencial cobre combustível, pedágio e alimentação e só é cobrada quando houver deslocamento. A quantidade de visitas presenciais é ajustada conforme a necessidade do trabalho.</p>
+          </article>
+
+          <article class="offer offer--bpo">
+            <div class="offer__top">
+              <div>
+                <span class="offer__kicker">Proposta 02</span>
+                <h4>BPO Financeiro</h4>
+                <p>A Lean assume a rotina operacional do financeiro para manter as informações organizadas, atualizadas e prontas para análise.</p>
+              </div>
+              <span class="optional">Serviço opcional</span>
+            </div>
+
+            <div class="bpo-price">
+              <div class="bpo-price__stage">
+                <span class="bpo-price__label">1º ao 3º mês</span>
+                <strong>R$ 3.000<span>/mês</span></strong>
+                <p>Condição inicial para facilitar a transição e a organização da nova rotina.</p>
+              </div>
+              <div class="bpo-price__arrow" aria-hidden="true">→</div>
+              <div class="bpo-price__stage bpo-price__stage--next">
+                <span class="bpo-price__label">A partir do 4º mês</span>
+                <strong>R$ 4.200<span>/mês</span></strong>
+                <p>Valor recorrente após a etapa inicial de transição.</p>
+              </div>
+            </div>
+
+            <div class="bpo-scope">
+              <span>Rotina operacional prevista</span>
+              <ul>
+                <li>Lançamento e organização de receitas e despesas</li>
+                <li>Controle de contas a pagar e receber</li>
+                <li>Conciliação financeira e conferência dos registros</li>
+                <li>Manutenção da base necessária aos controles e relatórios</li>
+              </ul>
+            </div>
+            <p class="offer__foot">Pagamento mensal via boleto. O BPO é independente da consultoria e pode ser contratado separadamente.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- JUNTOS -->
+      <section class="section">
+        <div class="together">
+          <div class="together__copy">
+            <span class="eyebrow">Se os dois forem contratados</span>
+            <h3 class="section__title">Um trabalho cuida da gestão. O outro mantém a rotina rodando.</h3>
+            <p>Os serviços não se misturam: a consultoria continua responsável por estruturar, analisar e melhorar; o BPO executa o operacional financeiro do dia a dia.</p>
+          </div>
+          <div class="together__visual" aria-label="Consultoria mais BPO financeiro">
+            <div><small>Consultoria</small><strong>Estrutura e analisa</strong></div>
+            <span>+</span>
+            <div><small>BPO</small><strong>Executa e mantém</strong></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- COMO COMEÇA -->
+      <section id="inicio" class="section section--alt section-anchor">
+        <div class="section__head">
+          <span class="eyebrow">Como começa</span>
+          <h3 class="section__title">Primeiro colocar a casa em ordem. Depois aprofundar.</h3>
+        </div>
+        <ol class="start-list">
+          <li><span>01</span><div><h4>Entender e organizar</h4><p>Contas, CNPJs, documentos, pessoas, planilhas e rotinas atuais.</p></div></li>
+          <li><span>02</span><div><h4>Implantar</h4><p>Sistema, processo financeiro e responsabilidades de cada pessoa.</p></div></li>
+          <li><span>03</span><div><h4>Conferir</h4><p>Garantir que receitas, despesas, saldos e registros estejam fechando.</p></div></li>
+          <li><span>04</span><div><h4>Analisar</h4><p>DRE, fluxo de caixa, contas a pagar e receber e demais controles.</p></div></li>
+          <li><span>05</span><div><h4>Aprofundar</h4><p>Localização, receita, custos e resultado de cada máquina.</p></div></li>
+        </ol>
+      </section>
+
+      <!-- ENCERRAMENTO -->
+      <section class="closing">
+        <div class="closing__inner">
+          <span class="eyebrow eyebrow--orange">Em resumo</span>
+          <h3 class="closing__title">A ideia é simples: parar de procurar respostas e começar a tê-las.</h3>
+          <div class="closing__answers">
+            <span>Quanto entrou.</span>
+            <span>Quanto saiu.</span>
+            <span>Quanto sobrou.</span>
+            <span>Onde estão as máquinas.</span>
+            <span>E quanto cada uma está deixando.</span>
+          </div>
+          <a href="https://wa.me/5544999061699?text=Ol%C3%A1%2C%20somos%20da%20Terraplenagem%20Laranjeira%20e%20gostar%C3%ADamos%20de%20conversar%20sobre%20a%20proposta." class="btn btn--orange" target="_blank" rel="noopener">Conversar com a Lean</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer__inner">
+        <img src="assets/lean-logo-white.png" alt="Lean Company" class="footer__logo" />
+        <div class="footer__contacts">
+          <span>44 99906-1699</span>
+          <span>@leancompanybrasil</span>
+          <span>Maringá · Paraná</span>
+        </div>
+        <p class="footer__legal">Material reservado · preparado exclusivamente para a Terraplenagem Laranjeira. © Lean Company.</p>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
