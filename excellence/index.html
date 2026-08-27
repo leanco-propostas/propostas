@@ -132,21 +132,6 @@ a{color:inherit}
 .sec__title{font-family:var(--title);font-size:clamp(28px,3.8vw,38px);font-weight:600;line-height:1.1;color:var(--lean);margin:0 0 14px}
 .sec__intro{font-size:15px;color:var(--ink-2);max-width:66ch;margin:0 0 30px}
 
-/* ---- cards de escopo ---- */
-.scope{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
-.scard{
-  background:#fff;border:1px solid var(--line);border-top:3px solid var(--cli-leaf);
-  border-radius:14px;padding:22px 22px 18px;display:flex;flex-direction:column;
-  box-shadow:0 2px 10px rgba(20,96,49,.05);
-}
-.scard__n{font-size:10.5px;font-weight:600;letter-spacing:.14em;color:var(--cli-leaf);margin:0 0 7px}
-.scard__t{font-family:var(--title);font-size:23px;font-weight:600;line-height:1.14;color:var(--lean);margin:0 0 9px}
-.scard ul{list-style:none;margin:0 0 16px;padding:0}
-.scard li{position:relative;padding-left:17px;font-size:13.5px;line-height:1.55;color:var(--ink-2);margin-bottom:5px}
-.scard li::before{content:"";position:absolute;left:0;top:9px;width:6px;height:6px;border-radius:50%;background:var(--cli-leaf)}
-.scard__done{margin:auto 0 0;padding-top:13px;font-size:13px;color:var(--ink)}
-.scard__done b{display:block;font-size:9.5px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--cli);margin-bottom:3px}
-
 /* ---- rotina ---- */
 .rot{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 .rcard{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 2px 10px rgba(20,96,49,.05)}
@@ -164,7 +149,7 @@ a{color:inherit}
 .rot__note{margin:20px 0 0;font-size:13px;color:var(--ink-3);max-width:70ch}
 
 /* ---- responsabilidades ---- */
-.resp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.resp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;align-items:start}
 .pcard{border-radius:14px;padding:24px;border:1px solid var(--line);background:#fff}
 .pcard.lean{background:var(--lean);border-color:var(--lean)}
 .pcard__h{font-family:var(--title);font-size:22px;font-weight:600;line-height:1.15;margin:0 0 4px;color:var(--lean)}
@@ -189,12 +174,11 @@ a{color:inherit}
 .guard p{margin:0;font-size:13.5px;color:var(--ink-2);max-width:74ch}
 
 /* ---- método ---- */
-.meth{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
+.meth{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#fff}
 .mitem{padding:24px 24px 26px;border-right:1px solid var(--line)}
 .mitem:last-child{border-right:0}
 .mitem b{display:block;font-size:10px;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--cli);margin-bottom:9px}
 .mitem p{margin:0;font-size:13.5px;line-height:1.58;color:var(--ink-2)}
-.mitem .hrs{font-family:var(--mono);font-size:15px;font-weight:600;color:var(--ink);letter-spacing:-.01em}
 
 /* ---- investimento ---- */
 .inv{display:grid;grid-template-columns:1fr 360px;gap:26px;align-items:start}
@@ -253,7 +237,7 @@ a{color:inherit}
   .sec{padding:52px 0}
   .sec__grid{grid-template-columns:1fr;gap:0}
   .sec__num{font-size:44px;margin-bottom:10px}
-  .scope,.rot,.resp,.close__grid{grid-template-columns:1fr}
+  .rot,.resp,.close__grid{grid-template-columns:1fr}
   .hdr__in{height:72px;gap:12px}
   .hdr__cli{height:50px;max-height:50px}
   .hdr__doc{display:none}
@@ -321,65 +305,7 @@ a{color:inherit}
       <div>
         <p class="sec__label">Escopo</p>
         <h2 class="sec__title">O que o BPO assume</h2>
-        <p class="sec__intro">Quatro frentes, todas executadas pela Lean. O que hoje ocupa a gestão passa a chegar pronto, no formato de relatório.</p>
-
-        <div class="scope">
-          <article class="scard">
-            <p class="scard__n">Frente 01</p>
-            <h3 class="scard__t">Contas a pagar</h3>
-            <ul>
-              <li>Lançamento das despesas na planilha ou no sistema financeiro</li>
-              <li>Provisionamento das despesas previstas</li>
-              <li>Agendamento dos pagamentos na conta corrente, para aprovação da gestão</li>
-            </ul>
-            <p class="scard__done"><b>Fica pronto</b>Todo pagamento agendado e conferido antes do vencimento.</p>
-          </article>
-
-          <article class="scard">
-            <p class="scard__n">Frente 02</p>
-            <h3 class="scard__t">Contas a receber e cobrança</h3>
-            <ul>
-              <li>Emissão e envio das notas fiscais de clientes</li>
-              <li>Lançamento das receitas e do contas a receber</li>
-              <li>Contato com clientes inadimplentes para cobrança e renegociação de valores em aberto</li>
-            </ul>
-            <p class="scard__done"><b>Fica pronto</b>A carteira acompanhada cliente a cliente, com a inadimplência à vista.</p>
-          </article>
-
-          <article class="scard">
-            <p class="scard__n">Frente 03</p>
-            <h3 class="scard__t">Conciliação bancária</h3>
-            <ul>
-              <li>Extrato retirado e conciliado em todas as contas da empresa</li>
-              <li>Identificação das despesas com nota fiscal recebida por e-mail</li>
-              <li>Tratamento das divergências antes que virem acúmulo</li>
-            </ul>
-            <p class="scard__done"><b>Fica pronto</b>Todos os bancos batidos, todos os dias, sem fila de pendência.</p>
-          </article>
-
-          <article class="scard">
-            <p class="scard__n">Frente 04</p>
-            <h3 class="scard__t">Relatórios de gestão</h3>
-            <ul>
-              <li>Fluxo de caixa projetado para os próximos 30 dias</li>
-              <li>Posição de contas a pagar, contas a receber e inadimplência</li>
-              <li>Relatórios e análises adicionais conforme a gestão solicitar</li>
-            </ul>
-            <p class="scard__done"><b>Fica pronto</b>A leitura do caixa chega antes da decisão, não depois dela.</p>
-          </article>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 02 ROTINA -->
-  <section class="sec alt" id="rotina">
-    <div class="wrap sec__grid">
-      <div class="sec__num">02</div>
-      <div>
-        <p class="sec__label">Rotina</p>
-        <h2 class="sec__title">O que chega, e quando</h2>
-        <p class="sec__intro">O BPO tem cadência fixa. A gestão sabe o que recebe todo dia e o que recebe toda semana, sem precisar pedir.</p>
+        <p class="sec__intro">O escopo saiu do mapeamento feito na própria Excellence. Está organizado pela frequência com que cada coisa acontece, que é como a gestão sente a rotina no dia a dia.</p>
 
         <div class="rot">
           <article class="rcard gold">
@@ -388,9 +314,10 @@ a{color:inherit}
               <b>Todo dia</b>
             </div>
             <ul>
-              <li>Lançamento das despesas e receitas do dia</li>
+              <li>Lançamento das despesas e receitas na planilha ou no sistema financeiro</li>
+              <li>Provisionamento das despesas previstas</li>
               <li>Agendamento dos pagamentos no banco, para aprovação da gestão</li>
-              <li>Conciliação bancária de todas as contas</li>
+              <li>Conciliação bancária de todas as contas, com as divergências tratadas na hora</li>
               <li>Relatório das despesas que vencem no dia</li>
             </ul>
           </article>
@@ -403,19 +330,19 @@ a{color:inherit}
             <ul>
               <li>Fluxo de caixa projetado para os próximos 30 dias</li>
               <li>Posição de contas a pagar e contas a receber</li>
-              <li>Relatório de inadimplência com o andamento das cobranças</li>
+              <li>Inadimplência, com o andamento das cobranças</li>
             </ul>
           </article>
 
           <article class="rcard">
             <div class="rcard__h">
               <span>Cadência</span>
-              <b>Sob demanda</b>
+              <b>Conforme acontece</b>
             </div>
             <ul>
-              <li>Relatórios e análises personalizadas que a gestão solicitar</li>
-              <li>Esclarecimento de dúvidas sobre lançamentos e relatórios</li>
-              <li>Videochamada para apresentação de resultados</li>
+              <li>Emissão e envio das notas fiscais de clientes</li>
+              <li>Cobrança e renegociação com clientes inadimplentes</li>
+              <li>Relatórios e análises que a gestão solicitar</li>
             </ul>
           </article>
         </div>
@@ -426,9 +353,9 @@ a{color:inherit}
   </section>
 
   <!-- 03 RESPONSABILIDADES -->
-  <section class="sec" id="parceria">
+  <section class="sec alt" id="parceria">
     <div class="wrap sec__grid">
-      <div class="sec__num">03</div>
+      <div class="sec__num">02</div>
       <div>
         <p class="sec__label">Parceria</p>
         <h2 class="sec__title">Como trabalhamos juntos</h2>
@@ -439,11 +366,8 @@ a{color:inherit}
             <h3 class="pcard__h">A Lean Company</h3>
             <p class="pcard__s">O que fica sob nossa responsabilidade</p>
             <ul>
-              <li><b>Alimentação diária.</b> Lançar todas as despesas e receitas encaminhadas, no dia em que chegam.</li>
-              <li><b>Agendamento de pagamentos.</b> Deixar os pagamentos agendados no banco, aguardando a aprovação da gestão.</li>
-              <li><b>Conciliação diária.</b> Conciliar todas as contas correntes, garantindo a precisão dos registros.</li>
-              <li><b>Relatórios na cadência combinada.</b> Diários e semanais, sem depender de cobrança.</li>
-              <li><b>Suporte e dúvidas.</b> Esclarecer lançamentos e relatórios dentro do horário de atendimento.</li>
+              <li><b>Cadência garantida.</b> Os relatórios chegam na frequência combinada, sem a gestão precisar pedir.</li>
+              <li><b>Suporte e dúvidas.</b> Esclarecer lançamentos e relatórios sempre que a gestão precisar.</li>
               <li><b>Confidencialidade.</b> Tratar os dados financeiros da Excellence com padrão rigoroso de proteção.</li>
             </ul>
           </article>
@@ -470,13 +394,13 @@ a{color:inherit}
   </section>
 
   <!-- 04 MÉTODO -->
-  <section class="sec alt" id="metodo">
+  <section class="sec" id="metodo">
     <div class="wrap sec__grid">
-      <div class="sec__num">04</div>
+      <div class="sec__num">03</div>
       <div>
         <p class="sec__label">Método</p>
-        <h2 class="sec__title">Acessos, modalidade e atendimento</h2>
-        <p class="sec__intro">Três condições práticas para o BPO operar com agilidade desde o primeiro dia.</p>
+        <h2 class="sec__title">Acessos e modalidade</h2>
+        <p class="sec__intro">Duas condições práticas para o BPO operar com agilidade desde o primeiro dia.</p>
 
         <div class="meth">
           <div class="mitem">
@@ -487,29 +411,24 @@ a{color:inherit}
             <b>Modalidade</b>
             <p>Atendimento remoto e online. Quando necessário, reuniões por videochamada para apresentação de resultados ou esclarecimento de dúvidas de ambas as partes.</p>
           </div>
-          <div class="mitem">
-            <b>Horário de atendimento</b>
-            <p class="hrs">08:00 às 12:00<br>13:30 às 18:00</p>
-            <p style="margin-top:8px">De segunda a sexta, para envio de relatórios e esclarecimento de dúvidas.</p>
-          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- 05 INVESTIMENTO -->
-  <section class="sec" id="investimento">
+  <section class="sec alt" id="investimento">
     <div class="wrap sec__grid">
-      <div class="sec__num">05</div>
+      <div class="sec__num">04</div>
       <div>
         <p class="sec__label">Investimento</p>
         <h2 class="sec__title">Valor mensal</h2>
 
         <div class="inv">
           <div class="inv__body">
-            <p>Valor fechado, com todas as frentes da seção 01 inclusas. A estruturação inicial acontece junto com o trabalho de consultoria já em andamento na Excellence, sem cobrança à parte.</p>
+            <p>Valor fechado, com todo o escopo da seção 01 incluso. A estruturação inicial acontece junto com o trabalho de consultoria já em andamento na Excellence, sem cobrança à parte.</p>
             <ul class="inv__list">
-              <li><b>Serviço</b><span>BPO Financeiro, escopo integral das quatro frentes</span></li>
+              <li><b>Serviço</b><span>BPO Financeiro, escopo integral da seção 01</span></li>
               <li><b>Implantação</b><span>Inclusa, sem cobrança adicional</span></li>
               <li><b>Modalidade</b><span>Remota e online</span></li>
               <li><b>Pagamento</b><span>Boleto bancário ou Pix</span></li>
