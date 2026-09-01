@@ -191,7 +191,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid rgba(
 .offer__price{margin-top:auto;padding-top:24px;border-top:1px solid var(--line)}
 .offer__price span{display:block;color:#8595A2;font-size:9px;text-transform:uppercase;letter-spacing:.12em;font-weight:800}
 .offer__price strong{display:block;margin-top:4px;font-family:var(--cond);font-size:48px;line-height:1;color:var(--client-dark)}
-.terms{width:min(calc(100% - 42px),var(--max));margin:20px auto 0;display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
+.terms{width:min(calc(100% - 42px),var(--max));margin:20px auto 0;display:grid;grid-template-columns:repeat(5,1fr);border:1px solid var(--line);border-radius:12px;overflow:hidden;background:#fff}
 .terms div{padding:18px 20px;border-right:1px solid var(--line)}
 .terms div:last-child{border-right:0}
 .terms span{display:block;color:#8797A3;font-size:8px;text-transform:uppercase;letter-spacing:.12em;font-weight:800}
@@ -233,7 +233,7 @@ a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid rgba(
   .scenario-grid{grid-template-columns:1fr 1fr}.scenario-grid article{border-bottom:1px solid var(--line)}.scenario-grid article:nth-child(2){border-right:0}.scenario-grid article:nth-last-child(-n+2){border-bottom:0}
   .roadmap{grid-template-columns:1fr}.roadmap__step{border-right:0;border-bottom:1px solid var(--line)}.roadmap__step:last-child{border-bottom:0}
   .proof__inner{grid-template-columns:1fr;gap:34px}.proof__card{max-width:430px}
-  .terms{grid-template-columns:1fr 1fr}.terms div:nth-child(2){border-right:0}.terms div:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .terms{grid-template-columns:1fr 1fr}.terms div{border-right:1px solid var(--line);border-bottom:1px solid var(--line)}.terms div:nth-child(even){border-right:0}.terms div:last-child{border-right:0;border-bottom:0}.terms div:nth-last-child(2):nth-child(even){border-bottom:1px solid var(--line)}
   .footer__inner{grid-template-columns:auto 1fr}.footer__legal{grid-column:1/-1;text-align:left}
 }
 @media(max-width:760px){
