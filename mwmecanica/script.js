@@ -34,7 +34,10 @@ function lock(){
 }
 
 if(sessionStorage.getItem(STORAGE_KEY)==='ok') unlock();
-else document.body.classList.add('is-locked');
+else {
+  document.body.classList.add('is-locked');
+  requestAnimationFrame(()=>input.focus());
+}
 
 form.addEventListener('submit',e=>{
   e.preventDefault();
@@ -70,6 +73,14 @@ document.addEventListener('click',e=>{
   menuToggle.setAttribute('aria-expanded','false');
 });
 
+document.addEventListener('keydown',e=>{
+  if(e.key !== 'Escape' || !nav.classList.contains('is-open')) return;
+  nav.classList.remove('is-open');
+  menuToggle.setAttribute('aria-expanded','false');
+  menuToggle.setAttribute('aria-label','Abrir menu');
+  menuToggle.focus();
+});
+
 function updateProgress(){
   const d=document.documentElement;
   const den=d.scrollHeight-d.clientHeight;
@@ -86,8 +97,10 @@ const linkMap=new Map(links.map(a=>[a.getAttribute('href').slice(1),a]));
 const sectionObserver=new IntersectionObserver(entries=>{
   const visible=entries.filter(e=>e.isIntersecting).sort((a,b)=>b.intersectionRatio-a.intersectionRatio)[0];
   if(!visible) return;
-  links.forEach(a=>a.classList.remove('is-active'));
-  linkMap.get(visible.target.id)?.classList.add('is-active');
+  links.forEach(a=>{ a.classList.remove('is-active'); a.removeAttribute('aria-current'); });
+  const activeLink=linkMap.get(visible.target.id);
+  activeLink?.classList.add('is-active');
+  activeLink?.setAttribute('aria-current','location');
 },{rootMargin:'-30% 0px -58% 0px',threshold:[0,.1,.25,.5]});
 sections.forEach(s=>sectionObserver.observe(s));
 
@@ -104,19 +117,3 @@ function initReveal(){
   items.forEach(x=>revealObserver.observe(x));
 }
 initReveal();
-
-const scenarioButtons=[...document.querySelectorAll('[data-scenario-btn]')];
-const scenarioPanels=[...document.querySelectorAll('[data-scenario-panel]')];
-scenarioButtons.forEach(btn=>btn.addEventListener('click',()=>{
-  const key=btn.dataset.scenarioBtn;
-  scenarioButtons.forEach(b=>{
-    const active=b===btn;
-    b.classList.toggle('is-active',active);
-    b.setAttribute('aria-selected',String(active));
-  });
-  scenarioPanels.forEach(p=>{
-    const active=p.dataset.scenarioPanel===key;
-    p.classList.toggle('is-active',active);
-    p.hidden=!active;
-  });
-}));

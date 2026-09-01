@@ -52,7 +52,6 @@
           <a href="#prioridades" class="nav__link">Prioridades</a>
           <a href="#frentes" class="nav__link">Frentes</a>
           <a href="#metodo" class="nav__link">Como atuamos</a>
-          <a href="#evolucao" class="nav__link">Evolução</a>
           <a href="#proposta" class="nav__link">Proposta</a>
         </nav>
         <div class="header__right">
@@ -148,7 +147,7 @@
           <article class="work-card work-card--highlight reveal">
             <div class="work-card__top"><span class="work-card__tag">Frente 01</span><span class="priority">Prioridade central</span></div>
             <h4>Financeiro e rentabilidade</h4>
-            <p>Construir uma leitura gerencial confiável para acompanhar caixa, resultado e rentabilidade das diferentes frentes da MW.</p>
+            <p>Construir uma leitura gerencial confiável para acompanhar caixa, resultado e rentabilidade das diferentes operações da MW — autopeças, mecânica, corte e dobra e solda/montagem — respeitando a estrutura dos CNPJs e a disponibilidade dos dados.</p>
             <ul>
               <li>DRE gerencial e fluxo de caixa com rotina de fechamento e validação</li>
               <li>Precificação, margens e rentabilidade por produto, serviço ou frente, conforme dados disponíveis</li>
@@ -184,8 +183,8 @@
             <p>Fazer a gestão permanecer na empresa por meio de pessoas que entendem o processo, os números e o que precisam acompanhar.</p>
             <ul>
               <li>Treinar a equipe financeira nas rotinas, controles e validações implantadas</li>
-              <li>Desenvolver lideranças e clareza de responsabilidades</li>
-              <li>Definir metas por equipe e rituais simples de acompanhamento</li>
+              <li>Definir responsáveis pelos principais indicadores e processos</li>
+              <li>Estruturar metas, reuniões de acompanhamento e planos de ação com as lideranças</li>
             </ul>
           </article>
         </div>
@@ -232,52 +231,38 @@
           <h3 class="section__title">O objetivo é mudar a forma como a informação percorre a empresa.</h3>
         </div>
 
-        <div class="scenario reveal" data-scenario>
-          <div class="scenario__tabs" role="tablist" aria-label="Comparar cenário atual e estrutura proposta">
-            <button type="button" class="scenario__tab is-active" role="tab" aria-selected="true" aria-controls="scenario-now" id="tab-now" data-scenario-btn="now">Contexto atual</button>
-            <button type="button" class="scenario__tab" role="tab" aria-selected="false" aria-controls="scenario-next" id="tab-next" data-scenario-btn="next">Com a estrutura implantada</button>
+        <div class="scenario scenario--compare reveal" aria-label="Comparação entre o contexto atual e a estrutura proposta">
+          <div class="scenario__compare-head" aria-hidden="true">
+            <span>Contexto atual</span>
+            <span>Com a estrutura implantada</span>
           </div>
-          <div class="scenario__panel is-active" id="scenario-now" role="tabpanel" aria-labelledby="tab-now" data-scenario-panel="now">
-            <div class="scenario-grid">
-              <article><span>Financeiro</span><strong>Fechamentos podem chegar tarde ou com inconsistências relatadas.</strong></article>
-              <article><span>Estoque</span><strong>A contagem corrige o saldo, mas o processo volta a gerar divergência.</strong></article>
-              <article><span>Gestão</span><strong>Parte do tempo é consumida buscando e conferindo informação.</strong></article>
-              <article><span>Equipe</span><strong>Metas e lideranças ainda precisam ganhar estrutura de acompanhamento.</strong></article>
-            </div>
-            <p class="scenario__foot">Contexto informado na conversa inicial · causas e extensão serão validadas na imersão.</p>
+          <div class="scenario__rows">
+            <article class="scenario__row">
+              <span class="scenario__area">Financeiro</span>
+              <div class="scenario__state scenario__state--now"><small>Contexto atual</small><strong>Fechamentos podem chegar tarde ou com inconsistências relatadas.</strong></div>
+              <span class="scenario__arrow" aria-hidden="true">→</span>
+              <div class="scenario__state scenario__state--next"><small>Estrutura proposta</small><strong>Rotina de fechamento, validações e leitura gerencial com cadência definida.</strong></div>
+            </article>
+            <article class="scenario__row">
+              <span class="scenario__area">Estoque</span>
+              <div class="scenario__state scenario__state--now"><small>Contexto atual</small><strong>A contagem corrige o saldo, mas o processo volta a gerar divergência.</strong></div>
+              <span class="scenario__arrow" aria-hidden="true">→</span>
+              <div class="scenario__state scenario__state--next"><small>Estrutura proposta</small><strong>Movimentação física e sistema amarrados por processo e responsabilidade.</strong></div>
+            </article>
+            <article class="scenario__row">
+              <span class="scenario__area">Gestão</span>
+              <div class="scenario__state scenario__state--now"><small>Contexto atual</small><strong>Parte do tempo é consumida buscando e conferindo informação.</strong></div>
+              <span class="scenario__arrow" aria-hidden="true">→</span>
+              <div class="scenario__state scenario__state--next"><small>Estrutura proposta</small><strong>Indicadores consolidados e automatizados para acompanhar as prioridades.</strong></div>
+            </article>
+            <article class="scenario__row">
+              <span class="scenario__area">Equipe</span>
+              <div class="scenario__state scenario__state--now"><small>Contexto atual</small><strong>Metas e lideranças ainda precisam ganhar estrutura de acompanhamento.</strong></div>
+              <span class="scenario__arrow" aria-hidden="true">→</span>
+              <div class="scenario__state scenario__state--next"><small>Estrutura proposta</small><strong>Lideranças treinadas, metas claras e ritos de acompanhamento.</strong></div>
+            </article>
           </div>
-          <div class="scenario__panel" id="scenario-next" role="tabpanel" aria-labelledby="tab-next" data-scenario-panel="next" hidden>
-            <div class="scenario-grid scenario-grid--future">
-              <article><span>Financeiro</span><strong>Rotina de fechamento, validações e leitura gerencial com cadência definida.</strong></article>
-              <article><span>Estoque</span><strong>Movimentação física e sistema amarrados por processo e responsabilidade.</strong></article>
-              <article><span>Gestão</span><strong>Indicadores consolidados e automatizados para acompanhar as prioridades.</strong></article>
-              <article><span>Equipe</span><strong>Lideranças treinadas, metas claras e ritos de acompanhamento.</strong></article>
-            </div>
-            <p class="scenario__foot">Direção de trabalho proposta · o desenho final depende da validação dos dados e processos da MW.</p>
-          </div>
-        </div>
-      </section>
-
-      <section id="evolucao" class="section section-anchor">
-        <div class="section__head section__head--wide reveal">
-          <span class="eyebrow">Sequência recomendada</span>
-          <h3 class="section__title">Começar pela confiabilidade. Depois acelerar a gestão.</h3>
-          <p class="section__lead">Sem cronograma artificial: as frentes avançam conforme a qualidade dos dados e a prioridade identificada na operação.</p>
-        </div>
-
-        <div class="roadmap reveal">
-          <article class="roadmap__step">
-            <span class="roadmap__num">1</span>
-            <div><small>Base</small><h4>Imersão e confiabilidade</h4><p>Entender sistemas, CNPJs, rotinas financeiras, estoque, responsáveis e qualidade dos dados.</p></div>
-          </article>
-          <article class="roadmap__step">
-            <span class="roadmap__num">2</span>
-            <div><small>Implantação</small><h4>Indicadores e processos</h4><p>Colocar de pé DRE, fluxo de caixa, rotinas de estoque, integrações e controles que sustentem a informação.</p></div>
-          </article>
-          <article class="roadmap__step roadmap__step--accent">
-            <span class="roadmap__num">3</span>
-            <div><small>Performance</small><h4>Liderança, metas e rentabilidade</h4><p>Aprofundar análises, desenvolver líderes e transformar indicadores em rotina de melhoria.</p></div>
-          </article>
+          <p class="scenario__foot">Contexto informado na conversa inicial · causas, extensão e desenho final serão validados na imersão.</p>
         </div>
       </section>
 
@@ -310,7 +295,7 @@
               <div><span class="offer__kicker">Plano 01</span><h4>4 dias presenciais / mês</h4></div>
               <span class="recommendation">Recomendado para começar</span>
             </div>
-            <p class="offer__desc">Atuação presencial em blocos de dois dias, com cadência aproximadamente quinzenal. Um ritmo suficiente para conhecer a operação, implantar a base e mostrar velocidade de entrega.</p>
+            <p class="offer__desc">Atuação presencial em blocos de dois dias, com cadência aproximadamente quinzenal. Um ritmo consistente para conhecer a operação, estruturar as prioridades e avançar nas implantações com proximidade da equipe.</p>
             <ul class="offer__list">
               <li>4 dias presenciais por mês em Pitanga</li>
               <li>Agenda organizada em 2 blocos de 2 dias</li>
@@ -322,7 +307,7 @@
 
           <article class="offer reveal">
             <div class="offer__top">
-              <div><span class="offer__kicker">Plano 02</span><h4>6 dias / mês</h4></div>
+              <div><span class="offer__kicker">Plano 02</span><h4>4 presenciais + 2 remotos / mês</h4></div>
               <span class="recommendation recommendation--soft">Ritmo intensivo</span>
             </div>
             <p class="offer__desc">Mantém os quatro dias presenciais e adiciona dois dias remotos dedicados para acelerar análises, estruturação e acompanhamento entre as visitas.</p>
@@ -341,7 +326,7 @@
           <div><span>Prazo</span><strong>Sem prazo mínimo</strong></div>
           <div><span>Pagamento</span><strong>Boleto mensal</strong></div>
           <div><span>Cancelamento</span><strong>Aviso prévio de 30 dias · sem multa</strong></div>
-          <div><span>Suporte</span><strong>30 dias por mês</strong></div>
+          <div><span>Suporte</span><strong>Ao longo de todo o mês</strong></div>
         </div>
         <p class="terms__note reveal">A carga de atuação pode ser ampliada ou revista conforme a necessidade percebida pela MW e pela Lean ao longo do trabalho.</p>
       </section>
