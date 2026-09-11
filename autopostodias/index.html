@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Auto Posto Dias · Diagnóstico Estratégico — Lean Company</title>
+<meta name="description" content="Diagnóstico estratégico e proposta da Lean Company para o Auto Posto Dias: controles, indicadores financeiros e gestão por unidade." />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ===================== TELA DE ACESSO ===================== -->
+<div id="access" class="access" role="dialog" aria-modal="true" aria-labelledby="access-title">
+  <div class="access__card">
+    <div class="access__logos">
+      <span class="access__client-word">Auto Posto Dias</span>
+      <span class="access__plus" aria-hidden="true">×</span>
+      <img src="assets/lean-logo-white.png" alt="Lean Company" class="access__lean-logo" />
+    </div>
+    <span class="access__tag">Conteúdo reservado</span>
+    <h1 id="access-title" class="access__title">Diagnóstico Estratégico Auto Posto Dias</h1>
+    <p class="access__desc">Material exclusivo preparado pela Lean Company. Informe a senha de acesso enviada pela equipe.</p>
+    <form id="access-form" class="access__form" autocomplete="off">
+      <label class="access__label" for="password">Senha de acesso</label>
+      <div class="access__field">
+        <input type="password" id="password" name="password" placeholder="••••••••" required />
+        <button type="button" id="toggle-pass" class="access__toggle" aria-label="Mostrar senha">Mostrar</button>
+      </div>
+      <p id="access-error" class="access__error" role="alert" aria-live="polite" hidden>Senha incorreta. Tente novamente.</p>
+      <button type="submit" class="access__btn">Acessar diagnóstico</button>
+    </form>
+    <p class="access__footer">Auto Posto Dias · Terra Rica e Marilena, PR &nbsp;·&nbsp; Lean Company</p>
+  </div>
+</div>
+
+<!-- ===================== CONTEÚDO ===================== -->
+<div id="site" class="site" hidden>
+
+  <div class="progress" aria-hidden="true"><span id="progress-bar" class="progress__bar"></span></div>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="#capa" class="header__brand">
+        <span class="header__client-word">Auto Posto Dias</span>
+        <span class="header__tagline">Diagnóstico estratégico</span>
+      </a>
+      <nav class="nav" id="nav" aria-label="Seções do diagnóstico">
+        <a href="#capa" class="nav__link">Início</a>
+        <a href="#leitura" class="nav__link">Panorama</a>
+        <a href="#diagnostico" class="nav__link">Diagnóstico</a>
+        <a href="#impacto" class="nav__link">Impacto</a>
+        <a href="#roadmap" class="nav__link">Roadmap</a>
+        <a href="#exemplo" class="nav__link">Exemplo</a>
+        <a href="#proposta" class="nav__link">Proposta</a>
+      </nav>
+      <div class="header__right">
+        <img src="assets/lean-wordmark-blue.png" alt="Lean Company" class="header__lean" />
+        <button id="logout" class="header__logout" title="Encerrar sessão">Encerrar</button>
+        <button id="menu-toggle" class="header__burger" aria-label="Abrir menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- CAPA -->
+  <section id="capa" class="cover">
+    <div class="cover__inner">
+      <div class="cover__content">
+        <span class="cover__label">Diagnóstico estratégico · Gestão financeira e operacional</span>
+        <h2 class="cover__title">Gerir o negócio, não só operar o caixa.</h2>
+        <p class="cover__text">Um diagnóstico consultivo para estruturar controles confiáveis nos dois postos e na distribuidora de gás, e dar a Terra Rica e Marilena, PR, indicadores claros de resultado por unidade e do grupo consolidado.</p>
+        <div class="cover__actions">
+          <a href="#diagnostico" class="btn btn--primary">Ver diagnóstico</a>
+        </div>
+        <div class="cover__sign">
+          <span>Preparado por</span>
+          <img src="assets/lean-wordmark-blue.png" alt="Lean Company" />
+        </div>
+      </div>
+      <aside class="cover__facts" aria-label="Estrutura do grupo">
+        <div class="fact">
+          <span class="fact__num">2</span>
+          <span class="fact__label">Postos de combustível</span>
+        </div>
+        <div class="fact">
+          <span class="fact__num">1</span>
+          <span class="fact__label">Distribuidora de gás</span>
+        </div>
+        <div class="fact fact--wide">
+          <span class="fact__label">Terra Rica e Marilena &nbsp;·&nbsp; Paraná</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- HEADLINE -->
+  <section class="headline">
+    <p class="headline__text">Dados confiáveis em cada unidade. <strong>Indicadores que tiram os proprietários do caixa e colocam na gestão.</strong> Decisão apoiada em número, não em presença.</p>
+  </section>
+
+  <!-- LEITURA EXECUTIVA -->
+  <section id="leitura" class="section">
+    <div class="section__head">
+      <span class="eyebrow">Panorama</span>
+      <h3 class="section__title">Onde o Auto Posto Dias está e para onde pode acelerar</h3>
+    </div>
+    <div class="exec">
+      <article class="exec__card">
+        <span class="exec__kicker">Contexto atual</span>
+        <p>Dois postos de combustível, em Terra Rica e Marilena, e uma distribuidora de gás cresceram a partir da atuação direta dos proprietários. O negócio começou enxuto e, mesmo maior hoje, eles seguem ocupando posição operacional, inclusive no caixa da conveniência.</p>
+      </article>
+      <article class="exec__card">
+        <span class="exec__kicker">Oportunidade</span>
+        <p>Implantar controles na conveniência, gerar dados confiáveis por unidade e migrar os proprietários do operacional para o acompanhamento gerencial dos três negócios.</p>
+      </article>
+      <article class="exec__card exec__card--lean">
+        <span class="exec__kicker">Como a Lean ajuda</span>
+        <p>A Lean estrutura os controles, organiza os dados e constrói os indicadores financeiros, comerciais, de estoque e de pessoas, atuando presencialmente nos dois postos e apoiando também a distribuidora de gás.</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- DIAGNÓSTICO -->
+  <section id="diagnostico" class="section">
+    <div class="section__head">
+      <span class="eyebrow">Diagnóstico por frentes</span>
+      <h3 class="section__title">Seis frentes para estruturar e acelerar a gestão</h3>
+      <p class="section__lead">Do controle da conveniência aos indicadores de cada unidade: cada frente com o que foi relatado e o que a Lean entrega.</p>
+    </div>
+    <div class="dcards" id="diag-grid"></div>
+  </section>
+
+  <!-- IMPACTO SISTÊMICO -->
+  <section id="impacto" class="section section--alt">
+    <div class="section__head">
+      <span class="eyebrow">Impacto sistêmico</span>
+      <h3 class="section__title">Da presença no caixa à gestão por indicadores</h3>
+    </div>
+    <div class="switch" role="group" aria-label="Alternar cenário">
+      <button class="switch__btn is-active" data-scenario="antes">Cenário atual</button>
+      <button class="switch__btn" data-scenario="depois">Após as melhorias</button>
+    </div>
+    <div class="impact" id="impact-grid"></div>
+  </section>
+
+  <!-- ROADMAP -->
+  <section id="roadmap" class="section">
+    <div class="section__head">
+      <span class="eyebrow">Sequência recomendada</span>
+      <h3 class="section__title">Três fases que se conectam</h3>
+      <p class="section__lead">As fases são encadeadas, sem prazos rígidos por etapa: os indicadores só avançam depois que os dados da conveniência estiverem confiáveis.</p>
+    </div>
+    <div class="roadmap">
+      <article class="phase">
+        <span class="phase__range">Fase 01</span>
+        <h4 class="phase__title">Base e implantação</h4>
+        <ul>
+          <li>Implantar o sistema de controle na conveniência</li>
+          <li>Definir processos e o responsável pelos lançamentos</li>
+          <li>Treinar a equipe e padronizar a rotina de registro</li>
+        </ul>
+      </article>
+      <article class="phase">
+        <span class="phase__range">Fase 02</span>
+        <h4 class="phase__title">Validação e indicadores</h4>
+        <ul>
+          <li>Validar os dados gerados pela nova rotina</li>
+          <li>Construir os indicadores financeiros, comerciais, de estoque e de compras</li>
+          <li>Separar o resultado de cada unidade</li>
+        </ul>
+      </article>
+      <article class="phase">
+        <span class="phase__range">Fase 03</span>
+        <h4 class="phase__title">Consolidação e gestão</h4>
+        <ul>
+          <li>Consolidar o resultado do grupo</li>
+          <li>Apoiar a análise de continuidade, expansão ou venda de operações</li>
+          <li>Acompanhar a transição dos proprietários para o papel gerencial</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- EXEMPLO / DASHBOARD -->
+  <section id="exemplo" class="section section--alt">
+    <div class="showcase">
+      <div class="showcase__text">
+        <span class="eyebrow">Exemplo do nosso trabalho</span>
+        <h3 class="section__title">Veja um painel que já construímos</h3>
+        <p>Um dashboard gerencial real desenvolvido pela Lean, o tipo de entrega que reúne indicadores financeiros, comerciais e de estoque em um só lugar, como planejamos para o Auto Posto Dias.</p>
+        <a href="https://leanco-dashboardexemplo.vercel.app/login.html" class="btn btn--lean" target="_blank" rel="noopener">Abrir dashboard de exemplo</a>
+        <p class="showcase__cred">Acesso de demonstração &nbsp;·&nbsp; <strong>login:</strong> lean &nbsp;&nbsp; <strong>senha:</strong> lean2025</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROPOSTA -->
+  <section id="proposta" class="section">
+    <div class="section__head">
+      <span class="eyebrow">Proposta comercial</span>
+      <h3 class="section__title">Uma parceria presencial nos dois postos</h3>
+    </div>
+    <div class="proposal">
+      <div class="proposal__main">
+        <div class="proposal__grid">
+          <div class="proposal__item"><span class="proposal__k">Formato</span><span class="proposal__v">Presencial</span></div>
+          <div class="proposal__item"><span class="proposal__k">Frequência</span><span class="proposal__v">4 dias por mês</span></div>
+          <div class="proposal__item"><span class="proposal__k">Rotina</span><span class="proposal__v">1 dia em Marilena, dia seguinte em Terra Rica, repetindo após 15 dias</span></div>
+          <div class="proposal__item"><span class="proposal__k">Escopo</span><span class="proposal__v">2 postos de combustível + distribuidora de gás</span></div>
+          <div class="proposal__item"><span class="proposal__k">Despesas</span><span class="proposal__v">R$ 650 de deslocamento, à parte</span></div>
+          <div class="proposal__item"><span class="proposal__k">Cancelamento</span><span class="proposal__v">Sem multa · aviso de 30 dias</span></div>
+        </div>
+        <p class="proposal__note">O valor contempla o acompanhamento presencial dos dois postos, a implantação dos controles na conveniência, a estruturação dos dados e a construção dos indicadores descritos neste diagnóstico. A distribuidora de gás é atendida dentro do mesmo pacote.</p>
+      </div>
+      <aside class="proposal__price">
+        <span class="proposal__price-k">Investimento mensal</span>
+        <span class="proposal__price-v">R$ 5.600</span>
+        <span class="proposal__price-sub">por mês · deslocamento à parte (R$ 650)</span>
+        <a href="https://wa.me/5544999061699?text=Ol%C3%A1%2C%20somos%20do%20Auto%20Posto%20Dias%20e%20gostar%C3%ADamos%20de%20conversar%20sobre%20a%20proposta%20da%20Lean." class="btn btn--lean" target="_blank" rel="noopener">Falar com a Lean</a>
+        <span class="proposal__price-foot">Próximo passo: agendar a imersão inicial</span>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ENCERRAMENTO -->
+  <section class="closing">
+    <div class="closing__inner">
+      <span class="eyebrow eyebrow--light">Em resumo</span>
+      <h3 class="closing__title">O que muda com a Lean ao lado do Auto Posto Dias</h3>
+      <div class="closing__grid">
+        <div><h4>Estruturar</h4><p>Controles e dados confiáveis na conveniência, nos dois postos e na distribuidora de gás.</p></div>
+        <div><h4>Acompanhar</h4><p>Indicadores por unidade e consolidado do grupo, sem depender da presença dos proprietários no caixa.</p></div>
+        <div><h4>Consolidar</h4><p>O resultado de cada negócio e do grupo como um todo, com clareza para decidir sobre continuar, expandir ou rever operações.</p></div>
+      </div>
+      <a href="https://wa.me/5544999061699?text=Ol%C3%A1%2C%20somos%20do%20Auto%20Posto%20Dias%20e%20gostar%C3%ADamos%20de%20conversar%20sobre%20a%20proposta%20da%20Lean." class="btn btn--primary" target="_blank" rel="noopener">Agendar conversa</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <img src="assets/lean-logo-white.png" alt="Lean Company" class="footer__logo" />
+      <div class="footer__contacts">
+        <span>44 99906-1699</span>
+        <span>@leancompanybrasil</span>
+        <span>leancompany.net</span>
+        <span>Maringá · Paraná</span>
+      </div>
+      <p class="footer__legal">Documento reservado · preparado exclusivamente para o Auto Posto Dias. © Lean Company.</p>
+    </div>
+  </footer>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
