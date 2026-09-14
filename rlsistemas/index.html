@@ -151,7 +151,7 @@ a{color:inherit}
 .phase p{margin:0;padding:18px 20px 20px;font-size:14px;color:var(--ink-2)}
 
 /* ---- composição ---- */
-.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line);margin:0 0 34px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);margin:0 0 34px}
 .stats div{padding:20px 18px 22px 0;border-bottom:1px solid var(--line)}
 .stats b{display:block;font-family:var(--title);font-size:36px;line-height:1;color:var(--cli);font-variant-numeric:tabular-nums;font-weight:600}
 .stats span{display:block;margin-top:8px;font-size:13px;color:var(--ink-3);line-height:1.45}
@@ -331,7 +331,6 @@ a{color:inherit}
   .sec__grid{grid-template-columns:1fr;gap:0}
   .sec__num{font-size:44px;margin-bottom:10px}
   .phases,.resp,.close__grid{grid-template-columns:1fr}
-  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
   .hdr__in{height:72px;gap:12px}
   .hdr__cli{height:40px;max-height:40px}
   .hdr__doc,.hdr__lean span{display:none}
@@ -416,12 +415,12 @@ a{color:inherit}
 
         <div class="phases">
           <article class="phase">
-            <div class="phase__h"><span>Fase 1 · valor fechado</span><b>Mapeamento em 32 horas</b></div>
-            <p>Três visitas presenciais e uma etapa online para desenhar os fluxos de implantação e suporte, medir o que a base atual permite e priorizar as oportunidades.</p>
+            <div class="phase__h"><span>Fase 1 · primeiro mês · valor fechado</span><b>Mapeamento</b></div>
+            <p>Três visitas presenciais e o desenho remoto dos fluxos de implantação e suporte, para medir o que a base atual permite e priorizar as oportunidades.</p>
           </article>
           <article class="phase two">
-            <div class="phase__h"><span>Fase 2 · valor por hora</span><b>Melhorias mês a mês</b></div>
-            <p>A cada mês, apresentamos o que será feito e as horas estimadas. A RL aprova, executamos e revisamos juntos ao final do mês.</p>
+            <div class="phase__h"><span>Fase 2 · a partir do segundo mês</span><b>Melhorias mês a mês</b></div>
+            <p>Carga mínima de 16 horas mensais. A cada mês, apresentamos o que será feito e as horas estimadas. A RL aprova, executamos e revisamos juntos ao final do mês.</p>
           </article>
         </div>
       </div>
@@ -435,18 +434,17 @@ a{color:inherit}
       <div>
         <p class="sec__label">Fase 1</p>
         <h2 class="sec__title">Como conduzimos o mapeamento</h2>
-        <p class="sec__intro">Um consultor da Lean conduz o mapeamento em quatro blocos de 8 horas: três visitas presenciais na RL e uma etapa de análise a distância, entre a segunda e a terceira visita.</p>
+        <p class="sec__intro">No primeiro mês, um consultor da Lean conduz o mapeamento em três visitas presenciais na RL e uma etapa remota de desenho dos fluxos, entre a segunda e a terceira visita.</p>
 
         <div class="stats">
           <div><b>1</b><span>consultor dedicado</span></div>
           <div><b>3</b><span>visitas presenciais</span></div>
-          <div><b>1</b><span>etapa online</span></div>
-          <div><b>32</b><span>horas de mapeamento</span></div>
+          <div><b>1</b><span>etapa de desenho remoto</span></div>
         </div>
 
-        <div class="g-scale"><span></span><div class="ticks"><span>Bloco 1</span><span>Bloco 2</span><span>Bloco 3</span><span>Bloco 4</span></div></div>
+        <div class="g-scale"><span></span><div class="ticks"><span>Etapa 1</span><span>Etapa 2</span><span>Etapa 3</span><span>Etapa 4</span></div></div>
         <div id="gantt"></div>
-        <p class="g-note">Cada bloco equivale a 8 horas de dedicação. As datas das visitas são combinadas com a RL, ao longo de cerca de três a quatro semanas.</p>
+        <p class="g-note">As datas das visitas são combinadas com a RL, ao longo do primeiro mês.</p>
 
         <div class="stages" id="stages"></div>
       </div>
@@ -466,7 +464,7 @@ a{color:inherit}
           <div><span class="i">03</span><p><b>Primeiro retrato em números</b> de horas e atendimentos, na medida em que a base atual permitir medir.</p></div>
           <div><span class="i">04</span><p><b>Proposta de apontamento de horas por etapa</b> da implantação, para formar base histórica e dar mais precisão às próximas estimativas.</p></div>
           <div><span class="i">05</span><p><b>Lista de oportunidades priorizada</b> por impacto e esforço, com a recomendação de ação para cada uma.</p></div>
-          <div><span class="i">06</span><p><b>Plano do primeiro mês</b> de melhorias, com as horas estimadas por ação, pronto para aprovação.</p></div>
+          <div><span class="i">06</span><p><b>Plano de melhorias do segundo mês</b>, com as horas estimadas por ação, pronto para aprovação.</p></div>
         </div>
       </div>
     </div>
@@ -479,7 +477,7 @@ a{color:inherit}
       <div>
         <p class="sec__label">Fase 2</p>
         <h2 class="sec__title">Depois do mapeamento, melhorias mês a mês</h2>
-        <p class="sec__intro">As melhorias seguem por horas aprovadas previamente. A RL sabe o que será feito e quanto vai custar antes de cada mês começar, e ajusta o ritmo conforme as prioridades do momento.</p>
+        <p class="sec__intro">A partir do segundo mês, as melhorias seguem com carga mínima de 16 horas mensais, aprovadas previamente. A RL sabe o que será feito e quanto vai custar antes de cada mês começar, e pode ampliar as horas conforme as prioridades do momento.</p>
 
         <div class="cycle">
           <div class="cstep"><span>01</span><b>Planejar</b><p>Apresentamos as ações do mês e as horas estimadas para cada uma.</p></div>
@@ -548,12 +546,12 @@ a{color:inherit}
 
         <div class="inv">
           <div class="inv__body">
-            <p>O mapeamento tem valor fechado. Depois dele, as melhorias seguem pelo valor da hora, com as horas de cada mês aprovadas pela RL antes de começar.</p>
+            <p>O mapeamento, no primeiro mês, tem valor fechado. A partir do segundo mês, as melhorias seguem pelo valor da hora, com carga mínima de 16 horas mensais aprovadas pela RL antes de começar.</p>
             <div class="table-x">
               <table class="bill">
                 <thead><tr><th>Fase 1 · Mapeamento</th><th class="r">Quant.</th><th class="r">Unit. R$</th><th class="r">Total R$</th></tr></thead>
                 <tbody>
-                  <tr><td>Consultoria<small>3 visitas presenciais e 1 etapa online</small></td><td class="r">32 h</td><td class="r">160,00</td><td class="r">5.120,00</td></tr>
+                  <tr><td>Mapeamento<small>3 visitas presenciais e desenho remoto dos fluxos</small></td><td class="r">1</td><td class="r">5.120,00</td><td class="r">5.120,00</td></tr>
                   <tr><td>Deslocamento a Apucarana<small>por visita presencial realizada</small></td><td class="r">3</td><td class="r">200,00</td><td class="r">600,00</td></tr>
                   <tr class="tot"><td>Total da Fase 1</td><td></td><td></td><td class="r">5.720,00</td></tr>
                 </tbody>
@@ -561,20 +559,20 @@ a{color:inherit}
             </div>
             <p class="bill-note">O deslocamento é cobrado apenas pelas visitas realizadas.</p>
             <ul class="inv__list">
-              <li><b>Fase 2</b><span>R$ 160,00 por hora, com as horas aprovadas previamente a cada mês</span></li>
+              <li><b>Fase 2</b><span>A partir do segundo mês, R$ 160,00 por hora, com carga mínima de 16 horas mensais aprovadas previamente</span></li>
               <li><b>Modalidade</b><span>Presencial ou a distância, conforme as ações do plano de cada mês</span></li>
               <li><b>Deslocamento</b><span>Na Fase 2, cobrado apenas nos meses com visita presencial</span></li>
             </ul>
           </div>
 
           <aside class="price">
-            <p class="price__pre">Fase 1 · Mapeamento</p>
+            <p class="price__pre">Fase 1 · Mapeamento no primeiro mês</p>
             <p class="price__v">5.120</p>
-            <p class="price__u">valor fechado · 32 horas</p>
+            <p class="price__u">valor fechado · 3 visitas e desenho remoto</p>
             <div class="price__hr"></div>
-            <p class="price__pre">Fase 2 · Melhorias</p>
+            <p class="price__pre">Fase 2 · A partir do segundo mês</p>
             <p class="price__v">160</p>
-            <p class="price__u">por hora, aprovada mês a mês</p>
+            <p class="price__u">por hora · mínimo de 16 horas mensais</p>
             <p class="price__sup"><em>Deslocamento à parte</em> · só nas visitas presenciais realizadas</p>
             <a class="price__cta" href="https://wa.me/5544999061699?text=Ol%C3%A1%2C%20quero%20falar%20sobre%20a%20proposta%20de%20mapeamento%20da%20RL" target="_blank" rel="noopener">Falar com a Lean Company</a>
           </aside>
@@ -644,10 +642,10 @@ a{color:inherit}
 
   /* ---------- cronograma ---------- */
   var PLANO = [
-    {t:'Abertura e implantação', d:'Visita presencial · 8 horas', ini:1},
-    {t:'Suporte e passagem de clientes', d:'Visita presencial · 8 horas', ini:2},
-    {t:'Análise e consolidação', d:'Online · 8 horas', ini:3, online:true},
-    {t:'Devolutiva e plano do primeiro mês', d:'Visita presencial · 8 horas', ini:4, fim:true}
+    {t:'Abertura e implantação', d:'Visita presencial', ini:1},
+    {t:'Suporte e passagem de clientes', d:'Visita presencial', ini:2},
+    {t:'Desenho e análise dos fluxos', d:'Remoto', ini:3, online:true},
+    {t:'Devolutiva e plano de melhorias', d:'Visita presencial', ini:4, fim:true}
   ];
   var g = document.getElementById('gantt');
   PLANO.forEach(function (p) {
@@ -779,14 +777,14 @@ a{color:inherit}
   MOCK.plano = '<div class="mock"><div class="table-x"><table class="mtable">' +
       '<thead><tr><th>Ação do mês</th><th>Modalidade</th><th class="h">Horas estimadas</th></tr></thead><tbody>' +
       '<tr><td>Ação priorizada A</td><td>Presencial</td><td class="h">6 h</td></tr>' +
-      '<tr><td>Ação priorizada B</td><td>Online</td><td class="h">4 h</td></tr>' +
-      '<tr><td>Ação priorizada C</td><td>Online</td><td class="h">3 h</td></tr>' +
-      '<tr><td>Revisão do mês com a liderança</td><td>Online</td><td class="h">2 h</td></tr>' +
+      '<tr><td>Ação priorizada B</td><td>Remoto</td><td class="h">5 h</td></tr>' +
+      '<tr><td>Ação priorizada C</td><td>Remoto</td><td class="h">3 h</td></tr>' +
+      '<tr><td>Revisão do mês com a liderança</td><td>Remoto</td><td class="h">2 h</td></tr>' +
     '</tbody></table></div>' +
     '<p class="mock-cap">Modelo de plano mensal · ações e horas fictícias. As ações reais saem do mapeamento.</p></div>';
 
   var ETAPAS = [
-    {n:'Bloco 1', d:'8 horas', t:'Abertura e implantação', mod:'Presencial',
+    {n:'Etapa 1', t:'Abertura e implantação', mod:'Presencial',
      o:'Apresentar o trabalho à equipe e entender, junto com quem implanta, como um projeto anda hoje, do contrato até a passagem para o suporte.',
      a:['Reunião de abertura com o Lucas e a coordenação, para alinhar prioridades e apresentar a consultoria à equipe.',
         'Acompanhamento do time de implantação no dia a dia e entrevistas com quem executa.',
@@ -797,7 +795,7 @@ a{color:inherit}
      leg:'Cada processo é desenhado no mesmo padrão: raias por responsável, documentos que circulam, pontos de decisão e desfechos. As oportunidades de melhoria já ficam marcadas sobre o desenho.',
      m:'mapa', wide:true},
 
-    {n:'Bloco 2', d:'8 horas', t:'Suporte e passagem de clientes', mod:'Presencial',
+    {n:'Etapa 2', t:'Suporte e passagem de clientes', mod:'Presencial',
      o:'Entender como N1 e N2 se organizam, como a cobertura acontece quando alguém se ausenta e em que momento o cliente sai da implantação e passa ao suporte.',
      a:['Acompanhamento do atendimento N1 e N2 e entrevistas com a coordenação.',
         'Levantamento de como o cliente passa hoje da implantação para o suporte, e dos casos em que segue com os implantadores.',
@@ -808,23 +806,23 @@ a{color:inherit}
      leg:'O painel mostra de imediato onde o trabalho que chega supera a capacidade de cada equipe.',
      m:'painel'},
 
-    {n:'Bloco 3', d:'8 horas', t:'Análise e consolidação', mod:'Online',
-     o:'Cruzar o que foi visto nas duas visitas com os dados disponíveis e organizar as oportunidades por impacto e esforço.',
-     a:['Consolidação dos fluxos de implantação e suporte.',
+    {n:'Etapa 3', t:'Desenho e análise dos fluxos', mod:'Remoto',
+     o:'Desenhar os fluxos levantados nas duas visitas, cruzar com os dados disponíveis e organizar as oportunidades por impacto e esforço.',
+     a:['Desenho dos fluxos de implantação e suporte no padrão de mapa de processo.',
         'Identificação de onde as horas e os projetos se perdem, com a evidência de cada ponto.',
         'Proposta de apontamento de horas por etapa da implantação, para formar base histórica.',
         'Priorização das oportunidades por impacto e esforço.'],
-     e:'Lista de oportunidades priorizada, com a recomendação de ação para cada uma.',
-     f:['Planilha','Documento'],
+     e:'Fluxos desenhados e lista de oportunidades priorizada, com a recomendação de ação para cada uma.',
+     f:['Mapa BPMN','Planilha'],
      leg:'As oportunidades de maior impacto e menor esforço entram primeiro no plano do mês.',
      m:'prior'},
 
-    {n:'Bloco 4', d:'8 horas', t:'Devolutiva e plano do primeiro mês', mod:'Presencial', fim:true,
-     o:'Apresentar o mapeamento à liderança e definir, junto com o Lucas, o que entra no primeiro mês de melhorias.',
+    {n:'Etapa 4', t:'Devolutiva e plano de melhorias', mod:'Presencial', fim:true,
+     o:'Apresentar o mapeamento à liderança e definir, junto com o Lucas, o que entra nas melhorias do segundo mês.',
      a:['Apresentação dos fluxos, dos números e das oportunidades priorizadas.',
         'Validação das prioridades com o Lucas e a coordenação.',
-        'Montagem do plano do primeiro mês, com as horas estimadas para cada ação.'],
-     e:'Plano do primeiro mês de melhorias, pronto para aprovação.',
+        'Montagem do plano do segundo mês, com as horas estimadas para cada ação.'],
+     e:'Plano de melhorias do segundo mês, pronto para aprovação.',
      f:['Apresentação','Plano mensal'],
      leg:'O plano mensal é o documento que a RL aprova antes de cada mês começar.',
      m:'plano'}
@@ -835,7 +833,7 @@ a{color:inherit}
     var el = document.createElement('article');
     el.className = 'stage' + (s.fim ? ' final' : '') + (s.wide ? ' wide' : '');
     el.innerHTML =
-      '<div class="stage__h"><span>' + s.n + ' · ' + s.d + '</span><b>' + s.t + '</b><i>' + s.mod + '</i></div>' +
+      '<div class="stage__h"><span>' + s.n + '</span><b>' + s.t + '</b><i>' + s.mod + '</i></div>' +
       '<div class="stage__body">' +
         '<div class="stage__txt">' +
           '<p class="stage__obj">' + s.o + '</p>' +
